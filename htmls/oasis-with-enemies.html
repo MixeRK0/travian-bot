@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="tileDetails" class="oasis oasis-14"><h1 class="titleInHeader">Unoccupied oasis &#x202d;<span
+        class="coordinates coordinatesWrapper"><span class="coordinateX">(&#x202d;13&#x202c;</span><span
+        class="coordinatePipe">|</span><span class="coordinateY">&#x202d;61&#x202c;)</span></span>&#x202c;&nbsp;</h1>
+    <div class="detailImage">
+        <div class="options">
+            <div class="option"><a class="a arrow" title="Center map" href="/karte.php?x=13&amp;y=61"> Center map </a>
+            </div>
+            <div class="option"><a class="a arrow" title="Raid unoccupied oasis"
+                                   href="/build.php?gid=16&amp;tt=2&amp;eventType=4&amp;targetMapId=55953"> Raid
+                unoccupied oasis </a></div>
+        </div>
+        <br/>
+        <div class="options">
+            <div class="option"><span class="a arrow needGoldClub" id="raidListButtonNoGoldClub"
+                                      title="For this feature you need the Gold club activated.">         Add to farm list    </span>
+            </div>
+            <div class="option">
+                <script type="text/javascript">jQuery(function () {
+                    jQuery('#raidListButtonNoGoldClub').on('click', function () {
+                        jQuery(window).trigger("buttonClicked", [this, {
+                            "goldclubDialog": {
+                                "featureKey": "raidList",
+                                "infoIcon": "https:\\/\\/support.travian.com\\/support\\/solutions\\/articles\\/7000060368-gold-club",
+                                "cssClass": "premiumFeaturePackage premiumFeatureGoldclub paymentShopV4",
+                                "premiumFeatureDialogVersion": 2,
+                                "version": 2,
+                                "paymentShopVersion": 4
+                            }
+                        }]);
+                    })
+                });</script>
+            </div>
+        </div>
+    </div>
+    <div id="map_details"><h4>Bonus</h4>
+        <table cellpadding="1" cellspacing="1" id="distribution" class="transparent">
+            <tbody>
+            <tr>
+                <td class="ico"><i class="r4" title="Crop"></i></td>
+                <td class="val">&#x202d;&#x202d;25&#x202c;&#37;&#x202c;</td>
+                <td class="desc">Crop</td>
+            </tr>
+            </tbody>
+        </table>
+        <h4>Troops</h4>
+        <table cellpadding="1" cellspacing="1" id="troop_info" class="transparent">
+            <tbody>
+            <tr>
+                <td class="ico"><img class="unit u31" src="/img/x.gif" onclick="Travian.Game.Manual.open('troop', 31);"
+                                     alt="Rat" title="Rat"/></td>
+                <td class="val">15</td>
+                <td class="desc">Rats</td>
+            </tr>
+            <tr>
+                <td class="ico"><img class="unit u33" src="/img/x.gif" onclick="Travian.Game.Manual.open('troop', 33);"
+                                     alt="Snake" title="Snake"/></td>
+                <td class="val">6</td>
+                <td class="desc">Snakes</td>
+            </tr>
+            <tr>
+                <td class="ico"><img class="unit u37" src="/img/x.gif" onclick="Travian.Game.Manual.open('troop', 37);"
+                                     alt="Bear" title="Bear"/></td>
+                <td class="val">9</td>
+                <td class="desc">Bears</td>
+            </tr>
+            <tr>
+                <td class="ico"><img class="unit u39" src="/img/x.gif" onclick="Travian.Game.Manual.open('troop', 39);"
+                                     alt="Tiger" title="Tiger"/></td>
+                <td class="val">6</td>
+                <td class="desc">Tigers</td>
+            </tr>
+            <tr>
+                <td colspan="3"><a href="/build.php?id=39&tt=3&screen=combatSimulator&kid=55953" class="a arrow">simulate
+                    raid</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <table cellpadding="1" cellspacing="1" id="distance" class="transparent">
+            <tbody>
+            <tr>
+                <td class="desc">Distance</td>
+                <td class="bold">7 fields</td>
+            </tr>
+            </tbody>
+        </table>
+        <div id="oasis1InstantTabs" class="instantTabs">
+            <div class="contentNavi tabNavi ">
+                <div title="" class="container  active">
+                    <div class="background-start">&nbsp;</div>
+                    <div class="background-end">&nbsp;</div>
+                    <div class="content"><a id="button6617245397d7a" href="" class="tabItem"> \t\t\t\t\tReports
+                        \t\t\t\t\t</a> \t\t\t\t
+                    </div>
+                </div>
+                <script type="text/javascript">                     jQuery(function () {
+                    if (jQuery('#button6617245397d7a').length > 0) {
+                        jQuery('#button6617245397d7a').on('click', function () {
+                            jQuery(window).trigger('tabClicked', [this, {
+                                "class": " active",
+                                "title": false,
+                                "target": false,
+                                "id": "button6617245397d7a",
+                                "href": null,
+                                "onclick": false,
+                                "enabled": true,
+                                "text": "Reports",
+                                "dialog": false,
+                                "plusDialog": false,
+                                "goldclubDialog": false,
+                                "containerId": "",
+                                "buttonIdentifier": "button6617245397d7a"
+                            }]);
+                        });
+                    }
+                });                 </script>
+                <div title="" class="container  normal">
+                    <div class="background-start">&nbsp;</div>
+                    <div class="background-end">&nbsp;</div>
+                    <div class="content"><a id="button6617245397d7f" href="" class="tabItem"> \t\t\t\t\tSurrounding
+                        \t\t\t\t\t</a> \t\t\t\t
+                    </div>
+                </div>
+                <script type="text/javascript">                     jQuery(function () {
+                    if (jQuery('#button6617245397d7f').length > 0) {
+                        jQuery('#button6617245397d7f').on('click', function () {
+                            jQuery(window).trigger('tabClicked', [this, {
+                                "class": " normal",
+                                "title": false,
+                                "target": false,
+                                "id": "button6617245397d7f",
+                                "href": null,
+                                "onclick": false,
+                                "enabled": true,
+                                "text": "Surrounding",
+                                "dialog": false,
+                                "plusDialog": false,
+                                "goldclubDialog": false,
+                                "containerId": "",
+                                "buttonIdentifier": "button6617245397d7f"
+                            }]);
+                        });
+                    }
+                });                 </script>
+                <div class="clear"></div>
+            </div>
+            <div class="tabContainer">
+                <table cellpadding="1" cellspacing="1" id="troop_info" class="rep transparent">
+                    <tbody>
+                    <tr>
+                        <td>No information<br/>available!</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tabContainer reports hide">
+                <table cellpadding="1" cellspacing="1" id="surrounding_info" class="reportSurround transparent">
+                    <tr>
+                        <td>No information<br/>available!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <script type="text/javascript">             Travian.Game.InstantTabs(jQuery('#oasis1InstantTabs'));         </script>
+    </div>
+    <div class="clear"></div>
+</div>
+</body>
+</html>

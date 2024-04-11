@@ -1,0 +1,10 @@
+# local-testing
+.env
+/docker/config/config.yml
+
+vendor/
+Godeps/
+bin/
+tools-bin/
+.idea/
+.DS_Store
