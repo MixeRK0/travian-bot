@@ -43,7 +43,7 @@ func SendTroops(targets []Target, logs string) {
 			}
 
 			if isNoTroops {
-				sleepSeconds := 300 + time.Duration(rand.Intn(900))
+				sleepSeconds := 100 + time.Duration(rand.Intn(900))
 				fmt.Printf("%s: %s, No troops for atack, sleep %d seconds, x = %d y = %d\n", time.Now().Format(time.TimeOnly), logs, sleepSeconds, x, y)
 				time.Sleep(sleepSeconds * time.Second)
 				continue
@@ -51,7 +51,7 @@ func SendTroops(targets []Target, logs string) {
 
 			checksum, timestamp := ParseStep1Result(*htmlStep1)
 
-			err = SendTroopsStep2(x, y, troopsType, troopsCount, 18469, checksum, timestamp)
+			err = SendTroopsStep2(x, y, troopsType, troopsCount, villageId, checksum, timestamp)
 			if err != nil {
 				log.Fatal("step2 gg", err)
 			}

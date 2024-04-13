@@ -1,6 +1,9 @@
 package main
 
-import "time"
+import (
+	"math/rand"
+	"time"
+)
 
 var commonCookie = "__cmpcc=1; __cmpconsentx17155=CP9AEggP9AEggAfSDBRUAwEgAAAAAEPAAAYgAABBQgJgA4AM-AjwBKoDfAHbAO5AgoBIgCSgEowJaATHAmSBNICfYFBAKDhBQAAA; __cmpcccx17155=aBP9ASYwAAgAzA_gACAAcABgAHgAUABgADgAJwAXABgAD0AIQAiABQADEAGgAQQAmgBeAD2AIcATIAxABlgEFAIWARIAjoBOACeAFPAKuAWYA0IBzAEYgI7gUaBRwCpwG6AN2Ab6BBkCFgENgIkgSlAlmBMACZYFdwLAgWZAuCBcMDHYGPwMjAZ4A68CIgEl4JdATBAm_BRoCoAFRwAoXVQvihlZDpmrIEA;"
 var jwtCookie = ""
@@ -32,15 +35,15 @@ var legionerTargets = []Target{
 	{19, 54, LEGIONER, LEGIONER_SQUAD_SIZE},
 	{15, 49, LEGIONER, LEGIONER_SQUAD_SIZE},
 	{7, 56, LEGIONER, LEGIONER_SQUAD_SIZE},
-}
-
-var caesarisTargets = []Target{
-	// 4-21 NA 49-61
 	{5, 60, CAESARIS, CAESARIS_SQUAD_SIZE},
 	{11, 60, CAESARIS, CAESARIS_SQUAD_SIZE},
 	{18, 61, CAESARIS, CAESARIS_SQUAD_SIZE},
 	{20, 61, CAESARIS, CAESARIS_SQUAD_SIZE},
 	{9, 59, CAESARIS, CAESARIS_SQUAD_SIZE},
+}
+
+var caesarisTargets = []Target{
+	// 4-21 NA 49-61
 	{14, 58, CAESARIS, CAESARIS_SQUAD_SIZE},
 	{4, 56, CAESARIS, CAESARIS_SQUAD_SIZE},
 	{6, 56, CAESARIS, CAESARIS_SQUAD_SIZE},
@@ -87,15 +90,23 @@ var caesarisTargets = []Target{
 	//{9, 53, CAESARIS, CAESARIS_SQUAD_SIZE},
 	//{12, 52, CAESARIS, CAESARIS_SQUAD_SIZE},
 	//{15, 49, CAESARIS, CAESARIS_SQUAD_SIZE},
+
+	//{5, 60, CAESARIS, CAESARIS_SQUAD_SIZE},
+	//{11, 60, CAESARIS, CAESARIS_SQUAD_SIZE},
+	//{18, 61, CAESARIS, CAESARIS_SQUAD_SIZE},
+	//{20, 61, CAESARIS, CAESARIS_SQUAD_SIZE},
+	//{9, 59, CAESARIS, CAESARIS_SQUAD_SIZE},
 }
 
 const username = "777McTRAXER777"
 const password = "qwe123"
+const villageId = 18469
 
 func main() {
 	Login(username, password)
 
 	go SendTroops(caesarisTargets, "Caesaris")
+	time.Sleep(time.Second * (60 + time.Duration(rand.Intn(120))))
 	go SendTroops(legionerTargets, "Legs")
 
 	for {
