@@ -37,13 +37,13 @@ func SendTroops(targets []Target, logs string) {
 				continue
 			}
 
-			htmlStep1, isNoTroops, err := SendTroopsStep1(x, y, troopsType, troopsCount)
+			htmlStep1, isNoTroops, err := SendTroopsStep1(x, y, troopsType, troopsCount, logs)
 			if err != nil {
 				log.Fatal("step1 gg", err)
 			}
 
 			if isNoTroops {
-				sleepSeconds := 100 + time.Duration(rand.Intn(900))
+				sleepSeconds := 300 + time.Duration(rand.Intn(900))
 				fmt.Printf("%s: %s, No troops for atack, sleep %d seconds, x = %d y = %d\n", time.Now().Format(time.TimeOnly), logs, sleepSeconds, x, y)
 				time.Sleep(sleepSeconds * time.Second)
 				continue

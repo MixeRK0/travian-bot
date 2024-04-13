@@ -35,11 +35,11 @@ var legionerTargets = []Target{
 	{19, 54, LEGIONER, LEGIONER_SQUAD_SIZE},
 	{15, 49, LEGIONER, LEGIONER_SQUAD_SIZE},
 	{7, 56, LEGIONER, LEGIONER_SQUAD_SIZE},
-	{5, 60, CAESARIS, CAESARIS_SQUAD_SIZE},
-	{11, 60, CAESARIS, CAESARIS_SQUAD_SIZE},
-	{18, 61, CAESARIS, CAESARIS_SQUAD_SIZE},
-	{20, 61, CAESARIS, CAESARIS_SQUAD_SIZE},
-	{9, 59, CAESARIS, CAESARIS_SQUAD_SIZE},
+	{5, 60, LEGIONER, LEGIONER_SQUAD_SIZE},
+	{11, 60, LEGIONER, LEGIONER_SQUAD_SIZE},
+	{18, 61, LEGIONER, LEGIONER_SQUAD_SIZE},
+	{20, 61, LEGIONER, LEGIONER_SQUAD_SIZE},
+	{9, 59, LEGIONER, LEGIONER_SQUAD_SIZE},
 }
 
 var caesarisTargets = []Target{
@@ -98,6 +98,90 @@ var caesarisTargets = []Target{
 	//{9, 59, CAESARIS, CAESARIS_SQUAD_SIZE},
 }
 
+var newTargets = []Target{
+	//[-2 49]
+	//[-1 53]
+	//[0 41]
+	//[0 42]
+	//[1 51]
+	//[2 49]
+	//[2 51]
+	//[3 40]
+	{3, 42, CAESARIS, 1},
+	{3, 55, CAESARIS, 1},
+	{4, 44, CAESARIS, 1},
+	{4, 55, CAESARIS, 1},
+	{4, 56, CAESARIS, 1},
+	{5, 40, CAESARIS, 1},
+	{5, 41, CAESARIS, 1},
+	{5, 45, CAESARIS, 1},
+	{5, 47, CAESARIS, 1},
+	{5, 60, CAESARIS, 1},
+	{6, 49, CAESARIS, 1},
+	{6, 56, CAESARIS, 1},
+	{7, 46, CAESARIS, 1},
+	{7, 47, CAESARIS, 1},
+	{7, 56, CAESARIS, 1},
+	{8, 47, CAESARIS, 1},
+	{8, 48, CAESARIS, 1},
+	{9, 48, CAESARIS, 1},
+	{9, 49, CAESARIS, 1},
+	{9, 53, CAESARIS, 1},
+	{9, 55, CAESARIS, 1},
+	{9, 59, CAESARIS, 1},
+	{10, 42, CAESARIS, 1},
+	{10, 43, CAESARIS, 1},
+	{10, 46, CAESARIS, 1},
+	{10, 48, CAESARIS, 1},
+	{10, 53, CAESARIS, 1},
+	{11, 56, CAESARIS, 1},
+	{11, 60, CAESARIS, 1},
+	{12, 48, CAESARIS, 1},
+	{12, 52, CAESARIS, 1},
+	{13, 47, CAESARIS, 1},
+	{13, 56, CAESARIS, 1},
+	{13, 57, CAESARIS, 1},
+	{14, 39, CAESARIS, 1},
+	{14, 58, CAESARIS, 1},
+	{14, 60, CAESARIS, 1},
+	{15, 42, CAESARIS, 1},
+	{15, 45, CAESARIS, 1},
+	{15, 49, CAESARIS, 1},
+	{15, 54, CAESARIS, 1},
+	{15, 55, CAESARIS, 1},
+	{15, 57, CAESARIS, 1},
+	{16, 42, CAESARIS, 1},
+	{16, 43, CAESARIS, 1},
+	{16, 48, CAESARIS, 1},
+	{17, 45, CAESARIS, 1},
+	{17, 46, CAESARIS, 1},
+	{18, 44, CAESARIS, 1},
+	{18, 45, CAESARIS, 1},
+	{18, 46, CAESARIS, 1},
+	{19, 39, CAESARIS, 1},
+	{19, 40, CAESARIS, 1},
+	{19, 41, CAESARIS, 1},
+	{19, 47, CAESARIS, 1},
+	{19, 54, CAESARIS, 1},
+	{20, 39, CAESARIS, 1},
+	{20, 46, CAESARIS, 1},
+	{20, 54, CAESARIS, 1},
+	{21, 42, CAESARIS, 1},
+	{21, 55, CAESARIS, 1},
+	{22, 42, CAESARIS, 1},
+	{22, 45, CAESARIS, 1},
+	//[22 54]
+	//[22 55]
+	//[23 39]
+	//[23 53]
+	//[23 57]
+	//[24 39]
+	//[24 42]
+	//[24 53]
+	//[25 39]
+	//[25 60]
+}
+
 const username = "777McTRAXER777"
 const password = "qwe123"
 const villageId = 18469
@@ -105,7 +189,7 @@ const villageId = 18469
 func main() {
 	Login(username, password)
 
-	go SendTroops(caesarisTargets, "Caesaris")
+	go SendTroops(newTargets, "Caesaris")
 	time.Sleep(time.Second * (60 + time.Duration(rand.Intn(120))))
 	go SendTroops(legionerTargets, "Legs")
 

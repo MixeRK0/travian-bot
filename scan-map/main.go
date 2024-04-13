@@ -24,10 +24,10 @@ const host = "https://ts3.x1.international.travian.com"
 const username = "777McTRAXER777"
 const password = "qwe123"
 
-const xMin = 9
-const xMax = 17
-const yMin = 51
-const yMax = 57
+const xMin = -2
+const xMax = 25
+const yMin = 39
+const yMax = 60
 
 //const xMin = -108
 //const xMax = -107

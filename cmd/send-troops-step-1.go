@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func SendTroopsStep1(x int, y int, troopType int, troopCount int) (*string, bool, error) {
+func SendTroopsStep1(x int, y int, troopType int, troopCount int, logs string) (*string, bool, error) {
 	params := url.Values{}
 	params.Add(fmt.Sprintf("troop[t%d]", troopType), fmt.Sprintf("%d", troopCount))
 	params.Add("troop[t11]", ``)
@@ -60,7 +60,7 @@ func SendTroopsStep1(x int, y int, troopType int, troopCount int) (*string, bool
 		return nil, true, err
 	}
 
-	if strings.Contains(res, "value=\"1\"") {
+	if strings.Contains(res, "value=\"1\"") && logs != "Caesaris" {
 		return nil, true, err
 	}
 

@@ -31,7 +31,6 @@ func main() {
 		if isEnoughResources(550, 440, 320, 100) {
 			Train()
 			fmt.Printf("%s: Launched train troop, sleep %d seconds\n", time.Now().Format(time.TimeOnly), sleepSeconds)
-			return
 		} else {
 			fmt.Printf("%s: Not enough resourses for train troop, sleep %d seconds\n", time.Now().Format(time.TimeOnly), sleepSeconds)
 		}
