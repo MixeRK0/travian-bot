@@ -99,14 +99,15 @@ var caesarisTargets = []Target{
 }
 
 var newTargets = []Target{
-	//[-2 49]
-	//[-1 53]
-	//[0 41]
-	//[0 42]
-	//[1 51]
-	//[2 49]
-	//[2 51]
-	//[3 40]
+	{-2, 49, CAESARIS, 1},
+	{-1, 53, CAESARIS, 1},
+	{0, 41, CAESARIS, 1},
+	{0, 42, CAESARIS, 1},
+	{1, 51, CAESARIS, 1},
+	{2, 49, CAESARIS, 1},
+	{2, 51, CAESARIS, 1},
+	{3, 40, CAESARIS, 1},
+
 	{3, 42, CAESARIS, 1},
 	{3, 55, CAESARIS, 1},
 	{4, 44, CAESARIS, 1},
@@ -170,16 +171,28 @@ var newTargets = []Target{
 	{21, 55, CAESARIS, 1},
 	{22, 42, CAESARIS, 1},
 	{22, 45, CAESARIS, 1},
-	//[22 54]
-	//[22 55]
-	//[23 39]
-	//[23 53]
-	//[23 57]
-	//[24 39]
-	//[24 42]
-	//[24 53]
-	//[25 39]
-	//[25 60]
+
+	{18, 61, CAESARIS, 1},
+	{19, 62, CAESARIS, 1},
+	{20, 61, CAESARIS, 1},
+	{23, 57, CAESARIS, 1},
+	{25, 60, CAESARIS, 1},
+	{16, 65, CAESARIS, 1},
+	{27, 56, CAESARIS, 1},
+	{27, 55, CAESARIS, 1},
+	{28, 57, CAESARIS, 1},
+	{26, 53, CAESARIS, 1},
+	{29, 51, CAESARIS, 1},
+	{22, 54, CAESARIS, 1},
+	{22, 55, CAESARIS, 1},
+	{23, 39, CAESARIS, 1},
+	{23, 53, CAESARIS, 1},
+	{23, 57, CAESARIS, 1},
+	{24, 39, CAESARIS, 1},
+	{24, 42, CAESARIS, 1},
+	{24, 53, CAESARIS, 1},
+	{25, 39, CAESARIS, 1},
+	{25, 60, CAESARIS, 1},
 }
 
 const username = "777McTRAXER777"
