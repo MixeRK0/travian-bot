@@ -175,8 +175,6 @@ var newTargets = []Target{
 	{18, 61, CAESARIS, 1},
 	{19, 62, CAESARIS, 1},
 	{20, 61, CAESARIS, 1},
-	{23, 57, CAESARIS, 1},
-	{25, 60, CAESARIS, 1},
 	{16, 65, CAESARIS, 1},
 	{27, 56, CAESARIS, 1},
 	{27, 55, CAESARIS, 1},

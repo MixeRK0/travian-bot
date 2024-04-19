@@ -16,30 +16,32 @@ var commonCookie = "__cmpcc=1; __cmpconsentx17155=CP9AEggP9AEggAfSDBRUAwEgAAAAAE
 var jwtCookie = ""
 var cookie = ""
 
-const hostHeader = "ts3.x1.international.travian.com"
-const host = "https://ts3.x1.international.travian.com"
+const hostHeader = "ts100.x10.international.travian.com"
+const host = "https://ts100.x10.international.travian.com"
 
-const username = "777McTRAXER777"
+const username = "777SWEETY777"
 const password = "qwe123"
-const villageId = "18469"
+const villageId = "21715"
 
 func main() {
-	Login(username, password)
 
 	for {
-		sleepSeconds := 300 + time.Duration(rand.Intn(1500))
-		if isEnoughResources(550, 440, 320, 100) {
-			Train()
-			fmt.Printf("%s: Launched train troop, sleep %d seconds\n", time.Now().Format(time.TimeOnly), sleepSeconds)
+		Login(username, password)
+		sleepMins := 60 + time.Duration(rand.Intn(60))
+		isEnough, count := isEnoughResources(550, 440, 320, 100)
+		if isEnough {
+			Train(count)
+			fmt.Printf("%s: Launched train troop, sleep %d minutes\n", time.Now().Format(time.TimeOnly), sleepMins)
 		} else {
-			fmt.Printf("%s: Not enough resourses for train troop, sleep %d seconds\n", time.Now().Format(time.TimeOnly), sleepSeconds)
+			fmt.Printf("%s: Not enough resourses for train troop, sleep %d minutes\n", time.Now().Format(time.TimeOnly), sleepMins)
 		}
-		time.Sleep(sleepSeconds * time.Second)
+		time.Sleep(sleepMins * time.Minute)
 	}
 }
 
-func Train() {
-	req, err := http.NewRequest("GET", host+"/build.php?id=29&gid=20", nil)
+func Train(count int) {
+	println(count)
+	req, err := http.NewRequest("GET", host+"/build.php?gid=20", nil)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -55,7 +57,7 @@ func Train() {
 	req.Header.Set("Sec-Ch-Ua", "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"")
 	req.Header.Set("Sec-Ch-Ua-Mobile", "?0")
 	req.Header.Set("Sec-Ch-Ua-Platform", "\"Windows\"")
-	req.Header.Set("Referer", host+"/build.php?id=22&gid=20")
+	req.Header.Set("Referer", host+"/dorf1.php")
 	req.Header.Set("Accept-Language", "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7")
 
 	resp, err := http.DefaultClient.Do(req)
@@ -92,7 +94,7 @@ func Train() {
 	params.Add("checksum", checksum)
 	params.Add("s", `1`)
 	params.Add("did", villageId)
-	params.Add("t5", `1`)
+	params.Add("t5", fmt.Sprintf("%d", count))
 	params.Add("s1", `ok`)
 	body := strings.NewReader(params.Encode())
 
@@ -115,7 +117,7 @@ func Train() {
 	req.Header.Set("Sec-Fetch-Mode", "navigate")
 	req.Header.Set("Sec-Fetch-User", "?1")
 	req.Header.Set("Sec-Fetch-Dest", "document")
-	req.Header.Set("Referer", host+"?id=29&gid=20")
+	req.Header.Set("Referer", host+"?gid=20")
 	req.Header.Set("Accept-Language", "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7")
 
 	resp, err = http.DefaultClient.Do(req)
@@ -127,7 +129,7 @@ func Train() {
 	TryToUpdateCookieAfterRequest(resp)
 }
 
-func isEnoughResources(needWood int, needClay int, needIron int, needCrop int) bool {
+func isEnoughResources(needWood int, needClay int, needIron int, needCrop int) (bool, int) {
 	req, err := http.NewRequest("GET", host+"/dorf1.php", nil)
 	if err != nil {
 		log.Fatal(err)
@@ -165,9 +167,9 @@ func isEnoughResources(needWood int, needClay int, needIron int, needCrop int) b
 	splited := strings.Split(res, "<div id=\"l1\" class=\"value\">&#x202d;")
 	if len(splited) < 2 {
 		fmt.Print("Can't split wood")
-		return false
+		return false, 0
 	}
-	woodStr := strings.Replace(strings.Split(splited[1], "&#x202c;</div>")[0], ",", "", -1)
+	woodStr := strings.Replace(strings.Split(splited[1], "&#x202c;</div>")[0], " ", "", -1)
 	wood, err := strconv.ParseInt(woodStr, 10, 0)
 	if err != nil {
 		log.Fatal(err)
@@ -176,9 +178,9 @@ func isEnoughResources(needWood int, needClay int, needIron int, needCrop int) b
 	splited = strings.Split(res, "<div id=\"l2\" class=\"value\">&#x202d;")
 	if len(splited) < 2 {
 		fmt.Print("Can't split wood")
-		return false
+		return false, 0
 	}
-	clayStr := strings.Replace(strings.Split(splited[1], "&#x202c;</div>")[0], ",", "", -1)
+	clayStr := strings.Replace(strings.Split(splited[1], "&#x202c;</div>")[0], " ", "", -1)
 	clay, err := strconv.ParseInt(clayStr, 10, 0)
 	if err != nil {
 		log.Fatal(err)
@@ -187,9 +189,9 @@ func isEnoughResources(needWood int, needClay int, needIron int, needCrop int) b
 	splited = strings.Split(res, "<div id=\"l3\" class=\"value\">&#x202d;")
 	if len(splited) < 2 {
 		fmt.Print("Can't split wood")
-		return false
+		return false, 0
 	}
-	ironStr := strings.Replace(strings.Split(splited[1], "&#x202c;</div>")[0], ",", "", -1)
+	ironStr := strings.Replace(strings.Split(splited[1], "&#x202c;</div>")[0], " ", "", -1)
 	iron, err := strconv.ParseInt(ironStr, 10, 0)
 	if err != nil {
 		log.Fatal(err)
@@ -198,29 +200,34 @@ func isEnoughResources(needWood int, needClay int, needIron int, needCrop int) b
 	splited = strings.Split(res, "<div id=\"l3\" class=\"value\">&#x202d;")
 	if len(splited) < 2 {
 		fmt.Print("Can't split wood")
-		return false
+		return false, 0
 	}
-	cropStr := strings.Replace(strings.Split(splited[1], "&#x202c;</div>")[0], ",", "", -1)
+	cropStr := strings.Replace(strings.Split(splited[1], "&#x202c;</div>")[0], " ", "", -1)
 	crop, err := strconv.ParseInt(cropStr, 10, 0)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	if needWood > int(wood) {
-		return false
+		return false, 0
 	}
 
 	if needClay > int(clay) {
-		return false
+		return false, 0
 	}
 
 	if needIron > int(iron) {
-		return false
+		return false, 0
 	}
 
 	if needCrop > int(crop) {
-		return false
+		return false, 0
 	}
 
-	return true
+	woodCount := int(wood) / needWood
+	//clayCount := int(clay) / needClay
+	//ironCount := int(iron) / needIron
+	//cropCount := int(crop) / needCrop
+
+	return true, woodCount
 }
