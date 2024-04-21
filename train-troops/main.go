@@ -27,7 +27,7 @@ func main() {
 
 	for {
 		Login(username, password)
-		sleepMins := 60 + time.Duration(rand.Intn(60))
+		sleepMins := 30 + time.Duration(rand.Intn(60))
 		isEnough, count := isEnoughResources(550, 440, 320, 100)
 		if isEnough {
 			Train(count)
@@ -225,9 +225,20 @@ func isEnoughResources(needWood int, needClay int, needIron int, needCrop int) (
 	}
 
 	woodCount := int(wood) / needWood
-	//clayCount := int(clay) / needClay
-	//ironCount := int(iron) / needIron
-	//cropCount := int(crop) / needCrop
+	clayCount := int(clay) / needClay
+	ironCount := int(iron) / needIron
+	cropCount := int(crop) / needCrop
 
-	return true, woodCount
+	minCount := woodCount
+	if clayCount < minCount {
+		minCount = clayCount
+	}
+	if ironCount < minCount {
+		minCount = ironCount
+	}
+	if cropCount < minCount {
+		minCount = cropCount
+	}
+
+	return true, minCount
 }
