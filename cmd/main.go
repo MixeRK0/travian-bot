@@ -12,10 +12,12 @@ func main() {
 
 	go send_troops.SendTroops(common.LegsTargets, "Legs")
 	go func() {
+		println("Sleep before send")
 		time.Sleep(time.Hour * 3)
 		send_troops.SendTroops(common.ImperatorisTargets, "Imperatoris")
 	}()
 	go func() {
+		println("Sleep before train")
 		time.Sleep(time.Hour * 2)
 		train_troops.TrainTroops()
 	}()
