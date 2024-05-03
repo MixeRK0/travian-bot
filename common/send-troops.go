@@ -46,7 +46,6 @@ var ImperatorisTargets1 = []Target{
 	{42, 45, IMPERATORIS, 1},
 	{34, 39, IMPERATORIS, 1},
 	{25, 46, IMPERATORIS, 1},
-	{23, 41, IMPERATORIS, 1},
 	{27, 41, IMPERATORIS, 1},
 	{30, 37, IMPERATORIS, 1},
 	{34, 35, IMPERATORIS, 1},
@@ -62,6 +61,7 @@ var ImperatorisTargets1 = []Target{
 	{22, 45, IMPERATORIS, 1},
 	{20, 36, IMPERATORIS, 1},
 	{23, 41, IMPERATORIS, 1},
+	{34, 44, IMPERATORIS, 1},
 
 	//clay
 	{29, 50, IMPERATORIS, 1},
@@ -81,20 +81,20 @@ var ImperatorisTargets1 = []Target{
 	{26, 30, IMPERATORIS, 1},
 
 	//iron
-	{40, 50, IMPERATORIS, 1},
-	{41, 50, IMPERATORIS, 1},
-	{41, 49, IMPERATORIS, 1},
-	{47, 49, IMPERATORIS, 1},
-	{38, 45, IMPERATORIS, 1},
-	{38, 44, IMPERATORIS, 1},
-	{33, 44, IMPERATORIS, 1},
-	{33, 47, IMPERATORIS, 1},
-	{39, 40, IMPERATORIS, 1},
-	{39, 39, IMPERATORIS, 1},
-	{40, 39, IMPERATORIS, 1},
-	{41, 39, IMPERATORIS, 1},
-	{41, 38, IMPERATORIS, 1},
-	{21, 41, IMPERATORIS, 1},
+	//{40, 50, IMPERATORIS, 1},
+	//{41, 50, IMPERATORIS, 1},
+	//{41, 49, IMPERATORIS, 1},
+	//{47, 49, IMPERATORIS, 1},
+	//{38, 45, IMPERATORIS, 1},
+	//{38, 44, IMPERATORIS, 1},
+	//{33, 44, IMPERATORIS, 1},
+	//{33, 47, IMPERATORIS, 1},
+	//{39, 40, IMPERATORIS, 1},
+	//{39, 39, IMPERATORIS, 1},
+	//{40, 39, IMPERATORIS, 1},
+	//{41, 39, IMPERATORIS, 1},
+	//{41, 38, IMPERATORIS, 1},
+	//{21, 41, IMPERATORIS, 1},
 
 	//crop
 }

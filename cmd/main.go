@@ -10,17 +10,11 @@ import (
 func main() {
 	common.Login()
 
+	go send_troops.SendTroops(common.ImperatorisTargets1, "Imperatoris")
+	time.Sleep(time.Second * 333)
 	go send_troops.SendTroops(common.LegsTargets, "Legs")
-	go func() {
-		println("Sleep before send")
-		time.Sleep(time.Hour * 3)
-		send_troops.SendTroops(common.ImperatorisTargets, "Imperatoris")
-	}()
-	go func() {
-		println("Sleep before train")
-		time.Sleep(time.Hour * 2)
-		train_troops.TrainTroops()
-	}()
+	time.Sleep(time.Second * 1542)
+	go train_troops.TrainTroops()
 
 	for {
 		time.Sleep(time.Minute * 100)
