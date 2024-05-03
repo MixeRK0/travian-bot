@@ -1,13 +1,14 @@
-package main
+package send_troops
 
 import (
 	"fmt"
 	"log"
 	"math/rand"
 	"time"
+	"travian-bot/common"
 )
 
-func SendTroops(targets []Target, logs string) {
+func SendTroops(targets []common.Target, logs string) {
 	checkMap := make(map[int]map[int]bool)
 	for _, target := range targets {
 		if _, ok := checkMap[target.X][target.Y]; ok {
@@ -36,6 +37,7 @@ func SendTroops(targets []Target, logs string) {
 				i++
 				continue
 			}
+			time.Sleep((1000 + time.Duration(rand.Intn(2000))) * time.Millisecond)
 
 			htmlStep1, isNoTroops, err := SendTroopsStep1(x, y, troopsType, troopsCount, logs)
 			if err != nil {
@@ -51,7 +53,8 @@ func SendTroops(targets []Target, logs string) {
 
 			checksum, timestamp := ParseStep1Result(*htmlStep1)
 
-			err = SendTroopsStep2(x, y, troopsType, troopsCount, villageId, checksum, timestamp)
+			time.Sleep((1000 + time.Duration(rand.Intn(2000))) * time.Millisecond)
+			err = SendTroopsStep2(x, y, troopsType, troopsCount, common.VillageId, checksum, timestamp)
 			if err != nil {
 				log.Fatal("step2 gg", err)
 			}

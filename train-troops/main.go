@@ -1,4 +1,4 @@
-package main
+package train_troops
 
 import (
 	"fmt"
@@ -10,23 +10,12 @@ import (
 	"strconv"
 	"strings"
 	"time"
+	"travian-bot/common"
 )
 
-var commonCookie = "__cmpcc=1; __cmpconsentx17155=CP9AEggP9AEggAfSDBRUAwEgAAAAAEPAAAYgAABBQgJgA4AM-AjwBKoDfAHbAO5AgoBIgCSgEowJaATHAmSBNICfYFBAKDhBQAAA; __cmpcccx17155=aBP9ASYwAAgAzA_gACAAcABgAHgAUABgADgAJwAXABgAD0AIQAiABQADEAGgAQQAmgBeAD2AIcATIAxABlgEFAIWARIAjoBOACeAFPAKuAWYA0IBzAEYgI7gUaBRwCpwG6AN2Ab6BBkCFgENgIkgSlAlmBMACZYFdwLAgWZAuCBcMDHYGPwMjAZ4A68CIgEl4JdATBAm_BRoCoAFRwAoXVQvihlZDpmrIEA;"
-var jwtCookie = ""
-var cookie = ""
-
-const hostHeader = "ts100.x10.international.travian.com"
-const host = "https://ts100.x10.international.travian.com"
-
-const username = "777SWEETY777"
-const password = "qwe123"
-const villageId = "21715"
-
-func main() {
-
+func TrainTroops() {
 	for {
-		Login(username, password)
+		//common.Login()
 		sleepMins := 30 + time.Duration(rand.Intn(60))
 		isEnough, count := isEnoughResources(550, 440, 320, 100)
 		if isEnough {
@@ -41,12 +30,12 @@ func main() {
 
 func Train(count int) {
 	println(count)
-	req, err := http.NewRequest("GET", host+"/build.php?gid=20", nil)
+	req, err := http.NewRequest("GET", common.Host+"/build.php?gid=20", nil)
 	if err != nil {
 		log.Fatal(err)
 	}
-	req.Host = hostHeader
-	req.Header.Set("Cookie", cookie)
+	req.Host = common.HostHeader
+	req.Header.Set("Cookie", common.Cookie)
 	req.Header.Set("Upgrade-Insecure-Requests", "1")
 	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36")
 	req.Header.Set("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7")
@@ -57,7 +46,7 @@ func Train(count int) {
 	req.Header.Set("Sec-Ch-Ua", "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"")
 	req.Header.Set("Sec-Ch-Ua-Mobile", "?0")
 	req.Header.Set("Sec-Ch-Ua-Platform", "\"Windows\"")
-	req.Header.Set("Referer", host+"/dorf1.php")
+	req.Header.Set("Referer", common.Host+"/dorf1.php")
 	req.Header.Set("Accept-Language", "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7")
 
 	resp, err := http.DefaultClient.Do(req)
@@ -71,7 +60,7 @@ func Train(count int) {
 		log.Fatal(err)
 	}
 
-	TryToUpdateCookieAfterRequest(resp)
+	common.TryToUpdateCookieAfterRequest(resp)
 
 	res := string(respBody)
 
@@ -93,23 +82,23 @@ func Train(count int) {
 	params.Add("action", `trainTroops`)
 	params.Add("checksum", checksum)
 	params.Add("s", `1`)
-	params.Add("did", villageId)
+	params.Add("did", fmt.Sprintf("%d", common.VillageId))
 	params.Add("t5", fmt.Sprintf("%d", count))
 	params.Add("s1", `ok`)
 	body := strings.NewReader(params.Encode())
 
-	req, err = http.NewRequest("POST", host+"/build.php?id=29&gid=20", body)
+	req, err = http.NewRequest("POST", common.Host+"/build.php?id=29&gid=20", body)
 	if err != nil {
 		log.Fatal(err)
 	}
-	req.Host = hostHeader
-	req.Header.Set("Cookie", cookie)
+	req.Host = common.HostHeader
+	req.Header.Set("Cookie", common.Cookie)
 	req.Header.Set("Cache-Control", "max-age=0")
 	req.Header.Set("Sec-Ch-Ua", "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"")
 	req.Header.Set("Sec-Ch-Ua-Mobile", "?0")
 	req.Header.Set("Sec-Ch-Ua-Platform", "\"Windows\"")
 	req.Header.Set("Upgrade-Insecure-Requests", "1")
-	req.Header.Set("Origin", host)
+	req.Header.Set("Origin", common.Host)
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36")
 	req.Header.Set("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7")
@@ -117,7 +106,7 @@ func Train(count int) {
 	req.Header.Set("Sec-Fetch-Mode", "navigate")
 	req.Header.Set("Sec-Fetch-User", "?1")
 	req.Header.Set("Sec-Fetch-Dest", "document")
-	req.Header.Set("Referer", host+"?gid=20")
+	req.Header.Set("Referer", common.Host+"?gid=20")
 	req.Header.Set("Accept-Language", "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7")
 
 	resp, err = http.DefaultClient.Do(req)
@@ -126,17 +115,17 @@ func Train(count int) {
 	}
 	defer resp.Body.Close()
 
-	TryToUpdateCookieAfterRequest(resp)
+	common.TryToUpdateCookieAfterRequest(resp)
 }
 
 func isEnoughResources(needWood int, needClay int, needIron int, needCrop int) (bool, int) {
-	req, err := http.NewRequest("GET", host+"/dorf1.php", nil)
+	req, err := http.NewRequest("GET", common.Host+"/dorf1.php", nil)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	req.Host = hostHeader
-	req.Header.Set("Cookie", cookie)
+	req.Host = common.HostHeader
+	req.Header.Set("Cookie", common.Cookie)
 	req.Header.Set("Sec-Ch-Ua", "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"")
 	req.Header.Set("Sec-Ch-Ua-Mobile", "?0")
 	req.Header.Set("Sec-Ch-Ua-Platform", "\"Windows\"")
@@ -161,7 +150,7 @@ func isEnoughResources(needWood int, needClay int, needIron int, needCrop int) (
 		log.Fatal(err)
 	}
 
-	TryToUpdateCookieAfterRequest(resp)
+	common.TryToUpdateCookieAfterRequest(resp)
 
 	res := string(respBody)
 	splited := strings.Split(res, "<div id=\"l1\" class=\"value\">&#x202d;")

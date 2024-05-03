@@ -1,4 +1,4 @@
-package main
+package send_troops
 
 import (
 	"bytes"
@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"strings"
+	"travian-bot/common"
 )
 
 func IsEnemyInOasis(x int, y int) bool {
@@ -25,12 +26,12 @@ func IsEnemyInOasis(x int, y int) bool {
 	}
 	body := bytes.NewReader(payloadBytes)
 
-	req, err := http.NewRequest("POST", "https://ts3.x1.international.travian.com/api/v1/map/tile-details", body)
+	req, err := http.NewRequest("POST", common.Host+"/api/v1/map/tile-details", body)
 	if err != nil {
 		log.Fatal(err)
 	}
-	req.Host = "ts3.x1.international.travian.com"
-	req.Header.Set("Cookie", cookie)
+	req.Host = common.HostHeader
+	req.Header.Set("Cookie", common.Cookie)
 	req.Header.Set("Sec-Ch-Ua", "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"")
 	req.Header.Set("X-Version", "2435.8")
 	req.Header.Set("Sec-Ch-Ua-Mobile", "?0")
@@ -39,7 +40,7 @@ func IsEnemyInOasis(x int, y int) bool {
 	req.Header.Set("Accept", "application/json, text/javascript, */*; q=0.01")
 	req.Header.Set("X-Requested-With", "XMLHttpRequest")
 	req.Header.Set("Sec-Ch-Ua-Platform", "\"Windows\"")
-	req.Header.Set("Origin", "https://ts3.x1.international.travian.com")
+	req.Header.Set("Origin", common.Host)
 	req.Header.Set("Sec-Fetch-Site", "same-origin")
 	req.Header.Set("Sec-Fetch-Mode", "cors")
 	req.Header.Set("Sec-Fetch-Dest", "empty")
@@ -58,7 +59,7 @@ func IsEnemyInOasis(x int, y int) bool {
 	}
 
 	respBodyString := string(respBodyBytes)
-	if strings.Contains(respBodyString, "none") {
+	if strings.Contains(respBodyString, "none") || strings.Contains(respBodyString, "\\u043d\\u0435\\u0442") {
 		return false
 	}
 

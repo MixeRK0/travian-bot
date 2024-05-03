@@ -1,4 +1,4 @@
-package main
+package common
 
 import (
 	"bytes"
@@ -9,7 +9,18 @@ import (
 	"net/http"
 )
 
-func Login(username, password string) {
+var CommonCookie = "__cmpcc=1; __cmpconsentx17155=CP9AEggP9AEggAfSDBRUAwEgAAAAAEPAAAYgAABBQgJgA4AM-AjwBKoDfAHbAO5AgoBIgCSgEowJaATHAmSBNICfYFBAKDhBQAAA; __cmpcccx17155=aBP9ASYwAAgAzA_gACAAcABgAHgAUABgADgAJwAXABgAD0AIQAiABQADEAGgAQQAmgBeAD2AIcATIAxABlgEFAIWARIAjoBOACeAFPAKuAWYA0IBzAEYgI7gUaBRwCpwG6AN2Ab6BBkCFgENgIkgSlAlmBMACZYFdwLAgWZAuCBcMDHYGPwMjAZ4A68CIgEl4JdATBAm_BRoCoAFRwAoXVQvihlZDpmrIEA;"
+var JwtCookie = ""
+var Cookie = ""
+
+const HostHeader = "ts2.x1.arabics.travian.com"
+const Host = "https://ts2.x1.arabics.travian.com"
+
+const Username = "777sweety777"
+const Password = "qwe123"
+const VillageId = 18475
+
+func Login() {
 	type Payload struct {
 		Name                string `json:"name"`
 		Password            string `json:"password"`
@@ -18,8 +29,8 @@ func Login(username, password string) {
 	}
 
 	data := Payload{
-		Name:                username,
-		Password:            password,
+		Name:                Username,
+		Password:            Password,
 		MobileOptimizations: false,
 		W:                   "1920:1080",
 	}
@@ -29,11 +40,11 @@ func Login(username, password string) {
 	}
 	body := bytes.NewReader(payloadBytes)
 
-	req, err := http.NewRequest("POST", "https://ts3.x1.international.travian.com/api/v1/auth/login", body)
+	req, err := http.NewRequest("POST", Host+"/api/v1/auth/login", body)
 	if err != nil {
 		log.Fatal(err)
 	}
-	req.Host = "ts3.x1.international.travian.com"
+	req.Host = HostHeader
 	req.Header.Set("Cookie", "__cmpcc=1; __cmpconsentx17155=CP9AEggP9AEggAfSDBRUAwEgAAAAAEPAAAYgAABBQgJgA4AM-AjwBKoDfAHbAO5AgoBIgCSgEowJaATHAmSBNICfYFBAKDhBQAAA; __cmpcccx17155=aBP9ASB4AAgAzA_gACAAcABgAHgAUABgADgAJwAXABgAD0AIQAiABQADEAGgAQQAmgBeAD2AIcATIAxABlgEFAIWARIAjoBOACeAFPAKuAWYA0IBzAEYgI7gUaBRwCpwG6AN2Ab6BBkCFgENgIkgSlAlmBMACZYFdwLAgWZAuCBcMDHYGPwMjAZ4A68CIgEl4JdATBAm_BRoCoAFRwAoXVQvihlZDpmrIEA")
 	req.Header.Set("Sec-Ch-Ua", "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"")
 	req.Header.Set("X-Version", "2435.8")
@@ -43,11 +54,11 @@ func Login(username, password string) {
 	req.Header.Set("Accept", "application/json, text/javascript, */*; q=0.01")
 	req.Header.Set("X-Requested-With", "XMLHttpRequest")
 	req.Header.Set("Sec-Ch-Ua-Platform", "\"Windows\"")
-	req.Header.Set("Origin", "https://ts3.x1.international.travian.com")
+	req.Header.Set("Origin", Host)
 	req.Header.Set("Sec-Fetch-Site", "same-origin")
 	req.Header.Set("Sec-Fetch-Mode", "cors")
 	req.Header.Set("Sec-Fetch-Dest", "empty")
-	req.Header.Set("Referer", "https://ts3.x1.international.travian.com/")
+	req.Header.Set("Referer", Host)
 	req.Header.Set("Accept-Language", "ru-RU,ru;q=0.9")
 
 	resp, err := http.DefaultClient.Do(req)
@@ -74,12 +85,12 @@ func Login(username, password string) {
 }
 
 func ResolveCookie(code string) {
-	req, err := http.NewRequest("GET", fmt.Sprintf("https://ts3.x1.international.travian.com/api/v1/auth?code=%s", code), nil)
+	req, err := http.NewRequest("GET", fmt.Sprintf(Host+"/api/v1/auth?code=%s", code), nil)
 	if err != nil {
 		log.Fatal(err)
 	}
-	req.Host = "ts3.x1.international.travian.com"
-	req.Header.Set("Cookie", commonCookie)
+	req.Host = HostHeader
+	req.Header.Set("Cookie", CommonCookie)
 	req.Header.Set("Sec-Ch-Ua", "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"")
 	req.Header.Set("Sec-Ch-Ua-Mobile", "?0")
 	req.Header.Set("Sec-Ch-Ua-Platform", "\"Windows\"")
@@ -90,7 +101,7 @@ func ResolveCookie(code string) {
 	req.Header.Set("Sec-Fetch-Mode", "navigate")
 	req.Header.Set("Sec-Fetch-User", "?1")
 	req.Header.Set("Sec-Fetch-Dest", "document")
-	req.Header.Set("Referer", "https://ts3.x1.international.travian.com/")
+	req.Header.Set("Referer", Host)
 	req.Header.Set("Accept-Language", "ru-RU,ru;q=0.9")
 
 	resp, err := http.DefaultClient.Do(req)
@@ -99,8 +110,21 @@ func ResolveCookie(code string) {
 	}
 	defer resp.Body.Close()
 
-	jwtCookie = resp.Header.Get("Set-Cookie")
-	cookie = commonCookie + jwtCookie
+	JwtCookie = resp.Header.Get("Set-Cookie")
+	Cookie = CommonCookie + JwtCookie
 
-	println(cookie)
+	println(Cookie)
+}
+
+func TryToUpdateCookieAfterRequest(r *http.Response) {
+	if r == nil {
+		return
+	}
+
+	if r.Header.Get("Set-Cookie") != "" {
+		JwtCookie = r.Header.Get("Set-Cookie")
+		Cookie = CommonCookie + JwtCookie
+
+		println("Cookie updated")
+	}
 }

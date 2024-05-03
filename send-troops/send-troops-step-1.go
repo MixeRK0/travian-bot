@@ -1,4 +1,4 @@
-package main
+package send_troops
 
 import (
 	"fmt"
@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+	"travian-bot/common"
 )
 
 func SendTroopsStep1(x int, y int, troopType int, troopCount int, logs string) (*string, bool, error) {
@@ -19,18 +20,18 @@ func SendTroopsStep1(x int, y int, troopType int, troopCount int, logs string) (
 	params.Add("ok", `ok`)
 	body := strings.NewReader(params.Encode())
 
-	req, err := http.NewRequest("POST", "https://ts3.x1.international.travian.com/build.php?gid=16&tt=2", body)
+	req, err := http.NewRequest("POST", common.Host+"/build.php?gid=16&tt=2", body)
 	if err != nil {
 		return nil, false, err
 	}
-	req.Host = "ts3.x1.international.travian.com"
-	req.Header.Set("Cookie", cookie)
+	req.Host = common.HostHeader
+	req.Header.Set("Cookie", common.Cookie)
 	req.Header.Set("Cache-Control", "max-age=0")
 	req.Header.Set("Sec-Ch-Ua", "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"")
 	req.Header.Set("Sec-Ch-Ua-Mobile", "?0")
 	req.Header.Set("Sec-Ch-Ua-Platform", "\"Windows\"")
 	req.Header.Set("Upgrade-Insecure-Requests", "1")
-	req.Header.Set("Origin", "https://ts3.x1.international.travian.com")
+	req.Header.Set("Origin", common.Host)
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36")
 	req.Header.Set("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7")
@@ -47,7 +48,7 @@ func SendTroopsStep1(x int, y int, troopType int, troopCount int, logs string) (
 	}
 	defer resp.Body.Close()
 
-	TryToUpdateCookieAfterRequest(resp)
+	common.TryToUpdateCookieAfterRequest(resp)
 
 	respBody, err := io.ReadAll(resp.Body)
 	if err != nil {
@@ -56,13 +57,13 @@ func SendTroopsStep1(x int, y int, troopType int, troopCount int, logs string) (
 
 	res := string(respBody)
 
-	if strings.Contains(res, "No troops have been selected") {
+	if strings.Contains(res, "No troops have been selected") || strings.Contains(res, "Не выбраны войска") {
 		return nil, true, err
 	}
 
-	if strings.Contains(res, "value=\"1\"") && logs != "Caesaris" {
-		return nil, true, err
-	}
+	//if strings.Contains(res, "value=\"1\"") && logs != "Imperatoris" {
+	//	return nil, true, err
+	//}
 
 	return &res, false, nil
 }

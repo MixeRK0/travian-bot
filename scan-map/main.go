@@ -10,32 +10,16 @@ import (
 	"net/http"
 	"strings"
 	"time"
+	"travian-bot/common"
 )
 
-var commonCookie = "__cmpcc=1; __cmpconsentx17155=CP9AEggP9AEggAfSDBRUAwEgAAAAAEPAAAYgAABBQgJgA4AM-AjwBKoDfAHbAO5AgoBIgCSgEowJaATHAmSBNICfYFBAKDhBQAAA; __cmpcccx17155=aBP9ASYwAAgAzA_gACAAcABgAHgAUABgADgAJwAXABgAD0AIQAiABQADEAGgAQQAmgBeAD2AIcATIAxABlgEFAIWARIAjoBOACeAFPAKuAWYA0IBzAEYgI7gUaBRwCpwG6AN2Ab6BBkCFgENgIkgSlAlmBMACZYFdwLAgWZAuCBcMDHYGPwMjAZ4A68CIgEl4JdATBAm_BRoCoAFRwAoXVQvihlZDpmrIEA;"
-var jwtCookie = ""
-var cookie = ""
-
-// const hostHeader = "sow.x2.europe.travian.com"
-// const host = "https://sow.x2.europe.travian.com"
-const hostHeader = "ts3.x1.international.travian.com"
-const host = "https://ts3.x1.international.travian.com"
-
-const username = "777McTRAXER777"
-const password = "qwe123"
-
-const xMin = -2
+const xMin = 22
 const xMax = 25
-const yMin = 39
-const yMax = 60
-
-//const xMin = -108
-//const xMax = -107
-//const yMin = 100
-//const yMax = 101
+const yMin = 48
+const yMax = 50
 
 func main() {
-	Login(username, password)
+	common.Login()
 
 	result := make([][]int, 0)
 	for x := xMin; x <= xMax; x++ {
@@ -45,7 +29,7 @@ func main() {
 				result = append(result, []int{x, y})
 				fmt.Printf("%s: Finded oasis, x = %d y = %d\n", time.Now().Format(time.TimeOnly), x, y)
 			}
-			time.Sleep((1 + time.Duration(rand.Intn(1))) * time.Second)
+			time.Sleep((1000 + time.Duration(rand.Intn(2000))) * time.Millisecond)
 		}
 	}
 
@@ -70,12 +54,12 @@ func isOasis(x int, y int) bool {
 	}
 	body := bytes.NewReader(payloadBytes)
 
-	req, err := http.NewRequest("POST", host+"/api/v1/map/tile-details", body)
+	req, err := http.NewRequest("POST", common.Host+"/api/v1/map/tile-details", body)
 	if err != nil {
 		log.Fatal(err)
 	}
-	req.Host = hostHeader
-	req.Header.Set("Cookie", cookie)
+	req.Host = common.HostHeader
+	req.Header.Set("Cookie", common.Cookie)
 	req.Header.Set("Sec-Ch-Ua", "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"")
 	req.Header.Set("X-Version", "2435.8")
 	req.Header.Set("Sec-Ch-Ua-Mobile", "?0")
@@ -84,7 +68,7 @@ func isOasis(x int, y int) bool {
 	req.Header.Set("Accept", "application/json, text/javascript, */*; q=0.01")
 	req.Header.Set("X-Requested-With", "XMLHttpRequest")
 	req.Header.Set("Sec-Ch-Ua-Platform", "\"Windows\"")
-	req.Header.Set("Origin", host)
+	req.Header.Set("Origin", common.Host)
 	req.Header.Set("Sec-Fetch-Site", "same-origin")
 	req.Header.Set("Sec-Fetch-Mode", "cors")
 	req.Header.Set("Sec-Fetch-Dest", "empty")
