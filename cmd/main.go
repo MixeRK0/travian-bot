@@ -12,8 +12,6 @@ func main() {
 
 	go send_troops.SendTroops(common.ImperatorisTargets1, "Imperatoris")
 	time.Sleep(time.Second * 333)
-	go send_troops.SendTroops(common.LegsTargets, "Legs")
-	time.Sleep(time.Second * 1542)
 	go train_troops.TrainTroops()
 
 	for {

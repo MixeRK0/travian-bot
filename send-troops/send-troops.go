@@ -23,6 +23,8 @@ func SendTroops(targets []common.Target, logs string) {
 		checkMap[target.X][target.Y] = true
 	}
 
+	fmt.Printf("%s: %s, Targets count = %d\n", time.Now().Format(time.TimeOnly), logs, len(targets))
+
 	rand.Seed(time.Now().UnixNano())
 	rand.Shuffle(len(targets), func(i, j int) { targets[i], targets[j] = targets[j], targets[i] })
 

@@ -15,8 +15,8 @@ import (
 
 func TrainTroops() {
 	for {
-		//common.Login()
 		sleepMins := 30 + time.Duration(rand.Intn(60))
+
 		isEnough, count := isEnoughResources(550, 440, 320, 100)
 		if isEnough {
 			Train(count)
@@ -24,6 +24,7 @@ func TrainTroops() {
 		} else {
 			fmt.Printf("%s: Not enough resourses for train troop, sleep %d minutes\n", time.Now().Format(time.TimeOnly), sleepMins)
 		}
+
 		time.Sleep(sleepMins * time.Minute)
 	}
 }
