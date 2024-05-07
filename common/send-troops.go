@@ -12,11 +12,18 @@ const IMPERIAN = 3
 const IMPERATORIS = 5
 
 var LegsTargets = []Target{
-	{38, 44, LEGIONER, 2},
-	{38, 45, LEGIONER, 2},
-	{33, 44, LEGIONER, 2},
-	{33, 46, LEGIONER, 2},
-	{37, 47, LEGIONER, 2},
+	{41, -1, LEGIONER, 2},
+	{40, -3, LEGIONER, 2},
+	{40, -4, LEGIONER, 2},
+	{40, -5, LEGIONER, 2},
+	{42, -5, LEGIONER, 2},
+	{37, 1, LEGIONER, 2},
+	{37, 0, LEGIONER, 2},
+	{36, 0, LEGIONER, 2},
+	{44, 2, LEGIONER, 2},
+	{45, 2, LEGIONER, 2},
+	{41, 6, LEGIONER, 2},
+	{46, -5, LEGIONER, 2},
 }
 
 var ImperatorisTargets = []Target{
