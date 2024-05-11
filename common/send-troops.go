@@ -57,26 +57,26 @@ var ImpTargets = []Target{
 	{54, 13, IMPERATORIS, 1}, // distance: 9.848858
 	{38, 10, IMPERATORIS, 1}, // distance: 9.899495
 	{53, 11, IMPERATORIS, 1}, // distance: 10.000000
-	//{40, 26, IMPERATORIS, 1}, // distance: 10.295630
-	//{36, 23, IMPERATORIS, 1}, // distance: 10.816654
-	//{45, 6, IMPERATORIS, 1},  // distance: 11.000000
-	//{54, 24, IMPERATORIS, 1}, // distance: 11.401754
-	//{48, 6, IMPERATORIS, 1},  // distance: 11.401754
-	//{56, 21, IMPERATORIS, 1}, // distance: 11.704700
-	//{47, 5, IMPERATORIS, 1},  // distance: 12.165525
-	//{55, 10, IMPERATORIS, 1}, // distance: 12.206556
-	//{35, 10, IMPERATORIS, 1}, // distance: 12.206556
-	//{39, 28, IMPERATORIS, 1}, // distance: 12.529964
-	//{33, 21, IMPERATORIS, 1}, // distance: 12.649111
-	//{49, 5, IMPERATORIS, 1},  // distance: 12.649111
-	//{54, 26, IMPERATORIS, 1}, // distance: 12.727922
-	//{55, 9, IMPERATORIS, 1},  // distance: 12.806248
-	//{40, 5, IMPERATORIS, 1},  // distance: 13.000000
-	//{32, 17, IMPERATORIS, 1}, // distance: 13.000000
-	//{40, 29, IMPERATORIS, 1}, // distance: 13.000000
-	//{45, 30, IMPERATORIS, 1}, // distance: 13.000000
-	//{33, 22, IMPERATORIS, 1}, // distance: 13.000000
-	//{32, 16, IMPERATORIS, 1}, // distance: 13.038405
+	{40, 26, IMPERATORIS, 1}, // distance: 10.295630
+	{36, 23, IMPERATORIS, 1}, // distance: 10.816654
+	{45, 6, IMPERATORIS, 1},  // distance: 11.000000
+	{54, 24, IMPERATORIS, 1}, // distance: 11.401754
+	{48, 6, IMPERATORIS, 1},  // distance: 11.401754
+	{56, 21, IMPERATORIS, 1}, // distance: 11.704700
+	{47, 5, IMPERATORIS, 1},  // distance: 12.165525
+	{55, 10, IMPERATORIS, 1}, // distance: 12.206556
+	{35, 10, IMPERATORIS, 1}, // distance: 12.206556
+	{39, 28, IMPERATORIS, 1}, // distance: 12.529964
+	{33, 21, IMPERATORIS, 1}, // distance: 12.649111
+	{49, 5, IMPERATORIS, 1},  // distance: 12.649111
+	{54, 26, IMPERATORIS, 1}, // distance: 12.727922
+	{55, 9, IMPERATORIS, 1},  // distance: 12.806248
+	{40, 5, IMPERATORIS, 1},  // distance: 13.000000
+	{32, 17, IMPERATORIS, 1}, // distance: 13.000000
+	{40, 29, IMPERATORIS, 1}, // distance: 13.000000
+	{45, 30, IMPERATORIS, 1}, // distance: 13.000000
+	{33, 22, IMPERATORIS, 1}, // distance: 13.000000
+	{32, 16, IMPERATORIS, 1}, // distance: 13.038405
 	//{38, 6, IMPERATORIS, 1},  // distance: 13.038405
 	//{39, 29, IMPERATORIS, 1}, // distance: 13.416408
 	//{36, 27, IMPERATORIS, 1}, // distance: 13.453624
