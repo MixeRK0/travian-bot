@@ -6,35 +6,59 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"math"
 	"math/rand"
 	"net/http"
+	"sort"
 	"strings"
 	"time"
 	"travian-bot/common"
 )
 
-const xMin = 22
-const xMax = 25
-const yMin = 48
-const yMax = 50
+const xCenter = 45
+const yCenter = 17
+
+const yRadius = 15
+const xRadius = 15
+
+//const yRadius = 1
+//const xRadius = 1
+
+type target struct {
+	x        int
+	y        int
+	distance float64
+}
 
 func main() {
 	common.Login()
 
-	result := make([][]int, 0)
+	xMin := xCenter - xRadius
+	xMax := xCenter + xRadius
+
+	yMin := yCenter - yRadius
+	yMax := yCenter + yRadius
+	result := make([]target, 0)
 	for x := xMin; x <= xMax; x++ {
 		for y := yMin; y <= yMax; y++ {
 			isNeedToAdd := isOasis(x, y)
 			if isNeedToAdd {
-				result = append(result, []int{x, y})
-				fmt.Printf("%s: Finded oasis, x = %d y = %d\n", time.Now().Format(time.TimeOnly), x, y)
+				xDiff := math.Pow(float64(xCenter-x), 2)
+				yDiff := math.Pow(float64(yCenter-y), 2)
+				distance := math.Sqrt(xDiff + yDiff)
+				result = append(result, target{x, y, distance})
+				fmt.Printf("%s: Finded oasis, x = %d y = %d, d = %f \n", time.Now().Format(time.TimeOnly), x, y, distance)
 			}
 			time.Sleep((1000 + time.Duration(rand.Intn(2000))) * time.Millisecond)
 		}
 	}
 
+	sort.Slice(result, func(i, j int) bool {
+		return result[i].distance < result[j].distance
+	})
+
 	for _, item := range result {
-		fmt.Println(item)
+		fmt.Printf("x: %d, y: %d, // distance: %f \n", item.x, item.y, item.distance)
 	}
 }
 

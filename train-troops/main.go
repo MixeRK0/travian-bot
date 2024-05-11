@@ -3,7 +3,6 @@ package train_troops
 import (
 	"fmt"
 	"io"
-	"log"
 	"math/rand"
 	"net/http"
 	"net/url"
@@ -33,7 +32,9 @@ func Train(count int) {
 	println(count)
 	req, err := http.NewRequest("GET", common.Host+"/build.php?gid=20", nil)
 	if err != nil {
-		log.Fatal(err)
+		println("train troop error")
+		println(err.Error())
+		return
 	}
 	req.Host = common.HostHeader
 	req.Header.Set("Cookie", common.Cookie)
@@ -52,13 +53,17 @@ func Train(count int) {
 
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
-		log.Fatal(err)
+		println("train troop error")
+		println(err.Error())
+		return
 	}
 	defer resp.Body.Close()
 
 	respBody, err := io.ReadAll(resp.Body)
 	if err != nil {
-		log.Fatal(err)
+		println("train troop error")
+		println(err.Error())
+		return
 	}
 
 	common.TryToUpdateCookieAfterRequest(resp)
@@ -90,7 +95,9 @@ func Train(count int) {
 
 	req, err = http.NewRequest("POST", common.Host+"/build.php?id=29&gid=20", body)
 	if err != nil {
-		log.Fatal(err)
+		println("train troop error")
+		println(err.Error())
+		return
 	}
 	req.Host = common.HostHeader
 	req.Header.Set("Cookie", common.Cookie)
@@ -112,7 +119,9 @@ func Train(count int) {
 
 	resp, err = http.DefaultClient.Do(req)
 	if err != nil {
-		log.Fatal(err)
+		println("train troop error")
+		println(err.Error())
+		return
 	}
 	defer resp.Body.Close()
 
@@ -122,7 +131,9 @@ func Train(count int) {
 func isEnoughResources(needWood int, needClay int, needIron int, needCrop int) (bool, int) {
 	req, err := http.NewRequest("GET", common.Host+"/dorf1.php", nil)
 	if err != nil {
-		log.Fatal(err)
+		println("train troop error")
+		println(err.Error())
+		return false, 0
 	}
 
 	req.Host = common.HostHeader
@@ -142,13 +153,17 @@ func isEnoughResources(needWood int, needClay int, needIron int, needCrop int) (
 
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
-		log.Fatal(err)
+		println("train troop error")
+		println(err.Error())
+		return false, 0
 	}
 	defer resp.Body.Close()
 
 	respBody, err := io.ReadAll(resp.Body)
 	if err != nil {
-		log.Fatal(err)
+		println("train troop error")
+		println(err.Error())
+		return false, 0
 	}
 
 	common.TryToUpdateCookieAfterRequest(resp)
@@ -162,7 +177,9 @@ func isEnoughResources(needWood int, needClay int, needIron int, needCrop int) (
 	woodStr := strings.Replace(strings.Split(splited[1], "&#x202c;</div>")[0], " ", "", -1)
 	wood, err := strconv.ParseInt(woodStr, 10, 0)
 	if err != nil {
-		log.Fatal(err)
+		println("train troop error")
+		println(err.Error())
+		return false, 0
 	}
 
 	splited = strings.Split(res, "<div id=\"l2\" class=\"value\">&#x202d;")
@@ -173,7 +190,9 @@ func isEnoughResources(needWood int, needClay int, needIron int, needCrop int) (
 	clayStr := strings.Replace(strings.Split(splited[1], "&#x202c;</div>")[0], " ", "", -1)
 	clay, err := strconv.ParseInt(clayStr, 10, 0)
 	if err != nil {
-		log.Fatal(err)
+		println("train troop error")
+		println(err.Error())
+		return false, 0
 	}
 
 	splited = strings.Split(res, "<div id=\"l3\" class=\"value\">&#x202d;")
@@ -184,7 +203,9 @@ func isEnoughResources(needWood int, needClay int, needIron int, needCrop int) (
 	ironStr := strings.Replace(strings.Split(splited[1], "&#x202c;</div>")[0], " ", "", -1)
 	iron, err := strconv.ParseInt(ironStr, 10, 0)
 	if err != nil {
-		log.Fatal(err)
+		println("train troop error")
+		println(err.Error())
+		return false, 0
 	}
 
 	splited = strings.Split(res, "<div id=\"l3\" class=\"value\">&#x202d;")
@@ -195,7 +216,9 @@ func isEnoughResources(needWood int, needClay int, needIron int, needCrop int) (
 	cropStr := strings.Replace(strings.Split(splited[1], "&#x202c;</div>")[0], " ", "", -1)
 	crop, err := strconv.ParseInt(cropStr, 10, 0)
 	if err != nil {
-		log.Fatal(err)
+		println("train troop error")
+		println(err.Error())
+		return false, 0
 	}
 
 	if needWood > int(wood) {

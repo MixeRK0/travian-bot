@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"io/ioutil"
-	"log"
 	"net/http"
 	"strings"
 	"travian-bot/common"
@@ -22,13 +21,13 @@ func IsEnemyInOasis(x int, y int) bool {
 	}
 	payloadBytes, err := json.Marshal(data)
 	if err != nil {
-		log.Fatal(err)
+		return true
 	}
 	body := bytes.NewReader(payloadBytes)
 
 	req, err := http.NewRequest("POST", common.Host+"/api/v1/map/tile-details", body)
 	if err != nil {
-		log.Fatal(err)
+		return true
 	}
 	req.Host = common.HostHeader
 	req.Header.Set("Cookie", common.Cookie)
@@ -49,13 +48,13 @@ func IsEnemyInOasis(x int, y int) bool {
 
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
-		log.Fatal(err)
+		return true
 	}
 	defer resp.Body.Close()
 
 	respBodyBytes, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		log.Fatal(err)
+		return true
 	}
 
 	respBodyString := string(respBodyBytes)

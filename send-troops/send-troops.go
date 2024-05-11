@@ -2,7 +2,6 @@ package send_troops
 
 import (
 	"fmt"
-	"log"
 	"math/rand"
 	"time"
 	"travian-bot/common"
@@ -43,7 +42,10 @@ func SendTroops(targets []common.Target, logs string) {
 
 			htmlStep1, isNoTroops, err := SendTroopsStep1(x, y, troopsType, troopsCount, logs)
 			if err != nil {
-				log.Fatal("step1 gg", err)
+				println("step1")
+				println(err.Error())
+				i++
+				continue
 			}
 
 			if isNoTroops {
@@ -58,7 +60,10 @@ func SendTroops(targets []common.Target, logs string) {
 			time.Sleep((1000 + time.Duration(rand.Intn(2000))) * time.Millisecond)
 			err = SendTroopsStep2(x, y, troopsType, troopsCount, common.VillageId, checksum, timestamp)
 			if err != nil {
-				log.Fatal("step2 gg", err)
+				println("step2")
+				println(err.Error())
+				i++
+				continue
 			}
 
 			fmt.Printf("%s: %s, Sended %d trops to x = %d y = %d\n", time.Now().Format(time.TimeOnly), logs, troopsCount, x, y)

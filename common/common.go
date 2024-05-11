@@ -13,12 +13,12 @@ var CommonCookie = "__cmpcc=1; __cmpconsentx17155=CP9AEggP9AEggAfSDBRUAwEgAAAAAE
 var JwtCookie = ""
 var Cookie = ""
 
-const HostHeader = "ts31.x3.asia.travian.com"
-const Host = "https://ts31.x3.asia.travian.com"
+const HostHeader = "ts50.x5.arabics.travian.com"
+const Host = "https://ts50.x5.arabics.travian.com"
 
 const Username = "777sweety777"
 const Password = "qwe123"
-const VillageId = 17678
+const VillageId = 18054
 
 func Login() {
 	type Payload struct {
