@@ -4,6 +4,7 @@ import (
 	"time"
 	"travian-bot/common"
 	send_troops "travian-bot/send-troops"
+	train_troops "travian-bot/train-troops"
 )
 
 func main() {
