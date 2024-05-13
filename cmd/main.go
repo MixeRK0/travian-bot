@@ -2,18 +2,16 @@ package main
 
 import (
 	"time"
-	"travian-bot/common"
-	send_troops "travian-bot/send-troops"
 	train_troops "travian-bot/train-troops"
 )
 
 func main() {
-	common.Login()
+	//common.Login()
 
-	go send_troops.SendTroops(common.ImpTargets, "Imperatoris")
+	//go send_troops.SendTroops(common.ImpTargets, "Imperatoris")
 	//time.Sleep(time.Second * 333)
 	//go send_troops.SendTroops(common.LegsTargets, "Legs")
-	time.Sleep(time.Second * 60 * 30)
+	//time.Sleep(time.Second * 60 * 30)
 	go train_troops.TrainTroops()
 
 	for {

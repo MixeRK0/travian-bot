@@ -14,6 +14,7 @@ import (
 
 func TrainTroops() {
 	for {
+		common.Login()
 		sleepMins := 30 + time.Duration(rand.Intn(60))
 
 		isEnough, count := isEnoughResources(550, 440, 320, 100)
