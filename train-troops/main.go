@@ -10,11 +10,17 @@ import (
 	"strings"
 	"time"
 	"travian-bot/common"
+	switch_village "travian-bot/switch-village"
 )
 
-func TrainTroops() {
+func TrainTroops(villageId int) {
 	for {
-		common.Login()
+		err := switch_village.Switch(villageId)
+		if err != nil {
+			println(err.Error())
+			continue
+		}
+
 		sleepMins := 30 + time.Duration(rand.Intn(60))
 
 		isEnough, count := isEnoughResources(550, 440, 320, 100)

@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html id="mainLayout" lang="ru-RU">
+<head>
+    <title>Arabics 50</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="theme-color" content="#F4EFE4" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="//cdn.legends.travian.com/gpack/2473.2/apple-touch-icon.png"/>
+    <link href="//cdn.legends.travian.com/gpack/2473.2/css_ltr/imports_compressed.css" rel="stylesheet" type="text/css" />
+    <script type="application/javascript" src="//cdn.legends.travian.com/gpack/2473.2/js/jquery-3.5.1.min.js"></script>
+    <script type="application/javascript" src="//cdn.legends.travian.com/gpack/2473.2/js/jquery.md5.min.js"></script>
+    <script type="application/javascript" src="//cdn.legends.travian.com/gpack/2473.2/js/d3/d3.min.js"></script>
+    <script type="application/javascript" src="//cdn.legends.travian.com/gpack/2473.2/js/d3/d3pie.min.js"></script>
+    <script type="application/javascript" src="//cdn.legends.travian.com/gpack/2473.2/js/ChartJs/Chart.min.js"></script>
+    <script type="application/javascript" src="//cdn.legends.travian.com/gpack/2473.2/js/gsap/TweenMax.min.js"></script>
+    <script type="application/javascript" src="//cdn.legends.travian.com/gpack/2473.2/js/gsap/plugins/MorphSVGPlugin.min.js"></script>
+    <script type="application/javascript" src="//cdn.legends.travian.com/gpack/2473.2/js/simplebar.min.js"></script>
+    <script type="application/javascript" src="//cdn.legends.travian.com/gpack/2473.2/js/popper.min.js"></script>
+    <script type="application/javascript" src="//cdn.legends.travian.com/gpack/2473.2/js/tippy.min.js"></script>
+    <script type="application/javascript" src="//cdn.legends.travian.com/gpack/2473.2/js/PixiJS/pixi.min.js"></script>
+    <script type="application/javascript" src="//cdn.legends.travian.com/gpack/2473.2/js/deepmerge.js"></script>
+    <script type="application/javascript">window.Travian = {};</script>
+    <script type="application/javascript" src="/js/Variables.js?2473.2"></script>
+    <script type="application/javascript" src="/js/ru-RU/Strings.js?2473.2"></script>
+    <script defer type='application/javascript' src='//cdn.legends.travian.com/gpack/2473.2/js/bundle/vendor.js'></script>
+    <script defer type='application/javascript' src='//cdn.legends.travian.com/gpack/2473.2/js/bundle/runtime.js'></script>
+    <script defer type='application/javascript' src='//cdn.legends.travian.com/gpack/2473.2/js/bundle/main.js'></script>
+    <script type="application/javascript" src="//cdn.legends.travian.com/gpack/2473.2/js/crypt.js"></script>
+    <script type="application/javascript">
+        Travian.Game.language = "ru-RU";
+        Travian.Game.timeZone = "Europe/London";
+        Travian.Game.timeForamt = "" || Travian.Constants.TIME_FORMAT_MODE.eu;
+    </script>
+    <script type="application/javascript">
+        Travian.Game.Preferences.initialize({"adSalesVideoInfoScreen":"disabled","adSalesVideoSuccessDialogDisabled":"1","flagAttributesBoxOpen":"1","markLayer-player-alliance-expanded":"false","markLayer-player-flag-expanded":"false","markLayer-player-player-expanded":"false","mobileUnitDisplay":"expanded","outline-expanded":"false","shopCountry":"RUS","travian_toggle_infobox":"expanded","travian_toggle_villagelist":"collapsed"});
+        Travian.Game.PaymentWizardEventListener.defaultOptions = {"shopUIVersion":4,"cssClass":"paymentShopV4","data":{"activeTab":"buyGold"}};
+    </script>
+</head>
+<body class="build v35 chrome blink ru-RU perspectiveResources ltr" data-theme="default">
+<script>window.cmp_minimaltracking=true;window.cmp_disable_spa=true;window.cmp_noscreen=true;</script><script>window.gdprAppliesGlobally=true;if(!("cmp_id" in window)||window.cmp_id<1){window.cmp_id=0}if(!("cmp_cdid" in window)){window.cmp_cdid="40dcf06677fd"}if(!("cmp_params" in window)){window.cmp_params=""}if(!("cmp_host" in window)){window.cmp_host="d.delivery.consentmanager.net"}if(!("cmp_cdn" in window)){window.cmp_cdn="cdn.consentmanager.net"}if(!("cmp_proto" in window)){window.cmp_proto="https:"}if(!("cmp_codesrc" in window)){window.cmp_codesrc="1"}window.cmp_getsupportedLangs=function(){var b=["DE","EN","FR","IT","NO","DA","FI","ES","PT","RO","BG","ET","EL","GA","HR","LV","LT","MT","NL","PL","SV","SK","SL","CS","HU","RU","SR","ZH","TR","UK","AR","BS"];if("cmp_customlanguages" in window){for(var a=0;a<window.cmp_customlanguages.length;a++){b.push(window.cmp_customlanguages[a].l.toUpperCase())}}return b};window.cmp_getRTLLangs=function(){var a=["AR"];if("cmp_customlanguages" in window){for(var b=0;b<window.cmp_customlanguages.length;b++){if("r" in window.cmp_customlanguages[b]&&window.cmp_customlanguages[b].r){a.push(window.cmp_customlanguages[b].l)}}}return a};window.cmp_getlang=function(j){if(typeof(j)!="boolean"){j=true}if(j&&typeof(cmp_getlang.usedlang)=="string"&&cmp_getlang.usedlang!==""){return cmp_getlang.usedlang}var g=window.cmp_getsupportedLangs();var c=[];var f=location.hash;var e=location.search;var a="languages" in navigator?navigator.languages:[];if(f.indexOf("cmplang=")!=-1){c.push(f.substr(f.indexOf("cmplang=")+8,2).toUpperCase())}else{if(e.indexOf("cmplang=")!=-1){c.push(e.substr(e.indexOf("cmplang=")+8,2).toUpperCase())}else{if("cmp_setlang" in window&&window.cmp_setlang!=""){c.push(window.cmp_setlang.toUpperCase())}else{if(a.length>0){for(var d=0;d<a.length;d++){c.push(a[d])}}}}}if("language" in navigator){c.push(navigator.language)}if("userLanguage" in navigator){c.push(navigator.userLanguage)}var h="";for(var d=0;d<c.length;d++){var b=c[d].toUpperCase();if(g.indexOf(b)!=-1){h=b;break}if(b.indexOf("-")!=-1){b=b.substr(0,2)}if(g.indexOf(b)!=-1){h=b;break}}if(h==""&&typeof(cmp_getlang.defaultlang)=="string"&&cmp_getlang.defaultlang!==""){return cmp_getlang.defaultlang}else{if(h==""){h="EN"}}h=h.toUpperCase();return h};(function(){var i=document;var b=window;var a="";var g="_en";if("cmp_getlang" in b){a=b.cmp_getlang().toLowerCase();g="_"+a}var f=("cmp_proto" in b)?b.cmp_proto:"https:";if(f!="http:"&&f!="https:"){f="https:"}var c=i.createElement("script");c.setAttribute("data-cmp-ab","1");c.src=f+"//"+b.cmp_cdn+"/delivery/autocdn/cmp-web."+("cmp_id" in b&&b.cmp_id>0?b.cmp_id:"")+("cmp_cdid" in b?"x"+b.cmp_cdid:"")+"."+a.replace("_","").toLowerCase()+".js";c.type="text/javascript";c.async=true;if(i.body){i.body.appendChild(c)}else{if(i.currentScript&&i.currentScript.parentElement){i.currentScript.parentElement.appendChild(c)}else{var h=i.getElementsByTagName("body");if(h.length==0){h=i.getElementsByTagName("div")}if(h.length==0){h=i.getElementsByTagName("span")}if(h.length==0){h=i.getElementsByTagName("ins")}if(h.length==0){h=i.getElementsByTagName("script")}if(h.length==0){h=i.getElementsByTagName("head")}if(h.length>0){h[0].appendChild(c)}}}var c=i.createElement("script");c.src=f+"//"+b.cmp_cdn+"/delivery/js/cmp"+g+".min.js";c.type="text/javascript";c.setAttribute("data-cmp-ab","1");c.async=true;if(i.body){i.body.appendChild(c)}else{if(i.currentScript&&i.currentScript.parentElement){i.currentScript.parentElement.appendChild(c)}else{var h=i.getElementsByTagName("body");if(h.length==0){h=i.getElementsByTagName("div")}if(h.length==0){h=i.getElementsByTagName("span")}if(h.length==0){h=i.getElementsByTagName("ins")}if(h.length==0){h=i.getElementsByTagName("script")}if(h.length==0){h=i.getElementsByTagName("head")}if(h.length>0){h[0].appendChild(c)}}}})();window.cmp_addFrame=function(b){if(!window.frames[b]){if(document.body){var a=document.createElement("iframe");a.style.cssText="display:none";if("cmp_cdn" in window&&"cmp_ultrablocking" in window&&window.cmp_ultrablocking>0){a.src="//"+window.cmp_cdn+"/delivery/empty.html"}a.name=b;document.body.appendChild(a)}else{window.setTimeout(window.cmp_addFrame,10,b)}}};window.cmp_rc=function(h){var b=document.cookie;var f="";var d=0;while(b!=""&&d<100){d++;while(b.substr(0,1)==" "){b=b.substr(1,b.length)}var g=b.substring(0,b.indexOf("="));if(b.indexOf(";")!=-1){var c=b.substring(b.indexOf("=")+1,b.indexOf(";"))}else{var c=b.substr(b.indexOf("=")+1,b.length)}if(h==g){f=c}var e=b.indexOf(";")+1;if(e==0){e=b.length}b=b.substring(e,b.length)}return(f)};window.cmp_stub=function(){var a=arguments;__cmp.a=__cmp.a||[];if(!a.length){return __cmp.a}else{if(a[0]==="ping"){if(a[1]===2){a[2]({gdprApplies:gdprAppliesGlobally,cmpLoaded:false,cmpStatus:"stub",displayStatus:"hidden",apiVersion:"2.0",cmpId:31},true)}else{a[2](false,true)}}else{if(a[0]==="getUSPData"){a[2]({version:1,uspString:window.cmp_rc("")},true)}else{if(a[0]==="getTCData"){__cmp.a.push([].slice.apply(a))}else{if(a[0]==="addEventListener"||a[0]==="removeEventListener"){__cmp.a.push([].slice.apply(a))}else{if(a.length==4&&a[3]===false){a[2]({},false)}else{__cmp.a.push([].slice.apply(a))}}}}}}};window.cmp_gpp_ping=function(){return{gppVersion:"1.0",cmpStatus:"stub",cmpDisplayStatus:"hidden",supportedAPIs:["tcfca","usnat","usca","usva","usco","usut","usct"],cmpId:31}};window.cmp_gppstub=function(){var a=arguments;__gpp.q=__gpp.q||[];if(!a.length){return __gpp.q}var g=a[0];var f=a.length>1?a[1]:null;var e=a.length>2?a[2]:null;if(g==="ping"){return window.cmp_gpp_ping()}else{if(g==="addEventListener"){__gpp.e=__gpp.e||[];if(!("lastId" in __gpp)){__gpp.lastId=0}__gpp.lastId++;var c=__gpp.lastId;__gpp.e.push({id:c,callback:f});return{eventName:"listenerRegistered",listenerId:c,data:true,pingData:window.cmp_gpp_ping()}}else{if(g==="removeEventListener"){var h=false;__gpp.e=__gpp.e||[];for(var d=0;d<__gpp.e.length;d++){if(__gpp.e[d].id==e){__gpp.e[d].splice(d,1);h=true;break}}return{eventName:"listenerRemoved",listenerId:e,data:h,pingData:window.cmp_gpp_ping()}}else{if(g==="getGPPData"){return{sectionId:3,gppVersion:1,sectionList:[],applicableSections:[0],gppString:"",pingData:window.cmp_gpp_ping()}}else{if(g==="hasSection"||g==="getSection"||g==="getField"){return null}else{__gpp.q.push([].slice.apply(a))}}}}}};window.cmp_msghandler=function(d){var a=typeof d.data==="string";try{var c=a?JSON.parse(d.data):d.data}catch(f){var c=null}if(typeof(c)==="object"&&c!==null&&"__cmpCall" in c){var b=c.__cmpCall;window.__cmp(b.command,b.parameter,function(h,g){var e={__cmpReturn:{returnValue:h,success:g,callId:b.callId}};d.source.postMessage(a?JSON.stringify(e):e,"*")})}if(typeof(c)==="object"&&c!==null&&"__uspapiCall" in c){var b=c.__uspapiCall;window.__uspapi(b.command,b.version,function(h,g){var e={__uspapiReturn:{returnValue:h,success:g,callId:b.callId}};d.source.postMessage(a?JSON.stringify(e):e,"*")})}if(typeof(c)==="object"&&c!==null&&"__tcfapiCall" in c){var b=c.__tcfapiCall;window.__tcfapi(b.command,b.version,function(h,g){var e={__tcfapiReturn:{returnValue:h,success:g,callId:b.callId}};d.source.postMessage(a?JSON.stringify(e):e,"*")},b.parameter)}if(typeof(c)==="object"&&c!==null&&"__gppCall" in c){var b=c.__gppCall;window.__gpp(b.command,function(h,g){var e={__gppReturn:{returnValue:h,success:g,callId:b.callId}};d.source.postMessage(a?JSON.stringify(e):e,"*")},"parameter" in b?b.parameter:null,"version" in b?b.version:1)}};window.cmp_setStub=function(a){if(!(a in window)||(typeof(window[a])!=="function"&&typeof(window[a])!=="object"&&(typeof(window[a])==="undefined"||window[a]!==null))){window[a]=window.cmp_stub;window[a].msgHandler=window.cmp_msghandler;window.addEventListener("message",window.cmp_msghandler,false)}};window.cmp_setGppStub=function(a){if(!(a in window)||(typeof(window[a])!=="function"&&typeof(window[a])!=="object"&&(typeof(window[a])==="undefined"||window[a]!==null))){window[a]=window.cmp_gppstub;window[a].msgHandler=window.cmp_msghandler;window.addEventListener("message",window.cmp_msghandler,false)}};window.cmp_addFrame("__cmpLocator");if(!("cmp_disableusp" in window)||!window.cmp_disableusp){window.cmp_addFrame("__uspapiLocator")}if(!("cmp_disabletcf" in window)||!window.cmp_disabletcf){window.cmp_addFrame("__tcfapiLocator")}if(!("cmp_disablegpp" in window)||!window.cmp_disablegpp){window.cmp_addFrame("__gppLocator")}window.cmp_setStub("__cmp");if(!("cmp_disabletcf" in window)||!window.cmp_disabletcf){window.cmp_setStub("__tcfapi")}if(!("cmp_disableusp" in window)||!window.cmp_disableusp){window.cmp_setStub("__uspapi")}if(!("cmp_disablegpp" in window)||!window.cmp_disablegpp){window.cmp_setGppStub("__gpp")};</script>        <div id="reactDialogWrapper"></div>
+
+<div id="background" class=" ">
+    <div id="topBar">
+        <a id="logo" href="https://www.travian.com/ru" target="_blank" title="TRAVIAN">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 172.7 60">
+                <path d="M52.9 34.4c-.2-.3-.3-.7-.3-1.3 0-.8-.1-1.2-.1-1.3l-.1-3.9.1-6.6c0-1.1.1-2.2.1-3.3.1-1.5.2-2.4.3-2.8.1 0 .3 0 .6-.1h.4c2.6 0 4.1.3 4.4.8.1.1.1.4.3.8.1.4.2.5.2.5s.1 0 .2-.1V17c0-.4.1-.9.2-1.4.2-.5.3-1 .5-1.6l-.4-.1c-.9.2-1.9.4-3.1.4h-5l-6.5-.3c-.3 0-.5.4-.8 1.2-.1.5-.3 1-.4 1.4-.2.5-.3.8-.3.8v.2h.2c.1-.4.3-.7.6-1 .3-.3.6-.5.9-.6.3-.1.9-.2 2.1-.4 1.3-.2 2.1-.3 2.5-.3.3 0 .4 1.5.4 4.5l-.1 8.6c-.1 2.2-.3 3.7-.3 4.6-.1.9-.2 1.5-.4 1.8-.1.1-.2.2-.4.2-.2.1-.3.2-.3.3l.5.1c.2-.1.4-.1.5-.1 1.1-.1 1.8-.2 1.9-.2l2.8.2c.2 0 .3-.1.4-.2 0 0-.3-.1-.8-.2-.4-.2-.7-.3-.8-.5zm19.7-.1c.6.7 1.4 1 2.3 1h.9c1.2-.1 1.8-.2 1.9-.3-.1 0-.4-.1-.8-.3-.2-.1-.5-.2-.6-.4-.5-.4-1.1-1.2-1.7-2.2-.5-.9-1-1.8-1.4-2.7-.3-.5-.7-1.3-1.4-2.4-.4-.8-.7-1.2-.7-1.2 0-.1.4-.5 1-1.1.7-.7 1.3-1.4 1.6-2.1.6-1 .9-2.2.9-3.4 0-1.8-.7-3.1-2.1-3.9-1-.6-2.3-1-3.7-1l-2.8.1c-.9 0-1.6.1-2.1.1l-1.5.1c-.1 0-.3.1-.6.2l.3.1c.2.1.2.1.3.2.4 1 .6 2 .6 3l.1 3.9v2s0 .3-.1.8c0 .5-.1.7-.1.8v2l-.2 4.2c0 1.9-.1 3-.2 3.3-.3.4-.5.6-.6.7 1.2-.2 2-.3 2.3-.3h2.2s.3-.1.9-.2c-.1-.1-.2-.1-.4-.1-.9 0-1.4-1-1.4-3v-5.4c0-.2.1-.4.3-.4 1.2 0 2 .2 2.4.6.5.5 1 1.3 1.5 2.1.4.7.8 1.5 1.2 2.2.8 1.7 1.4 2.7 1.7 3zm-5.2-8.2h-1.8l.1-11.3h.9c1.4 0 2.6.8 3.6 2.5.9 1.5 1.4 2.9 1.4 4.3 0 1.9-.3 3.1-.9 3.6-.4.7-1.5.9-3.3.9zm33.6 8.6c-.4-.2-.7-.5-.9-.9-1.2-2-2.5-4.9-3.8-8.6-.9-2.6-1.7-5.1-2.6-7.7-.2-.7-.5-1.3-.7-2-.4-1-.9-1.5-1.3-1.5h-3.2c-.2 0-.4.1-.6.1-.2 0-.3.1-.3.2.1.1.2.1.2.1h.5c.3 0 .5.1.8.3.2.2.3.5.3.8 0 .5-.9 3-2.6 7.5-1.6 4.1-2.7 6.9-3.4 8.5-.7 1.6-1.5 2.8-2.5 3.6.3 0 .8 0 1.4.1.7.1 1.1.1 1.4.1l3.6-.5c-.7-.2-1.4-.5-2.1-.8-.6-.3-.9-.8-.9-1.7 0-.8.4-2.2 1.1-4.1l.6-1.8c.4-1 .8-1.6 1-1.6h5.4c.8 1.8 1.4 3.2 1.8 4.2.4 1.1.9 2.3 1.3 3.5.8 1.7 1.7 2.6 2.7 2.6l3-.2c.3.1.1 0-.2-.2zm-8.5-10.3h-5.4l2.8-7.4c.4.7.6 1.3.8 1.7l1.8 5.4v.3zm20.7-10.2c.3-.1.6.2.8.7.2.4.2.8.2 1.3 0 1.3-.8 4.2-2.3 8.5-1 2.8-1.8 4.9-2.5 6.4-1.6-3.7-2.8-6.9-3.8-9.4-.8-2.3-1.5-4-1.8-5.1-.5-1.4-.8-2.1-.8-2.1-.3-.1-.8-.2-1.6-.2h-2.6c-.3 0-.5.1-.6.3.2.1.4.1.6.2.2.1.3.2.5.3 1.1 1.5 2.3 3.7 3.5 6.7.7 1.5 1.6 3.9 2.8 7.1 1.1 3 1.7 4.6 1.8 4.9.6 1.2.9 1.8 1 1.9 2.8-7.3 5.8-14.6 9-21.8h-4.2v.3zm7.8 3.6c0 .3.1.6.1.8v6.8l-.1 4.9-.5 5.1h4.2c.1-.1.1-.2.1-.2-.5-.2-.7-.3-.7-.3-.2-.2-.3-.5-.3-.9 0-.3-.1-.6-.1-1l.1-9.6c.1-3.6.2-6.7.5-9.4h-.3c.1 0-.1 0-.6.1s-1 .1-1.7.1h-1.5c.5.5.7 1.1.8 1.8-.1.5-.1 1.2 0 1.8zm27 16.9c-.4-.2-.7-.5-.9-.9-1.2-2-2.5-4.9-3.8-8.6-.9-2.6-1.7-5.1-2.6-7.7-.2-.7-.5-1.3-.7-2-.4-1-.9-1.5-1.3-1.5l-3.1.1c-.2 0-.4.1-.6.1-.2 0-.3.1-.3.2.1.1.2.1.2.1h.5c.3 0 .5.1.8.3.2.2.3.5.3.8 0 .5-.9 3-2.6 7.5-1.6 4.1-2.7 6.9-3.4 8.5-.7 1.6-1.5 2.8-2.5 3.6.3 0 .8 0 1.4.1.7.1 1.1.1 1.4.1l3.6-.5c-.7-.2-1.4-.5-2.1-.8-.6-.3-.9-.8-.9-1.7 0-.8.4-2.2 1.1-4.1l.6-1.8c.4-1 .8-1.6 1-1.6h5.4c.8 1.8 1.4 3.2 1.8 4.2.4 1.1.9 2.3 1.3 3.5.8 1.7 1.7 2.6 2.7 2.6l3-.2c.2 0 .1-.1-.3-.3zm-8.4-10.3h-5.4L137 17c.4.7.6 1.3.8 1.7l1.8 5.4v.3zm29.7-10.2c-.4 0-1 .2-2 .5-.8.3-1.3.5-1.4.6.2 0 .8 0 1.7-.1.2 0 .3.1.3.2.1 1.4.2 2.5.2 3.2.1 2.1.2 4.4.3 6.6l.1 4.6c0 .2 0 .3-.1.4-3.4-3.8-5.7-6.3-6.8-7.6-2.8-3.3-4.8-6.1-6.2-8.6-2.1.2-3.8.3-4.9.5 1.3.6 2.1 1.4 2.5 2.4.3.6.4 1.6.4 3l-.2 3.7v1.7c0 3.8-.2 6.4-.6 7.9-.1.4-.3.7-.7 1-.5.4-.8.7-.9.7.5.1 1.1.2 2 .2.7 0 1.5-.1 2.5-.3 1.3-.3 2-.5 2-.5-.6-.1-1.1-.2-1.4-.2-.5 0-.9-.1-1.4-.4-.1-.1-.2-.3-.3-.5 0-.1-.1-.3-.1-.7-.2-1.9-.3-3.2-.3-4-.1-3.9-.1-7.1 0-9.7 1.1 1.3 3.1 3.5 5.8 6.7 1.8 2.1 4.3 4.9 7.5 8.4.9.9 1.3 1.4 1.4 1.4.1 0 .1 0 .2-.1.1-1.8.2-3.7.3-5.5.2-3.6.3-5.6.3-6.1v-1.4c0-.3.2-2.6.6-6.9.2-.1.7-.3 1.3-.5.6-.2.9-.3 1.1-.5l-3.2-.1zm-112 27.6H56v9.5h6v-1.2h-4.7m14.5-3.2h5.3v-1.1h-5.3v-2.9h5.7v-1.1h-7v9.5h7.2v-1.2h-5.9m19.1-2.6h2.8v1.8c-.3.2-.7.5-1.2.7s-1.1.3-1.6.3c-.6 0-1.2-.1-1.8-.4-.6-.3-1-.7-1.3-1.3-.3-.6-.4-1.3-.4-2.1 0-.7.1-1.3.4-1.9.1-.3.3-.7.6-.9.3-.3.6-.5 1-.7.4-.2.9-.3 1.5-.3.5 0 .9.1 1.3.2s.7.4.9.7c.2.3.4.7.5 1.1l1.2-.3c-.2-.6-.4-1.2-.7-1.6s-.8-.7-1.3-.9c-.6-.2-1.2-.3-1.9-.3-1 0-1.8.2-2.5.6s-1.3 1-1.7 1.8c-.4.8-.6 1.7-.6 2.6 0 .9.2 1.8.6 2.5s1 1.3 1.8 1.7 1.6.6 2.6.6c.7 0 1.4-.1 2.1-.4.7-.2 1.3-.6 1.9-1.1v-3.5H91v1.1zm14.2-.6h5.4v-1.1h-5.4v-2.9h5.7v-1.1h-7v9.5h7.3v-1.2h-6m21-.9l-5.1-7.4h-1.3v9.5h1.3v-7.5l5 7.5h1.3v-9.5h-1.2m16.8.8c-.4-.3-.9-.6-1.4-.7-.4-.1-1-.1-1.7-.1h-3.3v9.5h3.5c.6 0 1.1-.1 1.6-.2s.8-.3 1.2-.5c.3-.2.6-.5.9-.9.3-.4.5-.8.7-1.4.2-.6.3-1.2.3-1.9 0-.8-.1-1.6-.4-2.3-.5-.5-.9-1.1-1.4-1.5zm-.1 5.7c-.2.5-.4.9-.7 1.2-.2.2-.5.4-.9.5s-.9.2-1.5.2h-2.1V43h2c.8 0 1.3.1 1.7.2.5.2.9.5 1.2 1.1.3.5.5 1.3.5 2.3.1.6 0 1.2-.2 1.7zm15.9-2c-.4-.2-1.1-.4-2.1-.6-1-.2-1.7-.5-1.9-.7-.2-.2-.4-.5-.4-.8 0-.4.2-.7.5-1 .4-.3.9-.4 1.7-.4.7 0 1.3.2 1.7.5.4.3.6.8.7 1.4l1.2-.1c0-.6-.2-1.1-.5-1.5-.3-.4-.7-.8-1.3-1-.5-.2-1.2-.3-1.9-.3-.6 0-1.2.1-1.8.3-.5.2-.9.5-1.2.9-.3.4-.4.9-.4 1.3s.1.8.3 1.2c.2.4.6.6 1 .9.4.2 1 .4 1.9.6.9.2 1.5.4 1.7.5.4.2.7.3.9.6.2.2.3.5.3.8 0 .3-.1.6-.3.8-.2.2-.5.4-.8.6-.4.1-.8.2-1.3.2s-1-.1-1.5-.3-.8-.4-1-.7c-.2-.3-.3-.7-.4-1.2l-1.2.1c0 .6.2 1.2.5 1.7s.8.9 1.4 1.1 1.3.4 2.2.4c.7 0 1.3-.1 1.9-.4.6-.2 1-.6 1.3-1 .3-.4.4-.9.4-1.4 0-.5-.1-1-.4-1.3-.2-.7-.6-1-1.2-1.2z"></path>
+                <image width="156" height="250" transform="matrix(.24 0 0 .24 .22 .14)" xlink:href="//cdn.legends.travian.com/gpack/2473.2/logo.png"></image>
+            </svg>
+        </a>
+        <div id="header" class="referAFriend">
+            <input type="checkbox" id="mobileMenuState" />
+
+            <div id="navigation">
+                <a class="village resourceView " href="/dorf1.php" accesskey="1" title="Ресурсы||"></a>
+                <a class="village buildingView " href="/dorf2.php" accesskey="2" title="Центр деревни||"></a>
+
+                <a class="map" href="/karte.php" accesskey="3" title="Карта||"></a>
+                <a class="statistics" href="/statistics" accesskey="4" title="Статистика||"></a>
+                <a class="reports" href="/report" accesskey="5" title="Отчеты||Новых отчетов: 0">
+                </a>
+                <a class="messages" href="/messages" accesskey="6" title="Сообщения||Новых сообщений: 0">
+                </a>
+
+                <a class="dailyQuests" href="#" accesskey="7" title="Ежедневные задания || Соберите ежедневные награды" onclick="Travian.Game.Quest.openTodoListDialog('', true); return false;">
+                </a>
+
+                <label class="mobileMenuButton" for="mobileMenuState">
+                </label>
+                <a class="mobileShopButton" href="#" accesskey="8" title="" onclick="jQuery(window).trigger('startPaymentWizard', {}); this.blur(); return false;"></a>
+            </div>
+
+            <div class="currency">
+                <i title="Золото" class="goldCoin_medium" onclick="jQuery(window).trigger('startPaymentWizard', {data:{activeTab: Travian.Constants.SHOP_TABS.advantages}}); return false;"></i>
+                <div class="value ajaxReplaceableGoldAmount">
+                    &#x202d;95&#x202c;			</div>
+                <i title="Серебро" class="silverCoin_medium" onclick="jQuery(window).trigger('startPaymentWizard', {data:{activeTab: Travian.Constants.SHOP_TABS.advantages}}); return false;"></i>
+                <div class="value ajaxReplaceableSilverAmount">
+                    &#x202d;12 202&#x202c;			</div>
+            </div>
+
+            <a class="shop" href="#" accesskey="8" title="Купить золото" onclick="jQuery(window).trigger('startPaymentWizard', {}); this.blur(); return false;"></a>
+
+
+
+            <a id="button664a7cba4f735"
+               class="layoutButton buttonFramed withIcon round referAFriend green    "
+               title="Пригласить друга"
+               href="/referAFriend"
+            >
+                <svg viewBox="0 0 18.08 20" class="referAFriend"><g class="outline">
+                    <path class="human" d="M5.86 9a1.26 1.26 0 01-1.14-1.31V6.36a.72.72 0 01.55-.75.67.67 0 000-.42 4.87 4.87 0 01.2-2.51 1.63 1.63 0 01.28-.52c.29-.38.63-.73.94-1.09A3.84 3.84 0 0111.4.58a4.16 4.16 0 011.86 4.2 5.2 5.2 0 000 1c.63.3.41.88.39 1.38 0 .2-.05.41 0 .63a1.76 1.76 0 01-.09.75c-.15.43-.17.45-.59.6a3.31 3.31 0 01-.71 1.6c-.24.28-.16.65-.24 1s-.13.61-.21.91a1.56 1.56 0 00.83 2 6.14 6.14 0 011.63 1.14 4.54 4.54 0 01.91 1.38c.19.42.06.61-.4.61H.5c-.46 0-.51 0-.5-.52a4.13 4.13 0 012-3.48A6.1 6.1 0 013.57 13a4.77 4.77 0 002.07-1.21 1.2 1.2 0 00.36-1c-.06-.56-.1-1.16-.14-1.79z"></path>
+                    <path class="plus" d="M8.38 16.43v-2.56a.71.71 0 01.77-.57h2.27v-2.32c0-.53.17-.68.69-.68h2.09c.7 0 .88.15.89.9v2.1h2.17c.62 0 .81.19.82.81v2c0 .71-.17.88-.87.88h-2.12v2.21c0 .72-.19.8-.81.81h-2c-.69 0-.85-.17-.85-.85v-2.17H9.25c-.42.01-.75-.1-.87-.56z"></path>
+                </g><g class="icon">
+                    <path class="human" d="M5.86 9a1.26 1.26 0 01-1.14-1.31V6.36a.72.72 0 01.55-.75.67.67 0 000-.42 4.87 4.87 0 01.2-2.51 1.63 1.63 0 01.28-.52c.29-.38.63-.73.94-1.09A3.84 3.84 0 0111.4.58a4.16 4.16 0 011.86 4.2 5.2 5.2 0 000 1c.63.3.41.88.39 1.38 0 .2-.05.41 0 .63a1.76 1.76 0 01-.09.75c-.15.43-.17.45-.59.6a3.31 3.31 0 01-.71 1.6c-.24.28-.16.65-.24 1s-.13.61-.21.91a1.56 1.56 0 00.83 2 6.14 6.14 0 011.63 1.14 4.54 4.54 0 01.91 1.38c.19.42.06.61-.4.61H.5c-.46 0-.51 0-.5-.52a4.13 4.13 0 012-3.48A6.1 6.1 0 013.57 13a4.77 4.77 0 002.07-1.21 1.2 1.2 0 00.36-1c-.06-.56-.1-1.16-.14-1.79z"></path>
+                    <path class="plus" d="M8.38 16.43v-2.56a.71.71 0 01.77-.57h2.27v-2.32c0-.53.17-.68.69-.68h2.09c.7 0 .88.15.89.9v2.1h2.17c.62 0 .81.19.82.81v2c0 .71-.17.88-.87.88h-2.12v2.21c0 .72-.19.8-.81.81h-2c-.69 0-.85-.17-.85-.85v-2.17H9.25c-.42.01-.75-.1-.87-.56z"></path>
+                </g></svg>
+            </a>
+
+            <script type="text/javascript">
+                jQuery('#button664a7cba4f735').click(function (event) {
+                    jQuery(window).trigger('buttonClicked', [event.delegateTarget, {"type":"green","loadTooltip":null,"boxId":"","disabled":false,"attention":false,"colorBlind":false,"class":"","id":"button664a7cba4f735","redirectUrl":"\/referAFriend","redirectUrlExternal":"","svg":"topBar\/referAFriend.svg","content":""}]);
+                });
+            </script>
+
+            <div id="stockBar">
+
+                <div class="warehouse">
+
+                    <div class="capacity" title="Склад">
+                        <i class="warehouse_medium"></i>
+                        <div class="value">&#x202d;3 100&#x202c;</div>
+                    </div>
+
+                    <a class="stockBarButton" href="/production.php?t=1" title="Древесина||Производство: 260&lt;br /&gt;Полон через: 8:49:09&lt;br /&gt;Нажмите для подробной информации">
+                        <i class="lumber_small"></i>
+                        <div id="l1" class="value">&#x202d;807&#x202c;</div>
+                        <div class="barBox">
+                            <div id="lbar1"
+                                 class="bar"
+                                 style="width:26%;"></div>
+                        </div>
+                    </a>
+                    <a class="stockBarButton" href="/production.php?t=2" title="Глина||Производство: 325&lt;br /&gt;Полон через: 7:24:44&lt;br /&gt;Нажмите для подробной информации">
+                        <i class="clay_small"></i>
+                        <div id="l2" class="value">&#x202d;691&#x202c;</div>
+                        <div class="barBox">
+                            <div id="lbar2"
+                                 class="bar"
+                                 style="width:22%;"></div>
+                        </div>
+                    </a>
+                    <a class="stockBarButton" href="/production.php?t=3" title="Железо||Производство: 205&lt;br /&gt;Полон через: 10:28:23&lt;br /&gt;Нажмите для подробной информации">
+                        <i class="iron_small"></i>
+                        <div id="l3" class="value">&#x202d;953&#x202c;</div>
+                        <div class="barBox">
+                            <div id="lbar3"
+                                 class="bar"
+                                 style="width:31%;"></div>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="granary">
+                    <div class="capacity" title="Амбар">
+                        <i class="granary_medium"></i>
+                        <div class="value">&#x202d;2 300&#x202c;</div>
+                    </div>
+
+                    <a class="stockBarButton" href="/production.php?t=4" title="Зерно||Производство без содержания зданий: 58&lt;br /&gt;Полон через: 27:45:46&lt;br /&gt;Нажмите для подробной информации">
+                        <i class="crop_small"></i>
+                        <div id="l4" class="value">&#x202d;662&#x202c;</div>
+                        <div class="barBox">
+                            <div id="lbar4"
+                                 class="bar"
+                                 style="width:29%;"></div>
+                        </div>
+                    </a>
+
+                    <a class="stockBarButton" href="/production.php?t=5" title="Свободное зерно для новых зданий||Баланс зерна: &amp;#x202d;59&amp;#x202c;&lt;br /&gt;Нажмите для подробной информации">
+                        <i class="freeCrop_small"></i>
+                        <div id="stockBarFreeCrop" class="value">&#x202d;58&#x202c;</div>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <script type="text/javascript">
+                var resources = {
+                    production: {"l1": 260,"l2": 325,"l3": 205,"l4": 59,"l5": 58},
+                    storage: {"l1": 807,"l2": 691,"l3": 953,"l4": 662},
+                    maxStorage: {"l1": 3100,"l2": 3100,"l3": 3100,"l4": 2300}
+                };
+            </script>
+            <nav id="mobileMenu">
+                <ul>
+                    <li>
+                        <a class="dailyQuests" href="#" accesskey="7" title="Ежедневные задания || Соберите ежедневные награды" onclick="Travian.Game.Quest.openTodoListDialog('', true); return false;">
+                            <div class="inlineIcon " title=""><svg viewBox="0 0 40 130.22" class="dailyQuests ">
+                                <rect width="40" height="89.11" rx="10.33"></rect>
+                                <ellipse cx="19.67" cy="115.67" rx="17.22" ry="14.56"></ellipse>
+                            </svg>
+                                <span class="value ">Ежедневные задания</span></div>                    </a>
+                    </li>
+                    <li>
+                        <a class="statistics" href="/statistics" title="Статистика||">
+                            <div class="inlineIcon " title=""><svg viewBox="0 0 120.56 137.33" class="statistics">
+                                <path d="M1.67 70.67h32.67V130H1.67zM43.56 35.56h32.67V130H43.56zM86.46 0h32.67v130H86.46zM0 133.56h120.56v3.78H0z"></path>
+                            </svg>
+                                <span class="value ">Статистика</span></div>                    </a>
+                    </li>
+                    <li>
+                        <a class="referAFriend" href="/referAFriend" title="Пригласить друга">
+                            <div class="inlineIcon " title=""><svg viewBox="0 0 18.08 20" class="referAFriend">
+                                <path class="human" d="M5.86 9a1.26 1.26 0 01-1.14-1.31V6.36a.72.72 0 01.55-.75.67.67 0 000-.42 4.87 4.87 0 01.2-2.51 1.63 1.63 0 01.28-.52c.29-.38.63-.73.94-1.09A3.84 3.84 0 0111.4.58a4.16 4.16 0 011.86 4.2 5.2 5.2 0 000 1c.63.3.41.88.39 1.38 0 .2-.05.41 0 .63a1.76 1.76 0 01-.09.75c-.15.43-.17.45-.59.6a3.31 3.31 0 01-.71 1.6c-.24.28-.16.65-.24 1s-.13.61-.21.91a1.56 1.56 0 00.83 2 6.14 6.14 0 011.63 1.14 4.54 4.54 0 01.91 1.38c.19.42.06.61-.4.61H.5c-.46 0-.51 0-.5-.52a4.13 4.13 0 012-3.48A6.1 6.1 0 013.57 13a4.77 4.77 0 002.07-1.21 1.2 1.2 0 00.36-1c-.06-.56-.1-1.16-.14-1.79z"></path>
+                                <path class="plus" d="M8.38 16.43v-2.56a.71.71 0 01.77-.57h2.27v-2.32c0-.53.17-.68.69-.68h2.09c.7 0 .88.15.89.9v2.1h2.17c.62 0 .81.19.82.81v2c0 .71-.17.88-.87.88h-2.12v2.21c0 .72-.19.8-.81.81h-2c-.69 0-.85-.17-.85-.85v-2.17H9.25c-.42.01-.75-.1-.87-.56z"></path>
+                            </svg>
+                                <span class="value ">Пригласить друга</span></div>						</a>
+                    </li>
+                    <li>
+                        <a class="profile" href="/profile" title="Профиль||Профиль вашей учетной записи">
+                            <div class="inlineIcon " title=""><svg viewBox="0 0 15.76 21" class="profile">
+                                <path d="M7.88 1.77c2.1 0 3.8 2.09 3.8 4.65s-1.7 4.65-3.8 4.65S4.08 9 4.08 6.42s1.71-4.65 3.8-4.65m0-1.77c-3 0-5.49 2.88-5.49 6.42s2.46 6.42 5.49 6.42 5.49-2.84 5.49-6.42S10.92 0 7.88 0zm7.88 21a11.81 11.81 0 0 0-2.51-7 7.17 7.17 0 0 1-5.37 2.46A7.17 7.17 0 0 1 2.52 14 11.82 11.82 0 0 0 0 21z"></path>
+                            </svg>
+                                <span class="value ">Профиль</span></div>                    </a>
+                    </li>
+                    <li>
+                        <a class="options" href="/options" title="Настройки||Изменить настройки персонажа.">
+                            <div class="inlineIcon " title=""><svg viewBox="0 0 20 20" class="settings">
+                                <path d="M9 20l-.24-3.26-.57-.16A7.21 7.21 0 0 1 6.66 16l-.52-.29-2.47 2.1-1.48-1.48 2.14-2.47-.33-.52a7.21 7.21 0 0 1-.62-1.49l-.16-.57L0 11V9l3.26-.24.16-.57A7.21 7.21 0 0 1 4 6.66l.29-.52-2.1-2.47 1.48-1.48 2.47 2.14.52-.33a7.21 7.21 0 0 1 1.49-.62l.57-.16L9 0h2l.24 3.26.57.16a7.21 7.21 0 0 1 1.53.58l.52.29 2.47-2.14 1.48 1.48-2.14 2.51.29.52a7.21 7.21 0 0 1 .62 1.49l.16.57L20 9v2l-3.26.24-.16.57a7.21 7.21 0 0 1-.58 1.53l-.29.52 2.14 2.47-1.48 1.48-2.47-2.14-.52.29a7.21 7.21 0 0 1-1.49.62l-.57.16L11 20zm1-15a5 5 0 1 0 5 5 5 5 0 0 0-5-5z"></path>
+                            </svg>
+                                <span class="value ">Настройки</span></div>                        </a>
+                    </li>
+                    <li>
+                        <a class="help" onclick="Travian.React.openHelpDialog()" title="Помощь||Справка, Answers и служба поддержки">
+                            <div class="inlineIcon " title=""><svg viewBox="0 0 12.24 20" class="answers">
+                                <path d="M3.73 13.1v-.52c0-2.8 1.47-3.8 2.89-4.76 1-.72 2.14-1.46 2.14-2.9s-1.13-2.55-3-2.55A5.39 5.39 0 0 0 2 4.12L0 2.61A8.15 8.15 0 0 1 6.24 0c3 0 6 1.4 6 4.52 0 2.42-1.4 3.38-2.88 4.4-1.33.91-2.7 1.85-2.7 3.82v.36zm3.61 4.8a2.09 2.09 0 0 0-2.1-2.07 2.09 2.09 0 0 0 0 4.17 2.1 2.1 0 0 0 2.1-2.1z"></path>
+                            </svg>
+                                <span class="value ">Помощь</span></div>                    </a>
+                    </li>
+                    <li>
+                        <a class="discord" target="_blank" href="https://discord.gg/travianlegends" title="Discord||Присоединяйтесь к другим игрокам на нашем официальном канале в Discord">
+                            <div class="inlineIcon " title=""><svg viewBox="0 0 20 18.71" class="discord">
+                                <path d="M0 2.91v10.18A2.92 2.92 0 002.91 16h12.71a.93.93 0 01.65.27l2.17 2.17a.91.91 0 001.56-.65V2.91A2.92 2.92 0 0017.09 0H2.91A2.92 2.92 0 000 2.91zm15.72 9.59H4.28a.78.78 0 01-.78-.78V4.28a.78.78 0 01.78-.78h11.44a.78.78 0 01.78.78v7.44a.78.78 0 01-.78.78z"></path>
+                            </svg>
+                                <span class="value ">Discord</span></div>                    </a>
+                    </li>
+                    <li>
+                        <a class="logout" href="/logout" onclick="Travian.api('auth/logout'); return false;" title="Выход||Выйти и завершить сеанс">
+                            <div class="inlineIcon " title=""><svg viewBox="0 0 20 20" class="logout">
+                                <path d="M0 17.01L7.01 10 .14 3.13 3.13.14 10 7.01 17.01 0 20 2.99 12.99 10l6.87 6.87-2.99 2.99L10 12.99 2.99 20 0 17.01z"></path>
+                            </svg>
+                                <span class="value ">Выход</span></div>                    </a>
+                    </li>
+                </ul>
+
+                <svg viewBox="0 0 200 10" class="divider">
+                    <path d="m200 5-78.7-2.5c.2.75.54 1.57.67 2.35h-2.49c-.08-1.31-1.16-2.35-2.48-2.35s-2.41 1.04-2.48 2.35h-9.67L100 0l-4.85 4.85h-9.67C85.4 3.54 84.32 2.5 83 2.5s-2.41 1.04-2.48 2.35h-2.49c.13-.78.47-1.6.67-2.35L0 5l78.7 2.5c-.22-.74-.55-1.58-.67-2.35h2.49C80.6 6.46 81.68 7.5 83 7.5s2.41-1.04 2.48-2.35h9.67L100 10l4.85-4.85h9.67c.08 1.31 1.16 2.35 2.48 2.35s2.41-1.04 2.48-2.35h2.49c-.12.77-.46 1.61-.67 2.35L200 5Z"></path>
+                </svg>
+
+                <ul>
+                    <li>
+                        <a class="mainpage" href="https://www.travian.com/ru" target="_blank" title="">Главная страница</a>
+                    </li>
+                    <li>
+                        <a class="terms" href="https://www.travian.com/ru/terms" target="_blank" title="">Основные положения</a>
+                    </li>
+                    <li>
+                        <a class="imprint" href="https://www.travian.com/ru/imprint" target="_blank" title="">Контакты</a>
+                    </li>
+                    <li>
+                        <a class="imprint" href="#" onclick="__cmapi('showScreenAdvanced',null,null); return false" target="_blank" title="">Настройки конфиденциальноси</a>
+                    </li>
+                </ul>
+
+                <p class="copyright">© 2004—2024 Travian Games GmbH</p>
+            </nav>
+
+        </div>
+        <nav id="outOfGame">
+
+
+            <a id="button664a7cba4feb7"
+               class="layoutButton buttonFramed withIcon round profile grey    "
+               title="Профиль||Профиль вашей учетной записи"
+               href="/profile"
+            >
+                <svg viewBox="0 0 15.76 21" class="profile"><g class="outline">
+                    <path d="M7.88 1.77c2.1 0 3.8 2.09 3.8 4.65s-1.7 4.65-3.8 4.65S4.08 9 4.08 6.42s1.71-4.65 3.8-4.65m0-1.77c-3 0-5.49 2.88-5.49 6.42s2.46 6.42 5.49 6.42 5.49-2.84 5.49-6.42S10.92 0 7.88 0zm7.88 21a11.81 11.81 0 0 0-2.51-7 7.17 7.17 0 0 1-5.37 2.46A7.17 7.17 0 0 1 2.52 14 11.82 11.82 0 0 0 0 21z"></path>
+                </g><g class="icon">
+                    <path d="M7.88 1.77c2.1 0 3.8 2.09 3.8 4.65s-1.7 4.65-3.8 4.65S4.08 9 4.08 6.42s1.71-4.65 3.8-4.65m0-1.77c-3 0-5.49 2.88-5.49 6.42s2.46 6.42 5.49 6.42 5.49-2.84 5.49-6.42S10.92 0 7.88 0zm7.88 21a11.81 11.81 0 0 0-2.51-7 7.17 7.17 0 0 1-5.37 2.46A7.17 7.17 0 0 1 2.52 14 11.82 11.82 0 0 0 0 21z"></path>
+                </g></svg>
+            </a>
+
+            <script type="text/javascript">
+                jQuery('#button664a7cba4feb7').click(function (event) {
+                    jQuery(window).trigger('buttonClicked', [event.delegateTarget, {"type":"grey","loadTooltip":null,"boxId":"","disabled":false,"attention":false,"colorBlind":false,"class":"","id":"button664a7cba4feb7","redirectUrl":"\/profile","redirectUrlExternal":"","svg":"outOfGame\/profile.svg","content":""}]);
+                });
+            </script>
+
+            <a id="button664a7cba4ff3e"
+               class="layoutButton buttonFramed withIcon round options grey    "
+               title="Настройки||Изменить настройки персонажа."
+               href="/options"
+            >
+                <svg viewBox="0 0 20 20" class="options"><g class="outline">
+                    <path d="M9 20l-.24-3.26-.57-.16A7.21 7.21 0 0 1 6.66 16l-.52-.29-2.47 2.1-1.48-1.48 2.14-2.47-.33-.52a7.21 7.21 0 0 1-.62-1.49l-.16-.57L0 11V9l3.26-.24.16-.57A7.21 7.21 0 0 1 4 6.66l.29-.52-2.1-2.47 1.48-1.48 2.47 2.14.52-.33a7.21 7.21 0 0 1 1.49-.62l.57-.16L9 0h2l.24 3.26.57.16a7.21 7.21 0 0 1 1.53.58l.52.29 2.47-2.14 1.48 1.48-2.14 2.51.29.52a7.21 7.21 0 0 1 .62 1.49l.16.57L20 9v2l-3.26.24-.16.57a7.21 7.21 0 0 1-.58 1.53l-.29.52 2.14 2.47-1.48 1.48-2.47-2.14-.52.29a7.21 7.21 0 0 1-1.49.62l-.57.16L11 20zm1-15a5 5 0 1 0 5 5 5 5 0 0 0-5-5z"></path>
+                </g><g class="icon">
+                    <path d="M9 20l-.24-3.26-.57-.16A7.21 7.21 0 0 1 6.66 16l-.52-.29-2.47 2.1-1.48-1.48 2.14-2.47-.33-.52a7.21 7.21 0 0 1-.62-1.49l-.16-.57L0 11V9l3.26-.24.16-.57A7.21 7.21 0 0 1 4 6.66l.29-.52-2.1-2.47 1.48-1.48 2.47 2.14.52-.33a7.21 7.21 0 0 1 1.49-.62l.57-.16L9 0h2l.24 3.26.57.16a7.21 7.21 0 0 1 1.53.58l.52.29 2.47-2.14 1.48 1.48-2.14 2.51.29.52a7.21 7.21 0 0 1 .62 1.49l.16.57L20 9v2l-3.26.24-.16.57a7.21 7.21 0 0 1-.58 1.53l-.29.52 2.14 2.47-1.48 1.48-2.47-2.14-.52.29a7.21 7.21 0 0 1-1.49.62l-.57.16L11 20zm1-15a5 5 0 1 0 5 5 5 5 0 0 0-5-5z"></path>
+                </g></svg>
+            </a>
+
+            <script type="text/javascript">
+                jQuery('#button664a7cba4ff3e').click(function (event) {
+                    jQuery(window).trigger('buttonClicked', [event.delegateTarget, {"type":"grey","loadTooltip":null,"boxId":"","disabled":false,"attention":false,"colorBlind":false,"class":"","id":"button664a7cba4ff3e","redirectUrl":"\/options","redirectUrlExternal":"","svg":"outOfGame\/settings.svg","content":""}]);
+                });
+            </script>
+
+            <a id="button664a7cba4ffa4"
+               class="layoutButton buttonFramed withIcon round help grey    "
+               title="Помощь||Справка, Answers и служба поддержки"
+               onclick="Travian.React.openHelpDialog()"
+            >
+                <svg viewBox="0 0 12.24 20" class="help"><g class="outline">
+                    <path d="M3.73 13.1v-.52c0-2.8 1.47-3.8 2.89-4.76 1-.72 2.14-1.46 2.14-2.9s-1.13-2.55-3-2.55A5.39 5.39 0 0 0 2 4.12L0 2.61A8.15 8.15 0 0 1 6.24 0c3 0 6 1.4 6 4.52 0 2.42-1.4 3.38-2.88 4.4-1.33.91-2.7 1.85-2.7 3.82v.36zm3.61 4.8a2.09 2.09 0 0 0-2.1-2.07 2.09 2.09 0 0 0 0 4.17 2.1 2.1 0 0 0 2.1-2.1z"></path>
+                </g><g class="icon">
+                    <path d="M3.73 13.1v-.52c0-2.8 1.47-3.8 2.89-4.76 1-.72 2.14-1.46 2.14-2.9s-1.13-2.55-3-2.55A5.39 5.39 0 0 0 2 4.12L0 2.61A8.15 8.15 0 0 1 6.24 0c3 0 6 1.4 6 4.52 0 2.42-1.4 3.38-2.88 4.4-1.33.91-2.7 1.85-2.7 3.82v.36zm3.61 4.8a2.09 2.09 0 0 0-2.1-2.07 2.09 2.09 0 0 0 0 4.17 2.1 2.1 0 0 0 2.1-2.1z"></path>
+                </g></svg>
+            </a>
+
+            <script type="text/javascript">
+                jQuery('#button664a7cba4ffa4').click(function (event) {
+                    jQuery(window).trigger('buttonClicked', [event.delegateTarget, {"type":"grey","loadTooltip":null,"boxId":"","disabled":false,"attention":false,"colorBlind":false,"class":"","id":"button664a7cba4ffa4","redirectUrl":"","redirectUrlExternal":"","svg":"outOfGame\/answers.svg","content":"","onclick":"Travian.React.openHelpDialog()"}]);
+                });
+            </script>
+            <a id="button664a7cba4fff7"
+               class="layoutButton buttonFramed withIcon round logout grey    "
+               title="Выход||Выйти и завершить сеанс"
+               onclick="Travian.api('auth/logout'); return false;"
+            >
+                <svg viewBox="0 0 20 20" class="logout"><g class="outline">
+                    <path d="M0 17.01L7.01 10 .14 3.13 3.13.14 10 7.01 17.01 0 20 2.99 12.99 10l6.87 6.87-2.99 2.99L10 12.99 2.99 20 0 17.01z"></path>
+                </g><g class="icon">
+                    <path d="M0 17.01L7.01 10 .14 3.13 3.13.14 10 7.01 17.01 0 20 2.99 12.99 10l6.87 6.87-2.99 2.99L10 12.99 2.99 20 0 17.01z"></path>
+                </g></svg>
+            </a>
+
+            <script type="text/javascript">
+                jQuery('#button664a7cba4fff7').click(function (event) {
+                    jQuery(window).trigger('buttonClicked', [event.delegateTarget, {"type":"grey","loadTooltip":null,"boxId":"","disabled":false,"attention":false,"colorBlind":false,"class":"","id":"button664a7cba4fff7","redirectUrl":"","redirectUrlExternal":"","svg":"misc\/cross.svg","content":"","onclick":"Travian.api('auth\/logout'); return false;"}]);
+                });
+            </script>
+        </nav>
+        <script type="text/javascript">
+            jQuery('#outOfGame li.logout a').click(function() {
+                var windows = Travian.WindowManager.getWindows();
+                for (var i = 0; i < windows.length; i++) {
+                    Travian.WindowManager.unregister(windows[i]);
+                }
+            });
+        </script>
+    </div>
+    <div id="topBarHeroWrapper">
+        <div id="topBarHero" class="heroV2">
+            <svg class="health" viewBox="0 0 110 110">
+                <defs>
+                    <clipPath id="healthMask" maskContentUnits="objectBoundingBox">
+                        <path d="M55 55L47.35 109.46A 55 55 0 0 0 88.01 98.99" fill="white" />
+                    </clipPath>
+                </defs>
+
+                <image xlink:href="//cdn.legends.travian.com/gpack/2473.2/img_ltr/hud/topBar/hero/frame/health.png" x="0" y="0" width="110" height="110" style="clip-path: url(#healthMask);" />
+
+                <path class="title" d="M55 55L47.35 109.46A 55 55 0 0 0 109.87 51.16" fill="transparent">
+                    <title>Здоровье:: &#x202d;&#x202d;44&#x202c;&#37;&#x202c;</title>
+                </path>
+            </svg>
+            <svg class="experience" viewBox="0 0 110 110">
+                <defs>
+                    <clipPath id="experienceMask" maskContentUnits="objectBoundingBox">
+                        <path d="M55 55L32.63 105.25A 55 55 0 0 1 1.27 66.77" fill="white" />
+                    </clipPath>
+                </defs>
+
+                <image xlink:href="//cdn.legends.travian.com/gpack/2473.2/img_ltr/hud/topBar/hero/frame/experience.png" x="0" y="0" width="110" height="110" style="clip-path: url(#experienceMask);" />
+
+                <path class="title" d="M55 55L32.63 105.25A 55 55 0 0 1 4 34.4" fill="transparent">
+                    <title>Опыт: &amp;#x202d;&amp;#x202d;61&amp;#x202c;&amp;#37;&amp;#x202c;||Для достижения 23-го уровня требуется получить ещё 449 ед. опыта.</title>
+                </path>
+            </svg>
+
+            <a id="heroImageButton" href="/hero" class="heroImageButton" type="button" title="Обзор героя||Герой находится в родной деревне «ТРАХ».">
+                <div class="heroImageHover">
+                    <img class="heroImage heroImageFemale" src="/heroV2/head/c5d53d6f8f0c87d35d26bc3575e32d6fde212cd1.829.1.png"  title="Герой" alt="Герой" />
+                </div>
+            </a>
+
+            <div class="heroStatus" title="Обзор героя||Герой находится в родной деревне «ТРАХ».">
+                <a href="/build.php?newdid=18054&id=39&&tt=2" title="" class=""><i class="heroHome" ></i></a>
+                <span class="hide"><i class="heroHome" ></i></span>
+            </div>
+
+            <i class="levelUp " title="Свободные очки||Нажмите на своего героя, чтобы распределить свободные очки"></i>
+
+            <a id="button664a7cba507d4"
+               class="layoutButton buttonFramed withIcon round auction green    "
+               title="Аукцион||Загружается информация"
+               data-load-tooltip="hero"    data-load-tooltip-data="{&quot;boxId&quot;:&quot;hero&quot;,&quot;buttonId&quot;:&quot;auction&quot;}"			href="/hero/auction"
+            >
+                <svg viewBox="0 0 20.18 19.44" class="auction"><g class="outline">
+                    <path d="M20 9.44l-6.14 6.16a.54.54 0 0 1-.78 0L11 13.5a.56.56 0 0 1 0-.78l1.64-1.64-.64-.64h-1.24l-7.38 8.7L0 15.76l8.67-7.41V7.13l-.57-.57-.74.75a.49.49 0 0 1-.69 0L4.19 4.83a.49.49 0 0 1 0-.69l4-4a.49.49 0 0 1 .69 0l2.45 2.45a.52.52 0 0 1 0 .74l-.45.46.65.65h3.14v3.14l.73.73 1.75-1.75a.54.54 0 0 1 .78 0L20 8.66a.54.54 0 0 1 0 .78zm-9.35 7v3h9v-3z"></path>
+                </g><g class="icon">
+                    <path d="M20 9.44l-6.14 6.16a.54.54 0 0 1-.78 0L11 13.5a.56.56 0 0 1 0-.78l1.64-1.64-.64-.64h-1.24l-7.38 8.7L0 15.76l8.67-7.41V7.13l-.57-.57-.74.75a.49.49 0 0 1-.69 0L4.19 4.83a.49.49 0 0 1 0-.69l4-4a.49.49 0 0 1 .69 0l2.45 2.45a.52.52 0 0 1 0 .74l-.45.46.65.65h3.14v3.14l.73.73 1.75-1.75a.54.54 0 0 1 .78 0L20 8.66a.54.54 0 0 1 0 .78zm-9.35 7v3h9v-3z"></path>
+                </g></svg>
+            </a>
+
+            <script type="text/javascript">
+                jQuery('#button664a7cba507d4').click(function (event) {
+                    jQuery(window).trigger('buttonClicked', [event.delegateTarget, {"type":"green","loadTooltip":"hero","boxId":"hero","disabled":false,"attention":false,"colorBlind":false,"class":"","id":"button664a7cba507d4","redirectUrl":"\/hero\/auction","redirectUrlExternal":"","svg":"topBar\/auction.svg","content":"","title":"\u0410\u0443\u043a\u0446\u0438\u043e\u043d||\u0417\u0430\u0433\u0440\u0443\u0436\u0430\u0435\u0442\u0441\u044f \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f"}]);
+                });
+            </script>
+            <a id="button664a7cba50858"
+               class="layoutButton buttonFramed withIcon round adventure green    attention"
+               title="Приключения||Загружается информация"
+               data-load-tooltip="hero"    data-load-tooltip-data="{&quot;boxId&quot;:&quot;hero&quot;,&quot;buttonId&quot;:&quot;adventure&quot;}"			href="/hero/adventures"
+            >
+                <div class="content">33</div>
+            </a>
+
+            <script type="text/javascript">
+                jQuery('#button664a7cba50858').click(function (event) {
+                    jQuery(window).trigger('buttonClicked', [event.delegateTarget, {"type":"green","loadTooltip":"hero","boxId":"hero","disabled":false,"attention":true,"colorBlind":false,"class":"","id":"button664a7cba50858","redirectUrl":"\/hero\/adventures","redirectUrlExternal":"","svg":false,"content":33,"title":"\u041f\u0440\u0438\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u044f||\u0417\u0430\u0433\u0440\u0443\u0436\u0430\u0435\u0442\u0441\u044f \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f"}]);
+                });
+            </script>
+        </div>
+    </div>
+
+    <div id="center">
+        <div class="behindContent">
+        </div>
+
+        <div id="sidebarBeforeContent" class="sidebar beforeContent">
+            <div class="sidebarBoxWrapper">
+
+                <div id="servertime" class="stime">
+                    Время сервера:&nbsp;
+                    <span  format="24h" class="timer" counting="up" value="1716157626">23:27:06</span></div>
+
+                <script type="text/javascript">
+                    Travian.Game.timezoneOffsetToUTC = -3600;
+                </script>
+
+                <div id="sidebarBoxAlliance" class="sidebarBox   ">
+                    <div class="header ">
+                        <div class="buttonsWrapper">
+                            <a id="button664a7cba50f37"
+                               class="layoutButton buttonFramed withIcon round alliance green    "
+                               title="Страница альянса"
+                               href="/alliance"
+                            >
+                                <svg viewBox="0 0 20 14.2" class="alliance"><g class="outline">
+                                    <path d="M4.42 1.17L2 6.62a.51.51 0 0 1-.66.26L.3 6.41a.51.51 0 0 1-.3-.66L2.43.3a.51.51 0 0 1 .66-.3l1.08.51a.49.49 0 0 1 .25.66zM20 5.61L17.68.53A.51.51 0 0 0 17 .28l-.82.37a.5.5 0 0 0-.25.66l2.28 5.08a.49.49 0 0 0 .66.25l.82-.37a.5.5 0 0 0 .31-.66zM4.85 1.11L4.49 2l3.09.22 1.06-.9zM2.69 5.86l-.46.87 1.11 1.61.52-.82zm2.16 1.66a.84.84 0 0 0-1.1.48l-.63 1.39a.84.84 0 1 0 1.53.67l.63-1.43a.84.84 0 0 0-.43-1.11zm1.44 1.35a.84.84 0 0 0-1.1.43l-.63 1.44a.84.84 0 0 0 .44 1.1.85.85 0 0 0 1.11-.43L6.72 10a.84.84 0 0 0-.43-1.13zM17 10.29a1.18 1.18 0 0 1-.76.48 1.14 1.14 0 0 1-.2.87 1.19 1.19 0 0 1-1 .51H15a1.18 1.18 0 0 1-1.2 1.14 1.12 1.12 0 0 1-.67-.22L13 13a1.21 1.21 0 0 1-.22.7 1.19 1.19 0 0 1-1 .51 1.12 1.12 0 0 1-.67-.22l-1.93-1.34a.81.81 0 0 1-.77 0 .84.84 0 0 1-.49-.93l-.16.37a.84.84 0 1 1-1.53-.67L6.85 10A.86.86 0 0 1 8 9.6a.85.85 0 0 1 .48.94l.16-.37a.84.84 0 0 1 1.11-.43.81.81 0 0 1 .45.49l3.24 2.24a.5.5 0 0 0 .69-.13.49.49 0 0 0 0-.58l-3.25-2.24a6.61 6.61 0 0 0 .39-.52l3.17 2.19a.77.77 0 0 1 .19.17l.1.06a.51.51 0 0 0 .7-.12.49.49 0 0 0 .09-.28.47.47 0 0 0-.12-.32l-.09-.06-3.64-2.58V8a4 4 0 0 0 .15-.7l3.91 2.7a.48.48 0 0 0 .55-.19.47.47 0 0 0 .09-.28.49.49 0 0 0-.21-.41l-4.34-3a3.82 3.82 0 0 0-.15-.67l-.62-.38a2.88 2.88 0 0 1-.83-.76s-.94.58-1.1.65a3.08 3.08 0 0 1-1.55.43 1.69 1.69 0 0 1-1.68-1.18A1.32 1.32 0 0 1 7 2.67a5.82 5.82 0 0 0 1.17-.17A7.59 7.59 0 0 0 10.08 1a1.1 1.1 0 0 1 .69-.37c1 0 1.46 1.21 2.74 1.21a4.32 4.32 0 0 0 1.93-.44l2.23 4.86a4.54 4.54 0 0 1-.62 1.19c-.25.23-.66.18-1 .18a3 3 0 0 1-1.29-.3l1.93 1.33a1.19 1.19 0 0 1 .31 1.63zm-4.88 2.6a.49.49 0 0 0-.22-.41L10 11.17l-.4.93 1.72 1.19a.51.51 0 0 0 .7-.12.51.51 0 0 0 .08-.28z"></path>
+                                </g><g class="icon">
+                                    <path d="M4.42 1.17L2 6.62a.51.51 0 0 1-.66.26L.3 6.41a.51.51 0 0 1-.3-.66L2.43.3a.51.51 0 0 1 .66-.3l1.08.51a.49.49 0 0 1 .25.66zM20 5.61L17.68.53A.51.51 0 0 0 17 .28l-.82.37a.5.5 0 0 0-.25.66l2.28 5.08a.49.49 0 0 0 .66.25l.82-.37a.5.5 0 0 0 .31-.66zM4.85 1.11L4.49 2l3.09.22 1.06-.9zM2.69 5.86l-.46.87 1.11 1.61.52-.82zm2.16 1.66a.84.84 0 0 0-1.1.48l-.63 1.39a.84.84 0 1 0 1.53.67l.63-1.43a.84.84 0 0 0-.43-1.11zm1.44 1.35a.84.84 0 0 0-1.1.43l-.63 1.44a.84.84 0 0 0 .44 1.1.85.85 0 0 0 1.11-.43L6.72 10a.84.84 0 0 0-.43-1.13zM17 10.29a1.18 1.18 0 0 1-.76.48 1.14 1.14 0 0 1-.2.87 1.19 1.19 0 0 1-1 .51H15a1.18 1.18 0 0 1-1.2 1.14 1.12 1.12 0 0 1-.67-.22L13 13a1.21 1.21 0 0 1-.22.7 1.19 1.19 0 0 1-1 .51 1.12 1.12 0 0 1-.67-.22l-1.93-1.34a.81.81 0 0 1-.77 0 .84.84 0 0 1-.49-.93l-.16.37a.84.84 0 1 1-1.53-.67L6.85 10A.86.86 0 0 1 8 9.6a.85.85 0 0 1 .48.94l.16-.37a.84.84 0 0 1 1.11-.43.81.81 0 0 1 .45.49l3.24 2.24a.5.5 0 0 0 .69-.13.49.49 0 0 0 0-.58l-3.25-2.24a6.61 6.61 0 0 0 .39-.52l3.17 2.19a.77.77 0 0 1 .19.17l.1.06a.51.51 0 0 0 .7-.12.49.49 0 0 0 .09-.28.47.47 0 0 0-.12-.32l-.09-.06-3.64-2.58V8a4 4 0 0 0 .15-.7l3.91 2.7a.48.48 0 0 0 .55-.19.47.47 0 0 0 .09-.28.49.49 0 0 0-.21-.41l-4.34-3a3.82 3.82 0 0 0-.15-.67l-.62-.38a2.88 2.88 0 0 1-.83-.76s-.94.58-1.1.65a3.08 3.08 0 0 1-1.55.43 1.69 1.69 0 0 1-1.68-1.18A1.32 1.32 0 0 1 7 2.67a5.82 5.82 0 0 0 1.17-.17A7.59 7.59 0 0 0 10.08 1a1.1 1.1 0 0 1 .69-.37c1 0 1.46 1.21 2.74 1.21a4.32 4.32 0 0 0 1.93-.44l2.23 4.86a4.54 4.54 0 0 1-.62 1.19c-.25.23-.66.18-1 .18a3 3 0 0 1-1.29-.3l1.93 1.33a1.19 1.19 0 0 1 .31 1.63zm-4.88 2.6a.49.49 0 0 0-.22-.41L10 11.17l-.4.93 1.72 1.19a.51.51 0 0 0 .7-.12.51.51 0 0 0 .08-.28z"></path>
+                                </g></svg>
+                            </a>
+
+                            <script type="text/javascript">
+                                jQuery('#button664a7cba50f37').click(function (event) {
+                                    jQuery(window).trigger('buttonClicked', [event.delegateTarget, {"type":"green","loadTooltip":null,"boxId":"","disabled":false,"attention":false,"colorBlind":false,"class":"","id":"button664a7cba50f37","redirectUrl":"\/alliance","redirectUrlExternal":"","svg":"sideBar\/alliance.svg","content":""}]);
+                                });
+                            </script>
+                            <a id="button664a7cba50fed"
+                               class="layoutButton buttonFramed withIcon round forum green    "
+                               title="Форум альянса"
+                               href="/alliance/forum"
+                            >
+                                <svg viewBox="0 0 20 18.54" class="forum"><g class="outline">
+                                    <path d="M3.31 4.7h8.5l-1.3 1.37h-7.2zm0 4.85h3.91l1.3-1.37H3.31zm0 3.47h3.45l.06-1.37H3.31zM17.16 1.29l-.94 1-1.43 1.5L13 5.66l-.49.51-2 2.11-1.26 1.37-.81.86-.06 1.24-.07 1.37v.51l3-.44 3.25-3.43.16-.17L20 4zm-.59 12l-.19-3.44L15 11.26a.61.61 0 0 0-.16.45l.07 1a.57.57 0 0 1-.15.43l-3.26 3.58a.57.57 0 0 1-.43.19H2.54a.58.58 0 0 1-.54-.58V2.53a.58.58 0 0 1 .58-.59h11a.59.59 0 0 0 .42-.17L15.7 0H.58A.58.58 0 0 0 0 .58V18a.58.58 0 0 0 .58.58H11.8a.57.57 0 0 0 .43-.19l4.19-4.66a.53.53 0 0 0 .15-.46z"></path>
+                                </g><g class="icon">
+                                    <path d="M3.31 4.7h8.5l-1.3 1.37h-7.2zm0 4.85h3.91l1.3-1.37H3.31zm0 3.47h3.45l.06-1.37H3.31zM17.16 1.29l-.94 1-1.43 1.5L13 5.66l-.49.51-2 2.11-1.26 1.37-.81.86-.06 1.24-.07 1.37v.51l3-.44 3.25-3.43.16-.17L20 4zm-.59 12l-.19-3.44L15 11.26a.61.61 0 0 0-.16.45l.07 1a.57.57 0 0 1-.15.43l-3.26 3.58a.57.57 0 0 1-.43.19H2.54a.58.58 0 0 1-.54-.58V2.53a.58.58 0 0 1 .58-.59h11a.59.59 0 0 0 .42-.17L15.7 0H.58A.58.58 0 0 0 0 .58V18a.58.58 0 0 0 .58.58H11.8a.57.57 0 0 0 .43-.19l4.19-4.66a.53.53 0 0 0 .15-.46z"></path>
+                                </g></svg>
+                            </a>
+
+                            <script type="text/javascript">
+                                jQuery('#button664a7cba50fed').click(function (event) {
+                                    jQuery(window).trigger('buttonClicked', [event.delegateTarget, {"type":"green","loadTooltip":null,"boxId":"","disabled":false,"attention":false,"colorBlind":false,"class":"","id":"button664a7cba50fed","redirectUrl":"\/alliance\/forum","redirectUrlExternal":"","svg":"general\/forum.svg","content":""}]);
+                                });
+                            </script>
+                            <a id="button664a7cba51052"
+                               class="layoutButton buttonFramed withIcon round embassy green    "
+                               title="Посольство||Имеющихся приглашений: 0&lt;br /&gt;Самое большое ваше посольство: 1-го уровня"
+                               href="/build.php?gid=18&newdid=18054"
+                            >
+                                <svg viewBox="0 0 17.63 20" class="embassy"><g class="outline">
+                                    <path d="M16.15 2.21l-.23 1.66h-1.45v-.4A2.28 2.28 0 0 0 11 2.15l-.34.28h-.05a2.77 2.77 0 0 1-1.82.45 2.78 2.78 0 0 1-2.06-1.22c-.06-.13-.12-.25-.19-.37V1.2A2.68 2.68 0 0 0 3 .31c-.48.25-1.86 1.11-1.86 1.11.53-.31 3.46-.2 3.63 1.33C1 .92 0 4.37 0 4.37s2.42-1.48 4.19 1.48A3 3 0 0 0 .88 8c.55-.34 1.79-.07 2.48 0a3 3 0 0 1 2.39 1.62A2.5 2.5 0 0 0 9.63 11a1.67 1.67 0 0 1 .23-.23 1.56 1.56 0 0 1 .2-.16 2.46 2.46 0 0 1 1.65-.43c.32 0 .39.29.41.55a.89.89 0 0 0 1.59.55v-.31H15l-1.27 8.83 1.48.2 2.42-17.58zM13.6 10a17.28 17.28 0 0 1-.06-2.72 10.63 10.63 0 0 1 .54-1.81h1.62L15.08 10z"></path>
+                                </g><g class="icon">
+                                    <path d="M16.15 2.21l-.23 1.66h-1.45v-.4A2.28 2.28 0 0 0 11 2.15l-.34.28h-.05a2.77 2.77 0 0 1-1.82.45 2.78 2.78 0 0 1-2.06-1.22c-.06-.13-.12-.25-.19-.37V1.2A2.68 2.68 0 0 0 3 .31c-.48.25-1.86 1.11-1.86 1.11.53-.31 3.46-.2 3.63 1.33C1 .92 0 4.37 0 4.37s2.42-1.48 4.19 1.48A3 3 0 0 0 .88 8c.55-.34 1.79-.07 2.48 0a3 3 0 0 1 2.39 1.62A2.5 2.5 0 0 0 9.63 11a1.67 1.67 0 0 1 .23-.23 1.56 1.56 0 0 1 .2-.16 2.46 2.46 0 0 1 1.65-.43c.32 0 .39.29.41.55a.89.89 0 0 0 1.59.55v-.31H15l-1.27 8.83 1.48.2 2.42-17.58zM13.6 10a17.28 17.28 0 0 1-.06-2.72 10.63 10.63 0 0 1 .54-1.81h1.62L15.08 10z"></path>
+                                </g></svg>
+                            </a>
+
+                            <script type="text/javascript">
+                                jQuery('#button664a7cba51052').click(function (event) {
+                                    jQuery(window).trigger('buttonClicked', [event.delegateTarget, {"type":"green","loadTooltip":null,"boxId":"alliance","disabled":false,"attention":false,"colorBlind":false,"class":"","id":"button664a7cba51052","redirectUrl":"\/build.php?gid=18&newdid=18054","redirectUrlExternal":"","svg":"sideBar\/embassy.svg","content":""}]);
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="boxTitle withBanner">
+                            <img src="/alliance/banner/2/08070E0A000000EBEBEBEBEBEBEBEBEB000000000000.svg" alt="Герб альянса" class="allianceBanner" />
+                            <div class="name">T.C. SLAY</div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="sidebarBoxInfobox" class="sidebarBox toggleable expanded ">
+                    <div class="header ">
+                    </div>
+                    <div class="content">
+                        <div class="boxTitle">Информация</div>
+
+                        <div class="inlineIcon messageShortInfo" title="Сообщений всего: 1&lt;br /&gt;Новых сообщений: 1"><svg viewBox="0 0 20 14.28" class="messageNew">
+                            <path d="M.72.93A1.69 1.69 0 0 1 .33.21L.54 0h19a1.56 1.56 0 0 1 .16.2 1.73 1.73 0 0 1-.39.73l-7.2 7.78a2.79 2.79 0 0 1-4.18 0zm13.59 7.89l3.55 2.5-4.92-1.06a4.31 4.31 0 0 1-5.84 0l-4.89 1.06 3.53-2.49L0 2.62v10.06a1.54 1.54 0 0 0 1.47 1.6h17.06a1.54 1.54 0 0 0 1.47-1.6v-10z"></path>
+                        </svg>
+                            <span class="value ">&#x202d;&#x202d;1&#x202c;&times;&#x202c;</span></div>
+                        <ul>
+                            <li id=infoID_84556 class="infoType_17 firstElement active unreaded">
+                                <p>
+                                    <a class ="infoboxDeleteButton" href="#" data-id="84556">
+                                        <img src="/img/x.gif" class="del" alt="del">
+                                    </a>
+                                    Бонус на производство сырья «Железо» закончился</p>
+                                <button type="button" value="Активировать" id="button664a7cba514aa" class="textButtonV1 gold " coins="5" version="textButtonV1">
+                                    Активировать<i class="goldIcon"></i><span class="goldValue">5</span></button>
+                                <script type="text/javascript" id="button664a7cba514aa_script">
+                                    jQuery(function() {
+                                        jQuery('button#button664a7cba514aa').click(function () {
+                                            jQuery(window).trigger('buttonClicked', [this, {"type":"button","value":"\u0410\u043a\u0442\u0438\u0432\u0438\u0440\u043e\u0432\u0430\u0442\u044c","name":"","id":"button664a7cba514aa","class":"textButtonV1 gold ","title":"","confirm":"","onclick":"","coins":5,"wayOfPayment":{"featureKey":"productionboostIron","context":"infobox"},"version":"textButtonV1"}]);
+                                        });
+                                    });
+                                </script>
+                            </li>
+                        </ul>
+
+
+                        <script type="text/javascript">
+                            jQuery(function() {
+                                Travian.Game.Layout.setupInfoboxItemsDeletionWithMessage('Полностью удалить сообщение?', 'Подтвердить');
+                            });
+                        </script>
+
+                    </div>
+                    <div class="toggle">
+                        <button type="button" class="toggleBox" onclick="" title="Свернуть | Отметить все сообщения прочитанными">
+                            <svg class="toggleArrow" viewBox="0 0 18 11">
+                                <filter id="insetShadow">
+                                    <feFlood flood-color="#a2e25e"/>
+                                    <feComposite in2="SourceAlpha" operator="out"/>
+                                    <feGaussianBlur stdDeviation="2" result="blur"/>
+                                    <feComposite operator="atop" in2="SourceGraphic"/>
+                                </filter>
+                                <path class="caret" d="M1 10H17L9 1z" />
+                                <path class="glow" d="M1 10H17L9 1z" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <script type="text/javascript">
+                        jQuery(function() {
+                            Travian.Translation.add({
+                                'infobox_collapsed': 'Развернуть',
+                                'infobox_expanded': 'Свернуть | Отметить все сообщения прочитанными'
+                            });
+
+                            var box = jQuery('#sidebarBoxInfobox');
+                            box.find('button.toggleBox').click(function(e) {
+                                Travian.Game.Layout.toggleBox(box, 'travian_toggle', 'infobox');
+                            });
+                        });
+                    </script>
+                </div>
+                <div id="sidebarBoxLinklist" class="sidebarBox   ">
+                    <div class="header ">
+                        <div class="buttonsWrapper">
+                            <a id="button664a7cba5153c"
+                               class="layoutButton buttonFramed withIcon round edit gold    "
+                               title="Список ссылок || С TRAVIAN Plus вы можете создать свой список ссылок"
+                               href="#"
+                               onclick="event.preventDefault();"
+                            >
+                                <svg viewBox="0 0 15.59 20" class="edit"><g class="outline">
+                                    <path d="M15.59 18.55V20H0v-1.45zM11.52 0L1.05 13.47.92 17.4l3.65-1.21L15 2.73zm.25 7L8.16 4.33 9 3.2l3.6 2.62z"></path>
+                                </g><g class="icon">
+                                    <path d="M15.59 18.55V20H0v-1.45zM11.52 0L1.05 13.47.92 17.4l3.65-1.21L15 2.73zm.25 7L8.16 4.33 9 3.2l3.6 2.62z"></path>
+                                </g></svg>
+                            </a>
+
+                            <script type="text/javascript">
+                                jQuery('#button664a7cba5153c').click(function (event) {
+                                    jQuery(window).trigger('buttonClicked', [event.delegateTarget, {"type":"gold","loadTooltip":null,"boxId":"","disabled":false,"attention":false,"colorBlind":false,"class":"","id":"button664a7cba5153c","redirectUrl":"#","redirectUrlExternal":"","svg":"sideBar\/editUnderlined.svg","content":"","plusDialog":{"featureKey":"linkList","infoIcon":"https:\/\/support.travian.com\/support\/solutions\/articles\/7000060367-travian-plus-membership","cssClass":"premiumFeaturePackage premiumFeaturePlus paymentShopV4","premiumFeatureDialogVersion":2,"version":2,"paymentShopVersion":4},"title":"\u0421\u043f\u0438\u0441\u043e\u043a \u0441\u0441\u044b\u043b\u043e\u043a || \u0421 TRAVIAN Plus \u0432\u044b \u043c\u043e\u0436\u0435\u0442\u0435 \u0441\u043e\u0437\u0434\u0430\u0442\u044c \u0441\u0432\u043e\u0439 \u0441\u043f\u0438\u0441\u043e\u043a \u0441\u0441\u044b\u043b\u043e\u043a","onclick":"event.preventDefault();"}]);
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="boxTitle">Список ссылок</div>
+
+                        <div class="linklistNotice">С TRAVIAN Plus вы можете создать свой список ссылок</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contentOuterContainer" class=" contentPage">
+            <div class="contentTitle buttonCount0">
+                <a id="closeContentButton" class="contentTitleButton buttonFramed green withIcon rectangle" href="/dorf1.php" title="Закрыть окно">
+                    <svg viewBox="0 0 20 20"><g class="outline">
+                        <path d="M0 17.01L7.01 10 .14 3.13 3.13.14 10 7.01 17.01 0 20 2.99 12.99 10l6.87 6.87-2.99 2.99L10 12.99 2.99 20 0 17.01z"></path>
+                    </g><g class="icon">
+                        <path d="M0 17.01L7.01 10 .14 3.13 3.13.14 10 7.01 17.01 0 20 2.99 12.99 10l6.87 6.87-2.99 2.99L10 12.99 2.99 20 0 17.01z"></path>
+                    </g></svg>
+                </a>
+                <a id="knowledgeBaseButton" class="contentTitleButton buttonFramed withIcon rectangle green" href="" target="_blank" title="База знаний об игре">&nbsp;</a>
+            </div>
+            <div class="contentContainer">
+                <div id="content" class="build">
+                    <h1 class="titleInHeader">Ферма <span
+                            class="level">Уровень 0</span></h1>
+                    <div id="build" class="gid4 level0">
+                        <div class="upgradeHeader levelSpecificInfo">
+                            <a onclick="Travian.Game.Manual.open('building', 4);">
+                                <img class="buildingIllustration g4 roman " alt="Ферма" src="/img/x.gif"/>
+                            </a>
+                            <table cellpadding="1" cellspacing="1" id="build_value" class="transparent">
+                                <tr class="currentLevel" title="">
+                                    <th>Производство:</th>
+                                    <td><span class="number">15</span> в час</td>
+                                </tr>
+
+
+                                <tr class="nextPossible" title="">
+                                    <th>Производство на уровне 1:</th>
+                                    <td><span class="number">35</span> в час</td>
+                                </tr>
+                            </table>
+
+                        </div>
+
+                        <div class="buildingDescription ">
+                            <div class="headline">
+                                <div class="openedClosedSwitch switchOpened"></div>
+                                <h4>Описание</h4>
+                            </div>
+                            <div class="description">
+                                На фермах выращивают зерно для обеспечения продовольствием населения. С развитием Фермы увеличивается ее производительность.
+                                <br><br>
+                                Мельница и пекарня также увеличивают производительность.    </div>
+                        </div>
+
+                        <script type="text/javascript">
+                            jQuery(function () {
+                                Travian.Game.BuildingUpgradeView.initialize();
+                            })
+                        </script>
+                        <div class="upgradeBuilding ">
+
+                            <div id="contract" class="contractWrapper">
+                                <div class="inlineIconList resourceWrapper"><div class="inlineIcon resource" title="Древесина"><i class="r1Big"></i><span class="value value">70</span></div><div class="inlineIcon resource" title="Глина"><i class="r2Big"></i><span class="value value">90</span></div><div class="inlineIcon resource" title="Железо"><i class="r3Big"></i><span class="value value">70</span></div><div class="inlineIcon resource" title="Зерно"><i class="r4Big"></i><span class="value value">20</span></div><div class="inlineIcon resource" title="Потребление зерна"><i class="cropConsumptionBig"></i><span class="value value">0</span></div></div>		<div class="upgradeBlocked">
+                            </div>
+                            </div><div class="buildingBenefits ">
+                            <div class="wrapper">
+                                <div class="unit" title="Единицы культуры, производимые этим зданием">
+                                    <i class="culturePoints_medium"></i>
+                                    <span class="value">
+				0			</span>
+                                    <span class="delta">
+				(&#x202d;&plus;&#x202d;1&#x202c;&#x202c;)			</span>
+                                </div>
+
+                                <div class="unit" title="Население, задействованное в обслуживании здания">
+                                    <i class="population_medium"></i>
+                                    <span class="value">
+				0			</span>
+                                    <span class="delta">
+				(&#x202d;&plus;&#x202d;0&#x202c;&#x202c;)			</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                            <div class="upgradeButtonsContainer ">
+
+                                <div class="section1">
+                                    <button type="button" value="Улучшить до уровня 1" id="button664a7cba4e35a" class="textButtonV1 green build" onclick="this.disabled = true; window.location.href = '/dorf1.php?id=8&amp;gid=4&amp;action=build&amp;checksum=b4a95c'; return false;" version="textButtonV1">
+                                        Улучшить до уровня 1</button>
+                                    <script type="text/javascript" id="button664a7cba4e35a_script">
+                                        jQuery(function() {
+                                            jQuery('button#button664a7cba4e35a').click(function () {
+                                                jQuery(window).trigger('buttonClicked', [this, {"type":"button","value":"\u0423\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u0434\u043e \u0443\u0440\u043e\u0432\u043d\u044f 1","name":"","id":"button664a7cba4e35a","class":"textButtonV1 green build","title":"","confirm":"","onclick":"this.disabled = true; window.location.href = \u0027\/dorf1.php?id=8\u0026amp;gid=4\u0026amp;action=build\u0026amp;checksum=b4a95c\u0027; return false;","version":"textButtonV1"}]);
+                                            });
+                                        });
+                                    </script>
+                                    <div class="inlineIcon duration" title="Время"><i class="clock_medium"></i><span class="value ">0:00:30</span></div>    </div>
+
+                                <div class="section2">
+                                </div>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sidebarAfterContent" class="sidebar afterContent">
+            <div class="sidebarBoxWrapper">
+                <div id="sidebarBoxActiveVillage" class="sidebarBox   ">
+                    <div class="header ">
+                        <div class="buttonsWrapper">
+                            <a id="button664a7cba51768"
+                               class="layoutButton buttonFramed withIcon round market gold disabled   "
+                               title="Прямые ссылки||Необходимо активировать TRAVIAN Plus&lt;br /&gt;&lt;span class=&quot;warning&quot;&gt;В этой деревне нет рынка&lt;/span&gt;"
+                               href="#"
+                               onclick="event.preventDefault();"
+                            >
+                                <svg viewBox="0 0 20.21 18" class="market"><g class="outline">
+                                    <path d="M17.12 7L17 3.43h1V2h-6V1h-1V0H9v1H8v1H2v1.43h1L2.92 6.9C1.89 7.47 0 8.71 0 10.14a3.58 3.58 0 1 0 7.15 0c0-1.47-2-2.74-3-3.29L4 3.43h5V15H8v1H6v1H5v1h10v-1h-1v-1h-2v-1h-1V3.43h5L15.9 7c-1 .54-3 1.81-3 3.29a3.67 3.67 0 0 0 3.75 3.5 3.75 3.75 0 0 0 3.57-3.57c-.01-1.49-2.07-2.66-3.1-3.22zm-3.58 3.2c0-1 1.59-1.85 2.46-2.24.32-.15.55-.23.55-.23s.26.1.63.27c.87.4 2.36 1.24 2.36 2.2 0 1.37-6 1.37-6 0zm-13 0C.53 9.21 2.11 8.35 3 8c.33-.15.55-.23.55-.23s.26.1.63.27c.88.4 2.37 1.24 2.37 2.2-.02 1.33-6.02 1.33-6.02-.04z"></path>
+                                </g><g class="icon">
+                                    <path d="M17.12 7L17 3.43h1V2h-6V1h-1V0H9v1H8v1H2v1.43h1L2.92 6.9C1.89 7.47 0 8.71 0 10.14a3.58 3.58 0 1 0 7.15 0c0-1.47-2-2.74-3-3.29L4 3.43h5V15H8v1H6v1H5v1h10v-1h-1v-1h-2v-1h-1V3.43h5L15.9 7c-1 .54-3 1.81-3 3.29a3.67 3.67 0 0 0 3.75 3.5 3.75 3.75 0 0 0 3.57-3.57c-.01-1.49-2.07-2.66-3.1-3.22zm-3.58 3.2c0-1 1.59-1.85 2.46-2.24.32-.15.55-.23.55-.23s.26.1.63.27c.87.4 2.36 1.24 2.36 2.2 0 1.37-6 1.37-6 0zm-13 0C.53 9.21 2.11 8.35 3 8c.33-.15.55-.23.55-.23s.26.1.63.27c.88.4 2.37 1.24 2.37 2.2-.02 1.33-6.02 1.33-6.02-.04z"></path>
+                                </g></svg>
+                            </a>
+
+                            <script type="text/javascript">
+                                jQuery('#button664a7cba51768').click(function (event) {
+                                    jQuery(window).trigger('buttonClicked', [event.delegateTarget, {"type":"gold","loadTooltip":null,"boxId":"activeVillage","disabled":true,"attention":false,"colorBlind":false,"class":"","id":"button664a7cba51768","redirectUrl":"#","redirectUrlExternal":"","svg":"sideBar\/market.svg","content":"","plusDialog":{"featureKey":"directLinks","infoIcon":"https:\/\/support.travian.com\/support\/solutions\/articles\/7000060367-travian-plus-membership","cssClass":"premiumFeaturePackage premiumFeaturePlus paymentShopV4","premiumFeatureDialogVersion":2,"version":2,"paymentShopVersion":4},"onclick":"event.preventDefault();"}]);
+                                });
+                            </script>
+                            <a id="button664a7cba51809"
+                               class="layoutButton buttonFramed withIcon round barracks gold disabled   "
+                               title="Прямые ссылки||Необходимо активировать TRAVIAN Plus&lt;br /&gt;&lt;span class=&quot;warning&quot;&gt;В этой деревне нет казармы&lt;/span&gt;"
+                               href="#"
+                               onclick="event.preventDefault();"
+                            >
+                                <svg viewBox="0 0 18.46 20" class="barracks"><g class="outline">
+                                    <path d="M4.32 13.44l.88.56 3-2.51-1.88-1.42a7.16 7.16 0 0 0-2.81 1.25c-.21.48-1 2.74-1 2.74l-1.34.64 1.13-4.07.16-.63a5.27 5.27 0 0 1 10 3.29c-.17 1.14-.15 3 1.39 3.91l.39.32a3.79 3.79 0 0 1-2.05.71c-.82-.14-1.62-2.3-1.62-2.33a1.49 1.49 0 1 0-2.66 1 1.45 1.45 0 0 0 1.13.58A13.32 13.32 0 0 1 1.49 20zM0 1.14l3.93 4.51c1-.14 3.5-1 4.56-.76 4.63 1.2 6.51 5.46 5.41 10.51 1.37 1.17 0 0 3.12 3.15a24.7 24.7 0 0 0 1-3.15 13.83 13.83 0 0 0 .44-3.28L15.66 11l2.73-.34a12.59 12.59 0 0 0-1.8-5.36l-3.67 1.44 2.82-2.69A10.8 10.8 0 0 0 11.5.83l-2 3.43.75-3.86-.2-.06A10.61 10.61 0 0 0 6.14.07l.41 3.09L5.09.25A18.06 18.06 0 0 0 0 1.14z"></path>
+                                </g><g class="icon">
+                                    <path d="M4.32 13.44l.88.56 3-2.51-1.88-1.42a7.16 7.16 0 0 0-2.81 1.25c-.21.48-1 2.74-1 2.74l-1.34.64 1.13-4.07.16-.63a5.27 5.27 0 0 1 10 3.29c-.17 1.14-.15 3 1.39 3.91l.39.32a3.79 3.79 0 0 1-2.05.71c-.82-.14-1.62-2.3-1.62-2.33a1.49 1.49 0 1 0-2.66 1 1.45 1.45 0 0 0 1.13.58A13.32 13.32 0 0 1 1.49 20zM0 1.14l3.93 4.51c1-.14 3.5-1 4.56-.76 4.63 1.2 6.51 5.46 5.41 10.51 1.37 1.17 0 0 3.12 3.15a24.7 24.7 0 0 0 1-3.15 13.83 13.83 0 0 0 .44-3.28L15.66 11l2.73-.34a12.59 12.59 0 0 0-1.8-5.36l-3.67 1.44 2.82-2.69A10.8 10.8 0 0 0 11.5.83l-2 3.43.75-3.86-.2-.06A10.61 10.61 0 0 0 6.14.07l.41 3.09L5.09.25A18.06 18.06 0 0 0 0 1.14z"></path>
+                                </g></svg>
+                            </a>
+
+                            <script type="text/javascript">
+                                jQuery('#button664a7cba51809').click(function (event) {
+                                    jQuery(window).trigger('buttonClicked', [event.delegateTarget, {"type":"gold","loadTooltip":null,"boxId":"activeVillage","disabled":true,"attention":false,"colorBlind":false,"class":"","id":"button664a7cba51809","redirectUrl":"#","redirectUrlExternal":"","svg":"sideBar\/barracks.svg","content":"","plusDialog":{"featureKey":"directLinks","infoIcon":"https:\/\/support.travian.com\/support\/solutions\/articles\/7000060367-travian-plus-membership","cssClass":"premiumFeaturePackage premiumFeaturePlus paymentShopV4","premiumFeatureDialogVersion":2,"version":2,"paymentShopVersion":4},"onclick":"event.preventDefault();"}]);
+                                });
+                            </script>
+                            <a id="button664a7cba51881"
+                               class="layoutButton buttonFramed withIcon round stable gold disabled   "
+                               title="Прямые ссылки||Необходимо активировать TRAVIAN Plus&lt;br /&gt;&lt;span class=&quot;warning&quot;&gt;В этой деревне нет конюшни&lt;/span&gt;"
+                               href="#"
+                               onclick="event.preventDefault();"
+                            >
+                                <svg viewBox="0 0 19.07 20" class="stable"><g class="outline">
+                                    <path d="M0 13.31a.79.79 0 0 0 .38.69 2.06 2.06 0 0 0 2 1.66h.33a2 2 0 0 0 1.67-1.68A8.12 8.12 0 0 0 6.76 13c.88-.51 1.87-1.23 2-2 .48-1.78-1.69-2.77-1.59-2.89 2.19.76 2.29 2 2.09 4.17 0 .35-2.42 6.68-2.57 7.11 1.37.81 2.36.71 5.15.31 1.55-.58 3.58-2.36 4.82-3a24.9 24.9 0 0 0 1.15-2.92 10.38 10.38 0 0 0-.24-3.46v-.05a7.48 7.48 0 0 1 1.52.77c0-.05-1.72-2.45-2.08-3a11.18 11.18 0 0 0-.79-.95 8.33 8.33 0 0 0-2.33-1.51 16 16 0 0 1 1.64-.05c-.92-.51-1.08-.88-5.64-2.45a12.52 12.52 0 0 1-1.61-.53A5 5 0 0 0 6.63.29 1.82 1.82 0 0 0 5.6 0a17.54 17.54 0 0 1 .17 1.75c.05.8.08 1.53.08 1.53l-.15.16-.49-.28-1.63-.94a5.07 5.07 0 0 0 .78 2.55c-.34.28-.62.7-.87.65s-.93.72-.93.72c-.25.51.14 1.23.06 1.9A7.47 7.47 0 0 0 2 9.27a5.85 5.85 0 0 0-.39 1.44l-1 1.82a.8.8 0 0 0-.61.78zm7.47-9.49c.49.05 5.82 1.87 7.72 5.31a9 9 0 0 1 .81 6.92s-.66-4.38-1.8-6.22c-1.29-2.07-1.22-2-4.42-4.19-1.18-.82-2.21-1.8-2.31-1.82zM3.55 8c0-.48.23-1.37.71-1.37h.48c.33 0 .61.1.61.42a1.16 1.16 0 0 1-.54.85.93.93 0 0 1-.55.2c-.48-.04-.71.35-.71-.1z"></path>
+                                </g><g class="icon">
+                                    <path d="M0 13.31a.79.79 0 0 0 .38.69 2.06 2.06 0 0 0 2 1.66h.33a2 2 0 0 0 1.67-1.68A8.12 8.12 0 0 0 6.76 13c.88-.51 1.87-1.23 2-2 .48-1.78-1.69-2.77-1.59-2.89 2.19.76 2.29 2 2.09 4.17 0 .35-2.42 6.68-2.57 7.11 1.37.81 2.36.71 5.15.31 1.55-.58 3.58-2.36 4.82-3a24.9 24.9 0 0 0 1.15-2.92 10.38 10.38 0 0 0-.24-3.46v-.05a7.48 7.48 0 0 1 1.52.77c0-.05-1.72-2.45-2.08-3a11.18 11.18 0 0 0-.79-.95 8.33 8.33 0 0 0-2.33-1.51 16 16 0 0 1 1.64-.05c-.92-.51-1.08-.88-5.64-2.45a12.52 12.52 0 0 1-1.61-.53A5 5 0 0 0 6.63.29 1.82 1.82 0 0 0 5.6 0a17.54 17.54 0 0 1 .17 1.75c.05.8.08 1.53.08 1.53l-.15.16-.49-.28-1.63-.94a5.07 5.07 0 0 0 .78 2.55c-.34.28-.62.7-.87.65s-.93.72-.93.72c-.25.51.14 1.23.06 1.9A7.47 7.47 0 0 0 2 9.27a5.85 5.85 0 0 0-.39 1.44l-1 1.82a.8.8 0 0 0-.61.78zm7.47-9.49c.49.05 5.82 1.87 7.72 5.31a9 9 0 0 1 .81 6.92s-.66-4.38-1.8-6.22c-1.29-2.07-1.22-2-4.42-4.19-1.18-.82-2.21-1.8-2.31-1.82zM3.55 8c0-.48.23-1.37.71-1.37h.48c.33 0 .61.1.61.42a1.16 1.16 0 0 1-.54.85.93.93 0 0 1-.55.2c-.48-.04-.71.35-.71-.1z"></path>
+                                </g></svg>
+                            </a>
+
+                            <script type="text/javascript">
+                                jQuery('#button664a7cba51881').click(function (event) {
+                                    jQuery(window).trigger('buttonClicked', [event.delegateTarget, {"type":"gold","loadTooltip":null,"boxId":"activeVillage","disabled":true,"attention":false,"colorBlind":false,"class":"","id":"button664a7cba51881","redirectUrl":"#","redirectUrlExternal":"","svg":"sideBar\/stable.svg","content":"","plusDialog":{"featureKey":"directLinks","infoIcon":"https:\/\/support.travian.com\/support\/solutions\/articles\/7000060367-travian-plus-membership","cssClass":"premiumFeaturePackage premiumFeaturePlus paymentShopV4","premiumFeatureDialogVersion":2,"version":2,"paymentShopVersion":4},"onclick":"event.preventDefault();"}]);
+                                });
+                            </script>
+                            <a id="button664a7cba518e9"
+                               class="layoutButton buttonFramed withIcon round workshop gold disabled   "
+                               title="Прямые ссылки||Необходимо активировать TRAVIAN Plus&lt;br /&gt;&lt;span class=&quot;warning&quot;&gt;В этой деревне нет мастерской&lt;/span&gt;"
+                               href="#"
+                               onclick="event.preventDefault();"
+                            >
+                                <svg viewBox="0 0 20 18.8" class="workshop"><g class="outline">
+                                    <path d="M19.73 6l-.45-.22-2.77-.8.49-.43a1.45 1.45 0 0 0 0-2 1.3 1.3 0 0 0-1.9.06l-.48.6-.48-3-3.93.15.12 4.05L13 5l-1.75 2a14.68 14.68 0 0 0-4.32-1.53 3.58 3.58 0 0 0 .17-4.06C6.26.19 4.87-.42 2.71.33A12.12 12.12 0 0 1 4 1a3.11 3.11 0 0 1 1.12 1.29 3.82 3.82 0 0 1-.39 3A16.83 16.83 0 0 1 3 4.64 3.15 3.15 0 0 1 1.56 3.3a5.86 5.86 0 0 1-.69-2 4.42 4.42 0 0 0-.38 4.62 3.56 3.56 0 0 0 3.84 1.32 12 12 0 0 0 .46 6.93l-1.31 1.49a1.29 1.29 0 0 0 .12 1.81l.12.11a1.28 1.28 0 0 0 1.81-.12l.84-.95A12.12 12.12 0 0 0 9 18.8l1.66-1.13A16.33 16.33 0 0 1 8 14.62l1.3-1.45 2.32-2.6a9.7 9.7 0 0 1 .83 1 16.44 16.44 0 0 1 1.87 3.57L16 14.05a12.44 12.44 0 0 0-2-4.72 7.09 7.09 0 0 0-.59-.74l1.75-2 .8 2.87.24.46c.56.55 1.82.11 2.8-1s1.29-2.4.73-2.92zM7.82 10.72l-.6.67-.45.51a13.24 13.24 0 0 1-.53-4.66 13.15 13.15 0 0 1 3.29 1.58z"></path>
+                                </g><g class="icon">
+                                    <path d="M19.73 6l-.45-.22-2.77-.8.49-.43a1.45 1.45 0 0 0 0-2 1.3 1.3 0 0 0-1.9.06l-.48.6-.48-3-3.93.15.12 4.05L13 5l-1.75 2a14.68 14.68 0 0 0-4.32-1.53 3.58 3.58 0 0 0 .17-4.06C6.26.19 4.87-.42 2.71.33A12.12 12.12 0 0 1 4 1a3.11 3.11 0 0 1 1.12 1.29 3.82 3.82 0 0 1-.39 3A16.83 16.83 0 0 1 3 4.64 3.15 3.15 0 0 1 1.56 3.3a5.86 5.86 0 0 1-.69-2 4.42 4.42 0 0 0-.38 4.62 3.56 3.56 0 0 0 3.84 1.32 12 12 0 0 0 .46 6.93l-1.31 1.49a1.29 1.29 0 0 0 .12 1.81l.12.11a1.28 1.28 0 0 0 1.81-.12l.84-.95A12.12 12.12 0 0 0 9 18.8l1.66-1.13A16.33 16.33 0 0 1 8 14.62l1.3-1.45 2.32-2.6a9.7 9.7 0 0 1 .83 1 16.44 16.44 0 0 1 1.87 3.57L16 14.05a12.44 12.44 0 0 0-2-4.72 7.09 7.09 0 0 0-.59-.74l1.75-2 .8 2.87.24.46c.56.55 1.82.11 2.8-1s1.29-2.4.73-2.92zM7.82 10.72l-.6.67-.45.51a13.24 13.24 0 0 1-.53-4.66 13.15 13.15 0 0 1 3.29 1.58z"></path>
+                                </g></svg>
+                            </a>
+
+                            <script type="text/javascript">
+                                jQuery('#button664a7cba518e9').click(function (event) {
+                                    jQuery(window).trigger('buttonClicked', [event.delegateTarget, {"type":"gold","loadTooltip":null,"boxId":"activeVillage","disabled":true,"attention":false,"colorBlind":false,"class":"","id":"button664a7cba518e9","redirectUrl":"#","redirectUrlExternal":"","svg":"sideBar\/workshop.svg","content":"","plusDialog":{"featureKey":"directLinks","infoIcon":"https:\/\/support.travian.com\/support\/solutions\/articles\/7000060367-travian-plus-membership","cssClass":"premiumFeaturePackage premiumFeaturePlus paymentShopV4","premiumFeatureDialogVersion":2,"version":2,"paymentShopVersion":4},"onclick":"event.preventDefault();"}]);
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="playerName">777sweety777</div>
+                        <div id="villageName"
+                             class="boxTitle editable"
+                             title="Нажмите сюда, чтобы изменить название деревни">
+
+                            <form>
+                                <input class="villageInput" type="text" maxlength="20" name="villageName" data-did=24271 value="Новая деревня"/>
+                                <svg viewBox="0 0 12.8 18.8" class="rename">
+                                    <path d="M5.5 16.6.8 18.8 0 13.6c0-.1.1-.1.1-.1l5.4 2.9c.1.1.1.2 0 .2zm6.7-14.4L8.4.1C7.9-.1 7.3 0 7 .5L1.2 11.2c-.3.5-.1 1.1.3 1.4h.1l3.9 2.1c.5.3 1.1.1 1.4-.4l5.8-10.7c.3-.4.1-1.1-.5-1.4.1 0 .1 0 0 0z"></path>
+                                </svg>
+                            </form>
+                        </div>
+
+                        <div class="population">
+                            Население:: <span>&#x202d;51&#x202c;</span>
+                        </div>
+
+                        <div class="loyalty medium">
+                            Одобрение: <span>&#x202d;&#x202d;100&#x202c;&#37;&#x202c;</span>
+                        </div>
+
+                        <script type="text/javascript">
+                            function saveChanges(newVillageName) {
+                                Travian.api('village/change-names', {
+                                    data: {
+                                        data: [
+                                            {villageId: 24271, name: newVillageName}
+                                        ]
+                                    },
+                                    success: function(data) {
+                                        Travian.Game.VillageList.updateVillageNames();
+                                    },
+                                    error: function(body) {
+                                        var errorDialog = new Travian.Dialog.Dialog({
+                                            buttonOk: true,
+                                            buttonCloseOnClickOk: true,
+                                            preventFormSubmit: true
+                                        });
+                                        errorDialog.setContent(body.message);
+                                        errorDialog.show();
+                                    }
+                                }, 'PUT');
+                            }
+
+                            jQuery(function() {
+                                var villageNameForm = jQuery('#villageName form');
+                                var villageNameInput = jQuery('#villageName input');
+
+                                villageNameInput.on('focusout', function () {
+                                    saveChanges(villageNameInput.val())
+                                });
+
+                                villageNameForm.on('submit', function (event) {
+                                    event.preventDefault();
+                                    villageNameInput.blur();
+                                });
+                            })
+                        </script>
+                    </div>
+                </div>
+                <div id="sidebarBoxVillagelist" class="sidebarBox toggleable collapsed ">
+                    <div class="header ">
+                        <div class="buttonsWrapper">
+                            <a id="button664a7cba51dde"
+                               class="layoutButton buttonFramed withIcon round overview green    "
+                               title="Статистика деревень"
+                               href="/village/statistics"
+                               accesskey="9"
+                            >
+                                <svg viewBox="0 0 20 14.92" class="overview"><g class="outline">
+                                    <path d="M10 1.41c4.61 0 8.34 6.05 8.34 6.05s-3.73 6.05-8.34 6.05-8.34-6-8.34-6 3.73-6 8.34-6M10 0C7.7 0 5.38 1.16 3.1 3.44A20.17 20.17 0 0 0 .46 6.72L0 7.46l.46.74a20.17 20.17 0 0 0 2.64 3.28c2.28 2.28 4.6 3.44 6.9 3.44s4.62-1.16 6.9-3.44a20.17 20.17 0 0 0 2.64-3.28l.46-.74-.46-.74a20.17 20.17 0 0 0-2.64-3.28C14.62 1.16 12.3 0 10 0zm.08 11.64a4.5 4.5 0 1 1 4.49-4.49 4.5 4.5 0 0 1-4.49 4.49zm0-7.88a3.39 3.39 0 1 0 3.38 3.39 3.39 3.39 0 0 0-3.38-3.39zm0 5.92a2.53 2.53 0 1 1 2.52-2.53 2.53 2.53 0 0 1-2.52 2.53z"></path>
+                                </g><g class="icon">
+                                    <path d="M10 1.41c4.61 0 8.34 6.05 8.34 6.05s-3.73 6.05-8.34 6.05-8.34-6-8.34-6 3.73-6 8.34-6M10 0C7.7 0 5.38 1.16 3.1 3.44A20.17 20.17 0 0 0 .46 6.72L0 7.46l.46.74a20.17 20.17 0 0 0 2.64 3.28c2.28 2.28 4.6 3.44 6.9 3.44s4.62-1.16 6.9-3.44a20.17 20.17 0 0 0 2.64-3.28l.46-.74-.46-.74a20.17 20.17 0 0 0-2.64-3.28C14.62 1.16 12.3 0 10 0zm.08 11.64a4.5 4.5 0 1 1 4.49-4.49 4.5 4.5 0 0 1-4.49 4.49zm0-7.88a3.39 3.39 0 1 0 3.38 3.39 3.39 3.39 0 0 0-3.38-3.39zm0 5.92a2.53 2.53 0 1 1 2.52-2.53 2.53 2.53 0 0 1-2.52 2.53z"></path>
+                                </g></svg>
+                            </a>
+
+                            <script type="text/javascript">
+                                jQuery('#button664a7cba51dde').click(function (event) {
+                                    jQuery(window).trigger('buttonClicked', [event.delegateTarget, {"type":"green","loadTooltip":null,"boxId":"","disabled":false,"attention":false,"colorBlind":false,"class":"","id":"button664a7cba51dde","redirectUrl":"\/village\/statistics","redirectUrlExternal":"","svg":"sideBar\/overview.svg","content":"","accesskey":9}]);
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="content">
+
+                        <div class="expansionSlotInfo" title="Деревни: &#x202d;&#x202d;3&#x202c;/&#x202d;3&#x202c;&#x202c;</br>Количество единиц культуры для основания/захвата следующей деревни: &#x202d;&#x202d;1148&#x202c;/&#x202d;2400&#x202c;&#x202c;">
+                            <div class="boxTitle">
+                                Деревни		<span class="slots">&#x202d;&#x202d;3&#x202c;/&#x202d;3&#x202c;&#x202c;</span>
+                            </div>
+                            <div class="barWrapper">
+                                <div class="bar" style="width:47.833333333333%">&nbsp;</div>
+                            </div>
+                        </div>
+
+                        <div class="villageList">
+                            <div class="dropContainer" data-sortindex="1">
+                                <div class="listEntry " data-did="18054">
+
+                                    <div class="dragAndDrop preventMobileSwipeNavigation">
+                                        <svg viewBox="0 0 7 13" class="handle">
+                                            <circle cx="1.5" cy="1.5" r="1.5"></circle>
+                                            <circle cx="5.5" cy="1.5" r="1.5"></circle>
+                                            <circle cx="1.5" cy="6.5" r="1.5"></circle>
+                                            <circle cx="5.5" cy="6.5" r="1.5"></circle>
+                                            <circle cx="1.5" cy="11.5" r="1.5"></circle>
+                                            <circle cx="5.5" cy="11.5" r="1.5"></circle>
+                                        </svg>
+                                    </div>
+
+                                    <a href="?newdid=18054&amp;id=8" accesskey="n" >
+                        <span class="iconAndNameWrapper">
+                            <span class="incomingTroops"
+                                  data-id="18054"
+                                  title="Загрузка данных..."
+                                  data-load-tooltip="incomingTroops"
+                                  data-load-tooltip-data="{&quot;villageId&quot;:18054}"
+                            >
+                                <svg viewBox="0 0 20 19.06" class="attack">
+  <path d="M16.22 13.08l2.14-2.14-1.37-1.36-1.63 1.63-2.15-2.15 4.74-4.73L19.06 0l-4.32 1.11L10 5.85 5.26 1.11.94 0l1.11 4.33 4.74 4.73-2.15 2.15-1.63-1.63-1.37 1.36 2.14 2.14L0 16.86l2.21 2.2 3.78-3.77 2.13 2.13 1.37-1.37-1.63-1.63L10 12.28l2.14 2.14-1.63 1.63 1.37 1.37 2.14-2.13 3.77 3.77 2.21-2.2-3.78-3.78z"></path>
+</svg>
+                            </span>
+                            <span class="name" data-did="18054" title="ТРАХ &amp;#x202d;&lt;span class=&quot;coordinates coordinatesWrapper&quot;&gt;&lt;span class=&quot;coordinateX&quot;&gt;(&amp;#x202d;45&amp;#x202c;&lt;/span&gt;&lt;span class=&quot;coordinatePipe&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;coordinateY&quot;&gt;&amp;#x202d;17&amp;#x202c;)&lt;/span&gt;&lt;/span&gt;&amp;#x202c;">ТРАХ</span>
+                        </span>
+                                    </a>
+                                    <span class="coordinatesGrid" >
+                        &#x202d;<span class="coordinates coordinatesWrapper coordinatesAligned coordinatesltr"><span class="coordinateX">(&#x202d;45&#x202c;</span><span class="coordinatePipe">|</span><span class="coordinateY">&#x202d;17&#x202c;)</span></span>&#x202c;                    </span>
+                                </div>
+                            </div>
+                            <div class="dropContainer" data-sortindex="2">
+                                <div class="listEntry " data-did="20342">
+
+                                    <div class="dragAndDrop preventMobileSwipeNavigation">
+                                        <svg viewBox="0 0 7 13" class="handle">
+                                            <circle cx="1.5" cy="1.5" r="1.5"></circle>
+                                            <circle cx="5.5" cy="1.5" r="1.5"></circle>
+                                            <circle cx="1.5" cy="6.5" r="1.5"></circle>
+                                            <circle cx="5.5" cy="6.5" r="1.5"></circle>
+                                            <circle cx="1.5" cy="11.5" r="1.5"></circle>
+                                            <circle cx="5.5" cy="11.5" r="1.5"></circle>
+                                        </svg>
+                                    </div>
+
+                                    <a href="?newdid=20342&amp;id=8" accesskey="b" >
+                        <span class="iconAndNameWrapper">
+                            <span class="incomingTroops"
+                                  data-id="20342"
+                                  title="Загрузка данных..."
+                                  data-load-tooltip="incomingTroops"
+                                  data-load-tooltip-data="{&quot;villageId&quot;:20342}"
+                            >
+                                <svg viewBox="0 0 20 19.06" class="attack">
+  <path d="M16.22 13.08l2.14-2.14-1.37-1.36-1.63 1.63-2.15-2.15 4.74-4.73L19.06 0l-4.32 1.11L10 5.85 5.26 1.11.94 0l1.11 4.33 4.74 4.73-2.15 2.15-1.63-1.63-1.37 1.36 2.14 2.14L0 16.86l2.21 2.2 3.78-3.77 2.13 2.13 1.37-1.37-1.63-1.63L10 12.28l2.14 2.14-1.63 1.63 1.37 1.37 2.14-2.13 3.77 3.77 2.21-2.2-3.78-3.78z"></path>
+</svg>
+                            </span>
+                            <span class="name" data-did="20342" title="АТЬ &amp;#x202d;&lt;span class=&quot;coordinates coordinatesWrapper&quot;&gt;&lt;span class=&quot;coordinateX&quot;&gt;(&amp;#x202d;46&amp;#x202c;&lt;/span&gt;&lt;span class=&quot;coordinatePipe&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;coordinateY&quot;&gt;&amp;#x202d;17&amp;#x202c;)&lt;/span&gt;&lt;/span&gt;&amp;#x202c;">АТЬ</span>
+                        </span>
+                                    </a>
+                                    <span class="coordinatesGrid" >
+                        &#x202d;<span class="coordinates coordinatesWrapper coordinatesAligned coordinatesltr"><span class="coordinateX">(&#x202d;46&#x202c;</span><span class="coordinatePipe">|</span><span class="coordinateY">&#x202d;17&#x202c;)</span></span>&#x202c;                    </span>
+                                </div>
+                            </div>
+                            <div class="dropContainer" data-sortindex="3">
+                                <div class="listEntry  active" data-did="24271">
+
+                                    <div class="dragAndDrop preventMobileSwipeNavigation">
+                                        <svg viewBox="0 0 7 13" class="handle">
+                                            <circle cx="1.5" cy="1.5" r="1.5"></circle>
+                                            <circle cx="5.5" cy="1.5" r="1.5"></circle>
+                                            <circle cx="1.5" cy="6.5" r="1.5"></circle>
+                                            <circle cx="5.5" cy="6.5" r="1.5"></circle>
+                                            <circle cx="1.5" cy="11.5" r="1.5"></circle>
+                                            <circle cx="5.5" cy="11.5" r="1.5"></circle>
+                                        </svg>
+                                    </div>
+
+                                    <a href="?newdid=24271&amp;id=8"  class="active">
+                        <span class="iconAndNameWrapper">
+                            <span class="incomingTroops"
+                                  data-id="24271"
+                                  title="Загрузка данных..."
+                                  data-load-tooltip="incomingTroops"
+                                  data-load-tooltip-data="{&quot;villageId&quot;:24271}"
+                            >
+                                <svg viewBox="0 0 20 19.06" class="attack">
+  <path d="M16.22 13.08l2.14-2.14-1.37-1.36-1.63 1.63-2.15-2.15 4.74-4.73L19.06 0l-4.32 1.11L10 5.85 5.26 1.11.94 0l1.11 4.33 4.74 4.73-2.15 2.15-1.63-1.63-1.37 1.36 2.14 2.14L0 16.86l2.21 2.2 3.78-3.77 2.13 2.13 1.37-1.37-1.63-1.63L10 12.28l2.14 2.14-1.63 1.63 1.37 1.37 2.14-2.13 3.77 3.77 2.21-2.2-3.78-3.78z"></path>
+</svg>
+                            </span>
+                            <span class="name" data-did="24271" title="Новая деревня &amp;#x202d;&lt;span class=&quot;coordinates coordinatesWrapper&quot;&gt;&lt;span class=&quot;coordinateX&quot;&gt;(&amp;#x202d;45&amp;#x202c;&lt;/span&gt;&lt;span class=&quot;coordinatePipe&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;coordinateY&quot;&gt;&amp;#x202d;18&amp;#x202c;)&lt;/span&gt;&lt;/span&gt;&amp;#x202c;">Новая деревня</span>
+                        </span>
+                                    </a>
+                                    <span class="coordinatesGrid" >
+                        &#x202d;<span class="coordinates coordinatesWrapper coordinatesAligned coordinatesltr"><span class="coordinateX">(&#x202d;45&#x202c;</span><span class="coordinatePipe">|</span><span class="coordinateY">&#x202d;18&#x202c;)</span></span>&#x202c;                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            Travian.Game.VillageList.enableDragAndDropSorting();
+                        </script>
+                    </div>
+                </div>
+                <div id="sidebarBoxQuestmaster" class="sidebarBox   ">
+                    <div class="header ">
+                        <button id="questmasterButton"
+                                title="Показать список"
+                                class="vid_1 claimable"
+                                type="button">
+
+                            <svg width="152" height="121" viewBox="0 0 152 121">
+                                <path fill="url(#mentor_gradient)" d="M0 121c.58-1.86 1.22-4.71 1.57-6.14.74-3.08 1.73-5.45 2.95-7.12.32-.43.78-1.06.95-1.41l.25-1.85.24-1.45c.32-.6.27-1.97.23-3.3-.1-3.08-.25-7.72 3.97-11.08 7.86-7.11 17.31-14.95 28.34-19.84.25-.44.5-.92.76-1.41 1.34-2.55 3.27-6.22 7.65-7.99.12-2.25-.92-7.25-2.71-11.48-3.01-5.87-1.7-11.07-.64-15.26.41-1.62.79-3.14.93-4.63l.02-.18C46.33 14 53.51-.09 72.8 0c8.93.04 17.78 4.1 23.02 11.44 6.87 9.62 5.27 23.97 2.18 38.46l-.06.17-.59 1.37c-.62 1.44-1.42 3.27-1.79 4.49.6.11 1.52.21 2.89.23h.28l.28.04c3.74.48 6.03 2.87 6.31 6.57v.18l.01.18c0 .09 0 .16.01.21.65.51 2.98.99 4.26 1.26 2 .41 4.07.84 5.9 1.81l1.31.69.72 1.3c.35.07 1.01.12 1.51.16 1.64.12 3.89.29 6.29 1.39l.26.12.25.15c1.29.78 2.32 1.69 3.23 2.5 1.34 1.19 1.99 1.71 2.59 1.71l.4-.02.46.05c3.57.43 5.55 2.07 6.65 3.81 2.59 1.36 3.6 3.14 3.89 4.78 3.33 6.51 4.38 13.48 5.19 20.25.97 8.07 3.92 16.05 3.72 17.72H0Z"></path>
+                                <defs>
+                                    <linearGradient id="mentor_gradient" gradientTransform="rotate(90)">
+                                        <stop class="colorStop1" offset="0%"></stop>
+                                        <stop class="colorStop2" offset="30%"></stop>
+                                        <stop class="colorStop1" offset="60%"></stop>
+                                        <stop class="colorStop3" offset="95%"></stop>
+                                        <stop class="colorStop4" offset="100%"></stop>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <img class="mentor" alt="" src="/img/x.gif" />
+                            <div class="bigSpeechBubble newQuestSpeechBubble" title="">
+                                <img src="/img/x.gif" alt="" />
+                            </div></button>
+
+                        <script type="text/javascript">
+                            jQuery(function() {
+                                jQuery('button#questmasterButton').click(function() {
+                                    window.location = '/tasks';
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="content">
+                        <a href="/tasks" title="Показать список" class="progressiveTasksTitle">
+                            <div class="boxTitle">Обзор заданий</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div id="pageLinks">
+            <a href="https://www.travian.com/ru" target="_blank">Главная страница</a>
+            <a href="https://discord.gg/travianlegends" target="_blank">Discord</a>
+            <a href="https://blog.travian.com" target="_blank">Блог</a>
+            <a href="/help?page=support&redirect=home" target="_blank">Служба поддержки</a>
+            <a href="https://www.travian.com/ru/gamerules" target="_blank">Правила игры</a>
+            <a href="https://www.travian.com/ru/terms" target="_blank">Основные положения</a>
+            <a href="https://www.travian.com/ru/imprint" target="_blank">Контакты</a>
+            <div class="clear"></div>
+        </div>
+        <p class="copyright">© 2004—2024 Travian Games GmbH</p>
+    </div>
+
+    <div id="ce"></div>
+
+
+</div>
+<script type="application/javascript">
+    Travian.Game.contextHelpData = {"groupName":"","steps":[],"restartableGroup":null};
+    Travian.Game.ContextualHelp.initialize();
+
+
+
+    Travian.Game.Layout.MobileOptimizations.init();
+    Travian.Game.Layout.updateContentTitleClass();
+</script>
+</body>
+</html>
