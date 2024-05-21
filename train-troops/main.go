@@ -13,7 +13,48 @@ import (
 	switch_village "travian-bot/switch-village"
 )
 
-func TrainTroops(villageId int) {
+type TroopsConfig struct {
+	Wood int
+	Clay int
+	Iron int
+	Crop int
+
+	Id    int
+	Gid   int
+	Index int
+}
+
+var LegsTrainConfig = TroopsConfig{
+	Wood:  120,
+	Clay:  100,
+	Iron:  150,
+	Crop:  30,
+	Id:    31,
+	Gid:   19,
+	Index: 1,
+}
+
+var PretsTrainConfig = TroopsConfig{
+	Wood:  100,
+	Clay:  130,
+	Iron:  160,
+	Crop:  70,
+	Id:    31,
+	Gid:   19,
+	Index: 2,
+}
+
+var ImperatorisTrainConfig = TroopsConfig{
+	Wood:  550,
+	Clay:  440,
+	Iron:  320,
+	Crop:  100,
+	Id:    29,
+	Gid:   20,
+	Index: 5,
+}
+
+func TrainTroops(villageId int, cfg TroopsConfig) {
 	for {
 		err := switch_village.Switch(villageId)
 		if err != nil {
@@ -21,11 +62,11 @@ func TrainTroops(villageId int) {
 			continue
 		}
 
-		sleepMins := 30 + time.Duration(rand.Intn(60))
+		sleepMins := 5 + time.Duration(rand.Intn(10))
 
-		isEnough, count := isEnoughResources(550, 440, 320, 100)
+		isEnough, count := isEnoughResources(cfg.Wood, cfg.Clay, cfg.Iron, cfg.Crop)
 		if isEnough {
-			Train(count)
+			Train(count, cfg.Id, cfg.Gid, cfg.Index)
 			fmt.Printf("%s: Launched train troop, sleep %d minutes\n", time.Now().Format(time.TimeOnly), sleepMins)
 		} else {
 			fmt.Printf("%s: Not enough resourses for train troop, sleep %d minutes\n", time.Now().Format(time.TimeOnly), sleepMins)
@@ -35,9 +76,9 @@ func TrainTroops(villageId int) {
 	}
 }
 
-func Train(count int) {
+func Train(count int, id int, gid int, index int) {
 	println(count)
-	req, err := http.NewRequest("GET", common.Host+"/build.php?gid=20", nil)
+	req, err := http.NewRequest("GET", fmt.Sprintf("%s/build.php?gid=%d", common.Host, gid), nil)
 	if err != nil {
 		println("train troop error")
 		println(err.Error())
@@ -96,11 +137,11 @@ func Train(count int) {
 	params.Add("checksum", checksum)
 	params.Add("s", `1`)
 	params.Add("did", fmt.Sprintf("%d", common.VillageId))
-	params.Add("t5", fmt.Sprintf("%d", count))
+	params.Add(fmt.Sprintf("t%d", index), fmt.Sprintf("%d", count))
 	params.Add("s1", `ok`)
 	body := strings.NewReader(params.Encode())
 
-	req, err = http.NewRequest("POST", common.Host+"/build.php?id=29&gid=20", body)
+	req, err = http.NewRequest("POST", fmt.Sprintf("%s/build.php?id=%d&gid=%d", common.Host, id, gid), body)
 	if err != nil {
 		println("train troop error")
 		println(err.Error())
