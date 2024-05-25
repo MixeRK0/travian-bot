@@ -12,13 +12,12 @@ import (
 	switch_village "travian-bot/switch-village"
 )
 
-func Build(villageId int) {
+func Build(villageId int, targets []common.BuildingId) {
 	for {
-		targets := common.BuildingPlan
 		rand.Seed(time.Now().UnixNano())
 		rand.Shuffle(len(targets), func(i, j int) { targets[i], targets[j] = targets[j], targets[i] })
 		i := 0
-		for i < len(targets)-1 {
+		for i < len(targets) {
 			err := switch_village.Switch(villageId)
 			if err != nil {
 				println(err.Error())
@@ -26,12 +25,14 @@ func Build(villageId int) {
 				continue
 			}
 
-			err = build(targets[i].Id, targets[i].Gid)
+			err = build(targets[i].Id, targets[i].Gid, targets[i].Dorf)
 			if err != nil {
 				sleepSeconds := 300 + time.Duration(rand.Intn(100))
+				fmt.Printf("%s: Build: villageId=%d, id = %d, gid = %d, Sleep %d seconds \n", time.Now().Format(time.TimeOnly), villageId, targets[i].Id, targets[i].Gid, sleepSeconds)
 				time.Sleep(sleepSeconds * time.Second)
-				time.Sleep(time.Second)
 				continue
+			} else {
+				fmt.Printf("%s: Build: villageId=%d, id = %d, gid = %d, Launched building \n", time.Now().Format(time.TimeOnly), villageId, targets[i].Id, targets[i].Gid)
 			}
 
 			i++
@@ -39,9 +40,8 @@ func Build(villageId int) {
 	}
 }
 
-func build(id int, gid int) error {
+func build(id int, gid int, dorf int) error {
 	req, err := http.NewRequest("GET", fmt.Sprintf("%s/build.php?id=%d&gid=%d", common.Host, id, gid), nil)
-	//req, err := http.NewRequest("GET", fmt.Sprintf("%s/build.php?id=%d", common.Host, id), nil)
 	if err != nil {
 		return err
 	}
@@ -75,6 +75,10 @@ func build(id int, gid int) error {
 
 	bodyStr := string(respBodyBytes)
 
+	if !strings.Contains(bodyStr, "checksum=") {
+		return errors.New("architect")
+	}
+
 	splited1 := strings.Split(bodyStr, `checksum=`)
 	checksum := strings.Split(splited1[1], `'`)[0]
 
@@ -82,8 +86,7 @@ func build(id int, gid int) error {
 		return errors.New("architect")
 	}
 
-	req, err = http.NewRequest("GET", fmt.Sprintf("%s/dorf1.php?id=%d&gid=%d&action=build&checksum=%s", common.Host, id, gid, checksum), nil)
-	//req, err = http.NewRequest("GET", fmt.Sprintf("%s/dorf1.php?id=%d&action=build&checksum=%s", common.Host, id, checksum), nil)
+	req, err = http.NewRequest("GET", fmt.Sprintf("%s/dorf%d.php?id=%d&gid=%d&action=build&checksum=%s", common.Host, dorf, id, gid, checksum), nil)
 	if err != nil {
 		return err
 	}
