@@ -27,21 +27,9 @@ func main() {
 }
 
 func launchBuild() {
-	//go build.Build(v1, common.CreateBuildingList(common.Tavern))
-	//time.Sleep(time.Second * 10)
-	//
-	//go build.Build(v2, common.CreateBuildingList(common.Ambar))
-	//time.Sleep(time.Second * 10)
-	//
-	//go build.Build(v3, common.CreateBuildingList(common.MainBuilding))
-	//time.Sleep(time.Second * 10)
-	//go build.Build(v3, common.CreateBuildingList(common.BuildingPlan4536...))
-	//time.Sleep(time.Second * 10)
-
-	//go build.Build(v4, common.CreateBuildingList(common.Ambar))
 	time.Sleep(time.Second * 10)
 	go build.Build(v1, common.CreateBuildingList(common.BuildingPlan4446...), true)
 
 	time.Sleep(time.Second * 10)
-	go build.Build(v1, common.CreateBuildingList(common.Warehouse, common.Warehouse, common.Warehouse, common.Ambar, common.Ambar, common.Ambar, common.MainBuilding, common.MainBuilding, common.MainBuilding, common.MainBuilding, common.MainBuilding, common.Warehouse, common.Warehouse, common.Ambar, common.Ambar, common.Marketplace, common.Marketplace, common.Marketplace, common.Marketplace, common.Academy, common.Academy, common.Academy, common.Cranny, common.Cranny, common.Cranny, common.Cranny, common.Cranny, common.Cranny, common.Cranny, common.Cranny), false)
+	go build.Build(v1, common.CreateBuildingList(common.Warehouse, common.Warehouse, common.Warehouse, common.Ambar, common.Ambar, common.Ambar, common.MainBuilding, common.MainBuilding, common.MainBuilding, common.MainBuilding, common.MainBuilding, common.Warehouse, common.Warehouse, common.Ambar, common.Ambar, common.Marketplace, common.Marketplace, common.Marketplace, common.Marketplace, common.Academy, common.Academy, common.Academy, common.Cranny, common.Cranny, common.Cranny, common.Cranny, common.Cranny, common.Cranny, common.Cranny, common.Cranny, common.Wall, common.Wall, common.Wall, common.Wall, common.Wall, common.Wall, common.Wall, common.Warehouse, common.Warehouse, common.Ambar, common.Ambar), false)
 }
