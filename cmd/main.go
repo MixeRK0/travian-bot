@@ -5,28 +5,19 @@ import (
 	"travian-bot/adventure"
 	"travian-bot/build"
 	"travian-bot/common"
-	train_troops "travian-bot/train-troops"
 )
 
 const (
-	v1 = 18054
-	v2 = 20342
-	v3 = 24271
-	v4 = 25945
+	v1 = 20215
 )
 
 func main() {
 	common.Login()
 
-	go train_troops.TrainTroops(v1, train_troops.PretsTrainConfig)
-	time.Sleep(time.Second * 10)
-	go train_troops.TrainTroops(v2, train_troops.LegsTrainConfig)
-	time.Sleep(time.Second * 10)
-	go train_troops.TrainTroops(v3, train_troops.LegsTrainConfig)
+	//go train_troops.TrainTroops(v1, train_troops.PretsTrainConfig)
+	//time.Sleep(time.Second * 10)
 
 	go launchBuild()
-
-	time.Sleep(time.Second * 10)
 
 	go adventure.GoToAdventures()
 
@@ -49,5 +40,8 @@ func launchBuild() {
 
 	//go build.Build(v4, common.CreateBuildingList(common.Ambar))
 	time.Sleep(time.Second * 10)
-	go build.Build(v4, common.CreateBuildingList(common.BuildingPlan5346...))
+	go build.Build(v1, common.CreateBuildingList(common.BuildingPlan4446...), true)
+
+	time.Sleep(time.Second * 10)
+	go build.Build(v1, common.CreateBuildingList(common.Warehouse, common.Warehouse, common.Warehouse, common.Ambar, common.Ambar, common.Ambar, common.MainBuilding, common.MainBuilding, common.MainBuilding, common.MainBuilding, common.MainBuilding, common.Warehouse, common.Warehouse, common.Ambar, common.Ambar, common.Marketplace, common.Marketplace, common.Marketplace, common.Marketplace, common.Academy, common.Academy, common.Academy, common.Cranny, common.Cranny, common.Cranny, common.Cranny, common.Cranny, common.Cranny, common.Cranny, common.Cranny), false)
 }

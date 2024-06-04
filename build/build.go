@@ -12,10 +12,8 @@ import (
 	switch_village "travian-bot/switch-village"
 )
 
-func Build(villageId int, targets []common.BuildingId) {
+func Build(villageId int, targets []common.BuildingId, isRepeat bool) {
 	for {
-		rand.Seed(time.Now().UnixNano())
-		rand.Shuffle(len(targets), func(i, j int) { targets[i], targets[j] = targets[j], targets[i] })
 		i := 0
 		for i < len(targets) {
 			err := switch_village.Switch(villageId)
@@ -37,6 +35,13 @@ func Build(villageId int, targets []common.BuildingId) {
 
 			i++
 		}
+
+		if isRepeat == false {
+			return
+		}
+
+		rand.Seed(time.Now().UnixNano())
+		rand.Shuffle(len(targets), func(i, j int) { targets[i], targets[j] = targets[j], targets[i] })
 	}
 }
 

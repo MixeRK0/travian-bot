@@ -13,8 +13,8 @@ var CommonCookie = "__cmpcc=1; __cmpconsentx17155=CP9AEggP9AEggAfSDBRUAwEgAAAAAE
 var JwtCookie = ""
 var Cookie = ""
 
-const HostHeader = "ts50.x5.arabics.travian.com"
-const Host = "https://ts50.x5.arabics.travian.com"
+const HostHeader = "ts100.x10.europe.travian.com"
+const Host = "https://ts100.x10.europe.travian.com"
 
 const Username = "777sweety777"
 const Password = "qwe123"
