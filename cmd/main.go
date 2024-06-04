@@ -2,7 +2,6 @@ package main
 
 import (
 	"time"
-	"travian-bot/adventure"
 	"travian-bot/build"
 	"travian-bot/common"
 )
@@ -19,7 +18,7 @@ func main() {
 
 	go launchBuild()
 
-	go adventure.GoToAdventures()
+	//go adventure.GoToAdventures()
 
 	for {
 		time.Sleep(time.Minute * 100)
@@ -31,5 +30,5 @@ func launchBuild() {
 	go build.Build(v1, common.CreateBuildingList(common.BuildingPlan4446...), true)
 
 	time.Sleep(time.Second * 10)
-	go build.Build(v1, common.CreateBuildingList(common.Warehouse, common.Warehouse, common.Warehouse, common.Ambar, common.Ambar, common.Ambar, common.MainBuilding, common.MainBuilding, common.MainBuilding, common.MainBuilding, common.MainBuilding, common.Warehouse, common.Warehouse, common.Ambar, common.Ambar, common.Marketplace, common.Marketplace, common.Marketplace, common.Marketplace, common.Academy, common.Academy, common.Academy, common.Cranny, common.Cranny, common.Cranny, common.Cranny, common.Cranny, common.Cranny, common.Cranny, common.Cranny, common.Wall, common.Wall, common.Wall, common.Wall, common.Wall, common.Wall, common.Wall, common.Warehouse, common.Warehouse, common.Ambar, common.Ambar), false)
+	go build.Build(v1, common.CreateBuildingList(common.MainBuilding, common.MainBuilding, common.MainBuilding, common.MainBuilding, common.Ambar, common.Ambar, common.Wall, common.Wall, common.Wall, common.Wall, common.Wall, common.Wall, common.Cranny, common.Cranny, common.Cranny, common.Cranny, common.Cranny), false)
 }
