@@ -30,5 +30,5 @@ func launchBuild() {
 	go build.Build(v1, common.CreateBuildingList(common.BuildingPlan4446...), true)
 
 	time.Sleep(time.Second * 10)
-	go build.Build(v1, common.CreateBuildingList(common.MainBuilding, common.MainBuilding, common.MainBuilding, common.MainBuilding, common.Ambar, common.Ambar, common.Wall, common.Wall, common.Wall, common.Wall, common.Wall, common.Wall, common.Cranny, common.Cranny, common.Cranny, common.Cranny, common.Cranny), false)
+	go build.Build(v1, common.CreateBuildingList(common.Warehouse, common.Ambar, common.Warehouse, common.RallyPoint, common.RallyPoint, common.RallyPoint, common.RallyPoint, common.RallyPoint, common.RallyPoint, common.RallyPoint, common.RallyPoint, common.RallyPoint, common.Academy, common.Academy, common.Academy, common.Academy, common.Academy, common.Marketplace, common.Marketplace, common.Casarm, common.Casarm, common.Casarm, common.Casarm, common.Stable, common.Stable, common.Stable, common.Stable, common.Stable, common.Stable), false)
 }
