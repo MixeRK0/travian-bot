@@ -256,7 +256,7 @@ func isEnoughResources(needWood int, needClay int, needIron int, needCrop int) (
 		return false, 0
 	}
 
-	splited = strings.Split(res, "<div id=\"l3\" class=\"value\">&#x202d;")
+	splited = strings.Split(res, "<div id=\"l4\" class=\"value\">&#x202d;")
 	if len(splited) < 2 {
 		fmt.Print("Can't split wood")
 		return false, 0
