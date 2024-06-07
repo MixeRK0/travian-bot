@@ -11,12 +11,16 @@ const (
 	v1 = 20215
 	v2 = 23298
 	v3 = 24004
+	v4 = 25232
 )
 
 func main() {
 	common.Login()
+	time.Sleep(time.Second)
 
 	go train_troops.TrainTroops(v1, train_troops.ImperatorisTrainConfig)
+	go train_troops.TrainTroops(v2, train_troops.LegsTrainConfig)
+	go train_troops.TrainTroops(v3, train_troops.LegsTrainConfig)
 
 	go launchBuild()
 
@@ -28,41 +32,23 @@ func main() {
 }
 
 func launchBuild() {
-	time.Sleep(time.Second * 10)
-	go build.Build(v2, common.CreateBuildingList(common.BuildingPlan4446...), true)
+
+	go build.Build(v4, common.BuildingPlan4446, true)
 
 	time.Sleep(time.Second * 10)
-	go build.Build(v2, common.CreateBuildingList(
-		common.Ambar,
-		common.Ambar,
-		common.Marketplace,
-		common.Marketplace,
-		common.Marketplace,
-		common.Marketplace,
-		common.Marketplace,
-		common.MainBuilding,
-		common.MainBuilding,
-		common.MainBuilding,
-		common.MainBuilding,
-		common.MainBuilding,
-		common.Casarm,
-		common.Casarm,
-		common.Casarm,
-		common.Casarm,
-		common.Casarm,
-		common.Casarm,
-	), false)
-
-	time.Sleep(time.Second * 10)
-	go build.Build(v3, common.CreateBuildingList(common.BuildingPlan5346...), true)
-
-	time.Sleep(time.Second * 10)
-	go build.Build(v3, common.CreateBuildingList(
-		common.Warehouse,
-		common.Warehouse,
+	go build.Build(v4, common.CreateBuildingList(
 		common.Warehouse,
 		common.Ambar,
+		common.Warehouse,
 		common.Ambar,
+		common.Warehouse,
+		common.Ambar,
+		common.Warehouse,
+		common.Ambar,
+		common.MainBuilding,
+		common.MainBuilding,
+		common.MainBuilding,
+		common.MainBuilding,
 		common.MainBuilding,
 		common.MainBuilding,
 		common.MainBuilding,
@@ -70,18 +56,7 @@ func launchBuild() {
 		common.MainBuilding,
 		common.Warehouse,
 		common.Ambar,
-		common.Ambar,
 		common.Warehouse,
-		common.Warehouse,
-		common.Ambar,
-		common.Ambar,
-		common.MainBuilding,
-		common.MainBuilding,
-		common.MainBuilding,
-		common.MainBuilding,
-		common.Warehouse,
-		common.Warehouse,
-		common.Ambar,
 		common.Ambar,
 		common.MainBuilding,
 		common.MainBuilding,

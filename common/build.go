@@ -25,8 +25,10 @@ var Wall = BuildingId{40, 31, 2}
 var RallyPoint = BuildingId{39, 16, 2}
 var Cranny = BuildingId{35, 23, 2}
 var Tavern = BuildingId{37, 37, 2}
-var Ratushe = BuildingId{32, 24, 2}
+var Ratushe = BuildingId{37, 24, 2}
 var Marketplace = BuildingId{22, 17, 2}
+var Glina = BuildingId{27, 6, 2}
+var Residence = BuildingId{32, 25, 2}
 
 var BuildingPlan4536 = []BuildingId{
 	// wood
@@ -87,7 +89,7 @@ var BuildingPlan5346 = []BuildingId{
 var BuildingPlan4446 = []BuildingId{
 	// wood
 	{1, 1, 1},
-	//{3, 1, 1},
+	{3, 1, 1},
 	{14, 1, 1},
 	{17, 1, 1},
 
@@ -95,7 +97,7 @@ var BuildingPlan4446 = []BuildingId{
 	{5, 2, 1},
 	{6, 2, 1},
 	{16, 2, 1},
-	//{18, 2, 1},
+	{18, 2, 1},
 
 	// iron
 	{4, 3, 1},
@@ -110,11 +112,4 @@ var BuildingPlan4446 = []BuildingId{
 	{12, 4, 1},
 	{13, 4, 1},
 	{15, 4, 1},
-
-	{2, 4, 1},
-	{8, 4, 1},
-	{9, 4, 1},
-	//{12, 4, 1},
-	//{13, 4, 1},
-	//{15, 4, 1},
 }
