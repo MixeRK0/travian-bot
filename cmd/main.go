@@ -66,4 +66,17 @@ func launchBuild() {
 		common.MainBuilding,
 		common.MainBuilding,
 	), false)
+
+	time.Sleep(time.Second * 10)
+	go build.Build(v3, common.CreateBuildingList(
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+	), false)
 }
