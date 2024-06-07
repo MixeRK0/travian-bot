@@ -62,7 +62,7 @@ func TrainTroops(villageId int, cfg TroopsConfig) {
 			continue
 		}
 
-		sleepMins := 5 + time.Duration(rand.Intn(10))
+		sleepMins := 30 + time.Duration(rand.Intn(10))
 
 		isEnough, count := isEnoughResources(cfg.Wood, cfg.Clay, cfg.Iron, cfg.Crop)
 		if isEnough {
