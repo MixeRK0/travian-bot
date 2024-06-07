@@ -19,8 +19,11 @@ func main() {
 	time.Sleep(time.Second)
 
 	go train_troops.TrainTroops(v1, train_troops.ImperatorisTrainConfig)
+	time.Sleep(time.Second * 5)
 	go train_troops.TrainTroops(v2, train_troops.LegsTrainConfig)
+	time.Sleep(time.Second * 5)
 	go train_troops.TrainTroops(v3, train_troops.LegsTrainConfig)
+	time.Sleep(time.Second * 5)
 
 	go launchBuild()
 
