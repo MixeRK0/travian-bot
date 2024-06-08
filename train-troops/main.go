@@ -44,6 +44,16 @@ var PretsTrainConfig = TroopsConfig{
 	Index: 2,
 }
 
+var ImpsTrainConfig = TroopsConfig{
+	Wood:  150,
+	Clay:  160,
+	Iron:  210,
+	Crop:  80,
+	Id:    31,
+	Gid:   19,
+	Index: 3,
+}
+
 var ImperatorisTrainConfig = TroopsConfig{
 	Wood:  550,
 	Clay:  440,

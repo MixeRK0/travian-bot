@@ -29,6 +29,7 @@ var Ratushe = BuildingId{37, 24, 2}
 var Marketplace = BuildingId{22, 17, 2}
 var Glina = BuildingId{27, 6, 2}
 var Residence = BuildingId{32, 25, 2}
+var WarehouseSecond = BuildingId{33, 10, 2}
 
 var BuildingPlan4536 = []BuildingId{
 	// wood
