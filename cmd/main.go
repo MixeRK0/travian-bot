@@ -14,6 +14,7 @@ const (
 	v4 = 25232
 	v5 = 26261
 	v6 = 26853
+	v7 = 28304
 )
 
 func main() {
@@ -27,7 +28,7 @@ func main() {
 	time.Sleep(time.Second * 5)
 	go train_troops.TrainTroops(v3, train_troops.PretsTrainConfig)
 	time.Sleep(time.Second * 5)
-	go train_troops.TrainTroops(v4, train_troops.LegsTrainConfig)
+	go train_troops.TrainTroops(v4, train_troops.PretsTrainConfig)
 	time.Sleep(time.Second * 5)
 	go train_troops.TrainTroops(v5, train_troops.LegsTrainConfig)
 	time.Sleep(time.Second * 5)
@@ -44,36 +45,25 @@ func main() {
 }
 
 func launchBuild() {
-	go build.Build(v6, common.CreateBuildingList(
-		common.Academy,
-		common.Academy,
-		common.Academy,
-		common.Academy,
-		common.Academy,
-		common.Academy,
-		common.Academy,
-		common.Academy,
-		common.Academy,
-	), false)
+	go build.Build(v7, common.BuildingPlan4446, true)
+
 	time.Sleep(time.Second * 10)
-	go build.Build(v6, common.CreateBuildingList(
-		common.Academy,
-		common.Academy,
-		common.Academy,
-		common.Academy,
-		common.Academy,
-		common.Academy,
-		common.Academy,
-		common.Academy,
-		common.Academy,
-		common.Warehouse,
-		common.Warehouse,
+	go build.Build(v7, common.CreateBuildingList(
 		common.Warehouse,
 		common.Ambar,
+		common.Warehouse,
 		common.Ambar,
+		common.Warehouse,
 		common.Ambar,
+		common.Warehouse,
 		common.Ambar,
+		common.Warehouse,
 		common.Ambar,
+		common.MainBuilding,
+		common.MainBuilding,
+		common.MainBuilding,
+		common.MainBuilding,
+		common.MainBuilding,
 		common.Marketplace,
 		common.Marketplace,
 		common.Marketplace,
@@ -82,8 +72,15 @@ func launchBuild() {
 		common.Marketplace,
 		common.Marketplace,
 		common.Marketplace,
-		common.Marketplace,
-		common.Marketplace,
+		common.Residence,
+		common.Residence,
+		common.Residence,
+		common.Residence,
+		common.Residence,
+		common.Residence,
+		common.Residence,
+		common.Residence,
+		common.Residence,
+		common.Residence,
 	), false)
-	time.Sleep(time.Second * 10)
 }
