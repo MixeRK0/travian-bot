@@ -15,6 +15,7 @@ const (
 	v5 = 26261
 	v6 = 26853
 	v7 = 28304
+	v8 = 30281
 )
 
 func main() {
@@ -34,6 +35,8 @@ func main() {
 	time.Sleep(time.Second * 5)
 	go train_troops.TrainTroops(v6, train_troops.LegsTrainConfig)
 	time.Sleep(time.Second * 5)
+	go train_troops.TrainTroops(v7, train_troops.LegsTrainConfig)
+	time.Sleep(time.Second * 5)
 
 	go launchBuild()
 
@@ -45,10 +48,50 @@ func main() {
 }
 
 func launchBuild() {
-	go build.Build(v7, common.BuildingPlan4446, true)
+	go build.Build(v8, common.BuildingPlan4446, true)
 
 	time.Sleep(time.Second * 10)
 	go build.Build(v7, common.CreateBuildingList(
+		common.Casarm,
+
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+	), false)
+
+	time.Sleep(time.Second * 10)
+	go build.Build(v6, common.CreateBuildingList(
+		common.Casarm,
+
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+	), false)
+
+	time.Sleep(time.Second * 10)
+	go build.Build(v8, common.CreateBuildingList(
 		common.Warehouse,
 		common.Ambar,
 		common.Warehouse,
@@ -82,5 +125,19 @@ func launchBuild() {
 		common.Residence,
 		common.Residence,
 		common.Residence,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
+		common.Casarm,
 	), false)
 }
